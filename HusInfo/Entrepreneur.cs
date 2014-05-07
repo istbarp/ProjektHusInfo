@@ -6,12 +6,19 @@ using System.ComponentModel;
 
 namespace HusInfo
 {
-    public class Entrepreneur
+    public class Entrepreneur : Login
     {
-        private string username;
-        private string password;
         private int id;
-        private string company;
-        private int phoneNumber;
+
+        public Offer Offer
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

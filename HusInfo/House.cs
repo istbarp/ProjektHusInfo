@@ -30,5 +30,18 @@ namespace HusInfo
         private string address;
         private int zipCode;
         private string city;
+        private string webLink;
+        private int realEstateAgentId;
+
+        public Report Report
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

@@ -74,8 +74,10 @@
     <Compile Include="K1.cs" />
     <Compile Include="K2.cs" />
     <Compile Include="K3.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Offer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealEstateAgent.cs" />
     <Compile Include="Report.cs" />
     <Compile Include="Un.cs" />
     <Compile Include="Entrepreneur.cs" />
