@@ -11,6 +11,6 @@ namespace HusInfo
         private int id;
         private double price;
         private int entrepreneurId;
-        private int ProblemId;
+        private int problemId;
     }
 }

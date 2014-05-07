@@ -4,13 +4,13 @@
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAgAAAgQ=</HashCode>
-      <FileName>User.cs</FileName>
+      <FileName>Entrepreneur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HusInfo.Offer">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEABAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AEABAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Offer.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -28,39 +28,44 @@
       <FileName>Report.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HusInfo.k3">
+  <Class Name="HusInfo.K3">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>k3.cs</FileName>
+      <FileName>K3.cs</FileName>
+      <NewMemberFileName>k3.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HusInfo.k2">
+  <Class Name="HusInfo.K2">
     <Position X="6" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>k2.cs</FileName>
+      <FileName>K2.cs</FileName>
+      <NewMemberFileName>k2.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HusInfo.k1">
+  <Class Name="HusInfo.K0">
     <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Class1.cs</FileName>
+      <FileName>K0.cs</FileName>
+      <NewMemberFileName>k0.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HusInfo.un">
+  <Class Name="HusInfo.Un">
     <Position X="4" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Class1.cs</FileName>
+      <FileName>Un.cs</FileName>
+      <NewMemberFileName>un.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HusInfo.k0">
+  <Class Name="HusInfo.K1">
     <Position X="6" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Class1.cs</FileName>
+      <FileName>K1.cs</FileName>
+      <NewMemberFileName>k1.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace HusInfo
 {
-    public class K2
+    public class K0
     {
         private int id;
         private string problem;
