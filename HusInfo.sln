@@ -3,35 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HusInfo", "http://localhost:44661", "{2E781CE1-87B1-41FD-91F3-F37E010081E2}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_44661"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\HusInfo\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_44661\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_44661"
-		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\HusInfo\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_44661\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\WebSites\HusInfo\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HusInfo", "HusInfo\HusInfo.csproj", "{2B7672B4-782E-4E1B-8A8D-EB2D3EB23E55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E781CE1-87B1-41FD-91F3-F37E010081E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E781CE1-87B1-41FD-91F3-F37E010081E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7672B4-782E-4E1B-8A8D-EB2D3EB23E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7672B4-782E-4E1B-8A8D-EB2D3EB23E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7672B4-782E-4E1B-8A8D-EB2D3EB23E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7672B4-782E-4E1B-8A8D-EB2D3EB23E55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
