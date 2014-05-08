@@ -22,7 +22,7 @@ namespace HusInfo.Database
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dmaa0912JesperH")]
 	public partial class houseDatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,40 +30,25 @@ namespace HusInfo.Database
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertEntrepreneur(Entrepreneur instance);
-    partial void UpdateEntrepreneur(Entrepreneur instance);
-    partial void DeleteEntrepreneur(Entrepreneur instance);
+    partial void InsertClassification(Classification instance);
+    partial void UpdateClassification(Classification instance);
+    partial void DeleteClassification(Classification instance);
     partial void InsertHouse(House instance);
     partial void UpdateHouse(House instance);
     partial void DeleteHouse(House instance);
-    partial void InsertK0(K0 instance);
-    partial void UpdateK0(K0 instance);
-    partial void DeleteK0(K0 instance);
-    partial void InsertK1(K1 instance);
-    partial void UpdateK1(K1 instance);
-    partial void DeleteK1(K1 instance);
-    partial void InsertK2(K2 instance);
-    partial void UpdateK2(K2 instance);
-    partial void DeleteK2(K2 instance);
-    partial void InsertK3(K3 instance);
-    partial void UpdateK3(K3 instance);
-    partial void DeleteK3(K3 instance);
+    partial void InsertLogin(Login instance);
+    partial void UpdateLogin(Login instance);
+    partial void DeleteLogin(Login instance);
     partial void InsertOffer(Offer instance);
     partial void UpdateOffer(Offer instance);
     partial void DeleteOffer(Offer instance);
-    partial void InsertRealEstateAgent(RealEstateAgent instance);
-    partial void UpdateRealEstateAgent(RealEstateAgent instance);
-    partial void DeleteRealEstateAgent(RealEstateAgent instance);
     partial void InsertReport(Report instance);
     partial void UpdateReport(Report instance);
     partial void DeleteReport(Report instance);
-    partial void InsertUn(Un instance);
-    partial void UpdateUn(Un instance);
-    partial void DeleteUn(Un instance);
     #endregion
 		
 		public houseDatabaseDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DataSourceConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["dmaa0912JesperHConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -92,11 +77,11 @@ namespace HusInfo.Database
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Entrepreneur> Entrepreneurs
+		public System.Data.Linq.Table<Classification> Classifications
 		{
 			get
 			{
-				return this.GetTable<Entrepreneur>();
+				return this.GetTable<Classification>();
 			}
 		}
 		
@@ -105,38 +90,6 @@ namespace HusInfo.Database
 			get
 			{
 				return this.GetTable<House>();
-			}
-		}
-		
-		public System.Data.Linq.Table<K0> K0s
-		{
-			get
-			{
-				return this.GetTable<K0>();
-			}
-		}
-		
-		public System.Data.Linq.Table<K1> K1s
-		{
-			get
-			{
-				return this.GetTable<K1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<K2> K2s
-		{
-			get
-			{
-				return this.GetTable<K2>();
-			}
-		}
-		
-		public System.Data.Linq.Table<K3> K3s
-		{
-			get
-			{
-				return this.GetTable<K3>();
 			}
 		}
 		
@@ -156,14 +109,6 @@ namespace HusInfo.Database
 			}
 		}
 		
-		public System.Data.Linq.Table<RealEstateAgent> RealEstateAgents
-		{
-			get
-			{
-				return this.GetTable<RealEstateAgent>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Report> Reports
 		{
 			get
@@ -171,25 +116,27 @@ namespace HusInfo.Database
 				return this.GetTable<Report>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Un> Uns
-		{
-			get
-			{
-				return this.GetTable<Un>();
-			}
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Entrepreneur")]
-	public partial class Entrepreneur : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Classification")]
+	public partial class Classification : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
+		private string _problem;
+		
+		private System.Data.Linq.Binary _problemPicture;
+		
+		private string _type;
+		
+		private System.Nullable<int> _reportId;
+		
 		private EntitySet<Offer> _Offers;
+		
+		private EntityRef<Report> _Report;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -197,11 +144,20 @@ namespace HusInfo.Database
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OnproblemChanging(string value);
+    partial void OnproblemChanged();
+    partial void OnproblemPictureChanging(System.Data.Linq.Binary value);
+    partial void OnproblemPictureChanged();
+    partial void OntypeChanging(string value);
+    partial void OntypeChanged();
+    partial void OnreportIdChanging(System.Nullable<int> value);
+    partial void OnreportIdChanged();
     #endregion
 		
-		public Entrepreneur()
+		public Classification()
 		{
 			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
+			this._Report = default(EntityRef<Report>);
 			OnCreated();
 		}
 		
@@ -225,7 +181,91 @@ namespace HusInfo.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Entrepreneur_Offer", Storage="_Offers", ThisKey="id", OtherKey="entrepreneurId")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problem", DbType="NVarChar(MAX)")]
+		public string problem
+		{
+			get
+			{
+				return this._problem;
+			}
+			set
+			{
+				if ((this._problem != value))
+				{
+					this.OnproblemChanging(value);
+					this.SendPropertyChanging();
+					this._problem = value;
+					this.SendPropertyChanged("problem");
+					this.OnproblemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problemPicture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary problemPicture
+		{
+			get
+			{
+				return this._problemPicture;
+			}
+			set
+			{
+				if ((this._problemPicture != value))
+				{
+					this.OnproblemPictureChanging(value);
+					this.SendPropertyChanging();
+					this._problemPicture = value;
+					this.SendPropertyChanged("problemPicture");
+					this.OnproblemPictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type", DbType="NVarChar(MAX)")]
+		public string type
+		{
+			get
+			{
+				return this._type;
+			}
+			set
+			{
+				if ((this._type != value))
+				{
+					this.OntypeChanging(value);
+					this.SendPropertyChanging();
+					this._type = value;
+					this.SendPropertyChanged("type");
+					this.OntypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reportId", DbType="Int")]
+		public System.Nullable<int> reportId
+		{
+			get
+			{
+				return this._reportId;
+			}
+			set
+			{
+				if ((this._reportId != value))
+				{
+					if (this._Report.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnreportIdChanging(value);
+					this.SendPropertyChanging();
+					this._reportId = value;
+					this.SendPropertyChanged("reportId");
+					this.OnreportIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Classification_Offer", Storage="_Offers", ThisKey="id", OtherKey="classificationId")]
 		public EntitySet<Offer> Offers
 		{
 			get
@@ -235,6 +275,40 @@ namespace HusInfo.Database
 			set
 			{
 				this._Offers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Classification", Storage="_Report", ThisKey="reportId", OtherKey="id", IsForeignKey=true)]
+		public Report Report
+		{
+			get
+			{
+				return this._Report.Entity;
+			}
+			set
+			{
+				Report previousValue = this._Report.Entity;
+				if (((previousValue != value) 
+							|| (this._Report.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Report.Entity = null;
+						previousValue.Classifications.Remove(this);
+					}
+					this._Report.Entity = value;
+					if ((value != null))
+					{
+						value.Classifications.Add(this);
+						this._reportId = value.id;
+					}
+					else
+					{
+						this._reportId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Report");
+				}
 			}
 		}
 		
@@ -261,13 +335,13 @@ namespace HusInfo.Database
 		private void attach_Offers(Offer entity)
 		{
 			this.SendPropertyChanging();
-			entity.Entrepreneur = this;
+			entity.Classification = this;
 		}
 		
 		private void detach_Offers(Offer entity)
 		{
 			this.SendPropertyChanging();
-			entity.Entrepreneur = null;
+			entity.Classification = null;
 		}
 	}
 	
@@ -317,11 +391,11 @@ namespace HusInfo.Database
 		
 		private System.Nullable<int> _zipCode;
 		
-		private System.Nullable<int> _realEstateAgent;
+		private System.Nullable<int> _loginId;
 		
 		private EntitySet<Report> _Reports;
 		
-		private EntityRef<RealEstateAgent> _RealEstateAgent1;
+		private EntityRef<Login> _Login;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -367,14 +441,14 @@ namespace HusInfo.Database
     partial void OnwebLinkChanged();
     partial void OnzipCodeChanging(System.Nullable<int> value);
     partial void OnzipCodeChanged();
-    partial void OnrealEstateAgentChanging(System.Nullable<int> value);
-    partial void OnrealEstateAgentChanged();
+    partial void OnloginIdChanging(System.Nullable<int> value);
+    partial void OnloginIdChanged();
     #endregion
 		
 		public House()
 		{
 			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
-			this._RealEstateAgent1 = default(EntityRef<RealEstateAgent>);
+			this._Login = default(EntityRef<Login>);
 			OnCreated();
 		}
 		
@@ -778,26 +852,26 @@ namespace HusInfo.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_realEstateAgent", DbType="Int")]
-		public System.Nullable<int> realEstateAgent
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loginId", DbType="Int")]
+		public System.Nullable<int> loginId
 		{
 			get
 			{
-				return this._realEstateAgent;
+				return this._loginId;
 			}
 			set
 			{
-				if ((this._realEstateAgent != value))
+				if ((this._loginId != value))
 				{
-					if (this._RealEstateAgent1.HasLoadedOrAssignedValue)
+					if (this._Login.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnrealEstateAgentChanging(value);
+					this.OnloginIdChanging(value);
 					this.SendPropertyChanging();
-					this._realEstateAgent = value;
-					this.SendPropertyChanged("realEstateAgent");
-					this.OnrealEstateAgentChanged();
+					this._loginId = value;
+					this.SendPropertyChanged("loginId");
+					this.OnloginIdChanged();
 				}
 			}
 		}
@@ -815,36 +889,36 @@ namespace HusInfo.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RealEstateAgent_House", Storage="_RealEstateAgent1", ThisKey="realEstateAgent", OtherKey="id", IsForeignKey=true)]
-		public RealEstateAgent RealEstateAgent1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_House", Storage="_Login", ThisKey="loginId", OtherKey="id", IsForeignKey=true)]
+		public Login Login
 		{
 			get
 			{
-				return this._RealEstateAgent1.Entity;
+				return this._Login.Entity;
 			}
 			set
 			{
-				RealEstateAgent previousValue = this._RealEstateAgent1.Entity;
+				Login previousValue = this._Login.Entity;
 				if (((previousValue != value) 
-							|| (this._RealEstateAgent1.HasLoadedOrAssignedValue == false)))
+							|| (this._Login.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._RealEstateAgent1.Entity = null;
+						this._Login.Entity = null;
 						previousValue.Houses.Remove(this);
 					}
-					this._RealEstateAgent1.Entity = value;
+					this._Login.Entity = value;
 					if ((value != null))
 					{
 						value.Houses.Add(this);
-						this._realEstateAgent = value.id;
+						this._loginId = value.id;
 					}
 					else
 					{
-						this._realEstateAgent = default(Nullable<int>);
+						this._loginId = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("RealEstateAgent1");
+					this.SendPropertyChanged("Login");
 				}
 			}
 		}
@@ -882,821 +956,13 @@ namespace HusInfo.Database
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.K0")]
-	public partial class K0 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _problem;
-		
-		private System.Data.Linq.Binary _problemPicture;
-		
-		private System.Nullable<int> _reportId;
-		
-		private EntitySet<Offer> _Offers;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnproblemChanging(string value);
-    partial void OnproblemChanged();
-    partial void OnproblemPictureChanging(System.Data.Linq.Binary value);
-    partial void OnproblemPictureChanged();
-    partial void OnreportIdChanging(System.Nullable<int> value);
-    partial void OnreportIdChanged();
-    #endregion
-		
-		public K0()
-		{
-			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problem", DbType="NVarChar(MAX)")]
-		public string problem
-		{
-			get
-			{
-				return this._problem;
-			}
-			set
-			{
-				if ((this._problem != value))
-				{
-					this.OnproblemChanging(value);
-					this.SendPropertyChanging();
-					this._problem = value;
-					this.SendPropertyChanged("problem");
-					this.OnproblemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problemPicture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary problemPicture
-		{
-			get
-			{
-				return this._problemPicture;
-			}
-			set
-			{
-				if ((this._problemPicture != value))
-				{
-					this.OnproblemPictureChanging(value);
-					this.SendPropertyChanging();
-					this._problemPicture = value;
-					this.SendPropertyChanged("problemPicture");
-					this.OnproblemPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reportId", DbType="Int")]
-		public System.Nullable<int> reportId
-		{
-			get
-			{
-				return this._reportId;
-			}
-			set
-			{
-				if ((this._reportId != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnreportIdChanging(value);
-					this.SendPropertyChanging();
-					this._reportId = value;
-					this.SendPropertyChanged("reportId");
-					this.OnreportIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K0_Offer", Storage="_Offers", ThisKey="id", OtherKey="k0Id")]
-		public EntitySet<Offer> Offers
-		{
-			get
-			{
-				return this._Offers;
-			}
-			set
-			{
-				this._Offers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K0", Storage="_Report", ThisKey="reportId", OtherKey="id", IsForeignKey=true)]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.K0s.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.K0s.Add(this);
-						this._reportId = value.id;
-					}
-					else
-					{
-						this._reportId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K0 = this;
-		}
-		
-		private void detach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K0 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.K1")]
-	public partial class K1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _problem;
-		
-		private System.Data.Linq.Binary _problemPicture;
-		
-		private System.Nullable<int> _reportId;
-		
-		private EntitySet<Offer> _Offers;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnproblemChanging(string value);
-    partial void OnproblemChanged();
-    partial void OnproblemPictureChanging(System.Data.Linq.Binary value);
-    partial void OnproblemPictureChanged();
-    partial void OnreportIdChanging(System.Nullable<int> value);
-    partial void OnreportIdChanged();
-    #endregion
-		
-		public K1()
-		{
-			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problem", DbType="NVarChar(MAX)")]
-		public string problem
-		{
-			get
-			{
-				return this._problem;
-			}
-			set
-			{
-				if ((this._problem != value))
-				{
-					this.OnproblemChanging(value);
-					this.SendPropertyChanging();
-					this._problem = value;
-					this.SendPropertyChanged("problem");
-					this.OnproblemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problemPicture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary problemPicture
-		{
-			get
-			{
-				return this._problemPicture;
-			}
-			set
-			{
-				if ((this._problemPicture != value))
-				{
-					this.OnproblemPictureChanging(value);
-					this.SendPropertyChanging();
-					this._problemPicture = value;
-					this.SendPropertyChanged("problemPicture");
-					this.OnproblemPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reportId", DbType="Int")]
-		public System.Nullable<int> reportId
-		{
-			get
-			{
-				return this._reportId;
-			}
-			set
-			{
-				if ((this._reportId != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnreportIdChanging(value);
-					this.SendPropertyChanging();
-					this._reportId = value;
-					this.SendPropertyChanged("reportId");
-					this.OnreportIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K1_Offer", Storage="_Offers", ThisKey="id", OtherKey="k1Id")]
-		public EntitySet<Offer> Offers
-		{
-			get
-			{
-				return this._Offers;
-			}
-			set
-			{
-				this._Offers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K1", Storage="_Report", ThisKey="reportId", OtherKey="id", IsForeignKey=true)]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.K1s.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.K1s.Add(this);
-						this._reportId = value.id;
-					}
-					else
-					{
-						this._reportId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K1 = this;
-		}
-		
-		private void detach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.K2")]
-	public partial class K2 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _problem;
-		
-		private System.Data.Linq.Binary _problemPicture;
-		
-		private System.Nullable<int> _reportId;
-		
-		private EntitySet<Offer> _Offers;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnproblemChanging(string value);
-    partial void OnproblemChanged();
-    partial void OnproblemPictureChanging(System.Data.Linq.Binary value);
-    partial void OnproblemPictureChanged();
-    partial void OnreportIdChanging(System.Nullable<int> value);
-    partial void OnreportIdChanged();
-    #endregion
-		
-		public K2()
-		{
-			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problem", DbType="NVarChar(MAX)")]
-		public string problem
-		{
-			get
-			{
-				return this._problem;
-			}
-			set
-			{
-				if ((this._problem != value))
-				{
-					this.OnproblemChanging(value);
-					this.SendPropertyChanging();
-					this._problem = value;
-					this.SendPropertyChanged("problem");
-					this.OnproblemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problemPicture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary problemPicture
-		{
-			get
-			{
-				return this._problemPicture;
-			}
-			set
-			{
-				if ((this._problemPicture != value))
-				{
-					this.OnproblemPictureChanging(value);
-					this.SendPropertyChanging();
-					this._problemPicture = value;
-					this.SendPropertyChanged("problemPicture");
-					this.OnproblemPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reportId", DbType="Int")]
-		public System.Nullable<int> reportId
-		{
-			get
-			{
-				return this._reportId;
-			}
-			set
-			{
-				if ((this._reportId != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnreportIdChanging(value);
-					this.SendPropertyChanging();
-					this._reportId = value;
-					this.SendPropertyChanged("reportId");
-					this.OnreportIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K2_Offer", Storage="_Offers", ThisKey="id", OtherKey="k2Id")]
-		public EntitySet<Offer> Offers
-		{
-			get
-			{
-				return this._Offers;
-			}
-			set
-			{
-				this._Offers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K2", Storage="_Report", ThisKey="reportId", OtherKey="id", IsForeignKey=true)]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.K2s.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.K2s.Add(this);
-						this._reportId = value.id;
-					}
-					else
-					{
-						this._reportId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K2 = this;
-		}
-		
-		private void detach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K2 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.K3")]
-	public partial class K3 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _problem;
-		
-		private System.Data.Linq.Binary _problemPicture;
-		
-		private System.Nullable<int> _reportId;
-		
-		private EntitySet<Offer> _Offers;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnproblemChanging(string value);
-    partial void OnproblemChanged();
-    partial void OnproblemPictureChanging(System.Data.Linq.Binary value);
-    partial void OnproblemPictureChanged();
-    partial void OnreportIdChanging(System.Nullable<int> value);
-    partial void OnreportIdChanged();
-    #endregion
-		
-		public K3()
-		{
-			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problem", DbType="NVarChar(MAX)")]
-		public string problem
-		{
-			get
-			{
-				return this._problem;
-			}
-			set
-			{
-				if ((this._problem != value))
-				{
-					this.OnproblemChanging(value);
-					this.SendPropertyChanging();
-					this._problem = value;
-					this.SendPropertyChanged("problem");
-					this.OnproblemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problemPicture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary problemPicture
-		{
-			get
-			{
-				return this._problemPicture;
-			}
-			set
-			{
-				if ((this._problemPicture != value))
-				{
-					this.OnproblemPictureChanging(value);
-					this.SendPropertyChanging();
-					this._problemPicture = value;
-					this.SendPropertyChanged("problemPicture");
-					this.OnproblemPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reportId", DbType="Int")]
-		public System.Nullable<int> reportId
-		{
-			get
-			{
-				return this._reportId;
-			}
-			set
-			{
-				if ((this._reportId != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnreportIdChanging(value);
-					this.SendPropertyChanging();
-					this._reportId = value;
-					this.SendPropertyChanged("reportId");
-					this.OnreportIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K3_Offer", Storage="_Offers", ThisKey="id", OtherKey="k3Id")]
-		public EntitySet<Offer> Offers
-		{
-			get
-			{
-				return this._Offers;
-			}
-			set
-			{
-				this._Offers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K3", Storage="_Report", ThisKey="reportId", OtherKey="id", IsForeignKey=true)]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.K3s.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.K3s.Add(this);
-						this._reportId = value.id;
-					}
-					else
-					{
-						this._reportId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K3 = this;
-		}
-		
-		private void detach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.K3 = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Login")]
-	public partial class Login
+	public partial class Login : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private string _company;
 		
@@ -1708,8 +974,53 @@ namespace HusInfo.Database
 		
 		private string _personType;
 		
+		private EntitySet<House> _Houses;
+		
+		private EntitySet<Offer> _Offers;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OncompanyChanging(string value);
+    partial void OncompanyChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnphoneNumberChanging(System.Nullable<int> value);
+    partial void OnphoneNumberChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpersonTypeChanging(string value);
+    partial void OnpersonTypeChanged();
+    #endregion
+		
 		public Login()
 		{
+			this._Houses = new EntitySet<House>(new Action<House>(this.attach_Houses), new Action<House>(this.detach_Houses));
+			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_company", DbType="NVarChar(MAX)")]
@@ -1723,7 +1034,11 @@ namespace HusInfo.Database
 			{
 				if ((this._company != value))
 				{
+					this.OncompanyChanging(value);
+					this.SendPropertyChanging();
 					this._company = value;
+					this.SendPropertyChanged("company");
+					this.OncompanyChanged();
 				}
 			}
 		}
@@ -1739,7 +1054,11 @@ namespace HusInfo.Database
 			{
 				if ((this._password != value))
 				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
 					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
 				}
 			}
 		}
@@ -1755,7 +1074,11 @@ namespace HusInfo.Database
 			{
 				if ((this._phoneNumber != value))
 				{
+					this.OnphoneNumberChanging(value);
+					this.SendPropertyChanging();
 					this._phoneNumber = value;
+					this.SendPropertyChanged("phoneNumber");
+					this.OnphoneNumberChanged();
 				}
 			}
 		}
@@ -1771,7 +1094,11 @@ namespace HusInfo.Database
 			{
 				if ((this._username != value))
 				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
 					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
 				}
 			}
 		}
@@ -1787,533 +1114,16 @@ namespace HusInfo.Database
 			{
 				if ((this._personType != value))
 				{
+					this.OnpersonTypeChanging(value);
+					this.SendPropertyChanging();
 					this._personType = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Offer")]
-	public partial class Offer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private System.Nullable<int> _entrepreneurId;
-		
-		private System.Nullable<int> _k0Id;
-		
-		private System.Nullable<int> _k1Id;
-		
-		private System.Nullable<int> _k2Id;
-		
-		private System.Nullable<int> _k3Id;
-		
-		private System.Nullable<int> _unId;
-		
-		private System.Nullable<double> _price;
-		
-		private EntityRef<Entrepreneur> _Entrepreneur;
-		
-		private EntityRef<K0> _K0;
-		
-		private EntityRef<K1> _K1;
-		
-		private EntityRef<K2> _K2;
-		
-		private EntityRef<K3> _K3;
-		
-		private EntityRef<Un> _Un;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnentrepreneurIdChanging(System.Nullable<int> value);
-    partial void OnentrepreneurIdChanged();
-    partial void Onk0IdChanging(System.Nullable<int> value);
-    partial void Onk0IdChanged();
-    partial void Onk1IdChanging(System.Nullable<int> value);
-    partial void Onk1IdChanged();
-    partial void Onk2IdChanging(System.Nullable<int> value);
-    partial void Onk2IdChanged();
-    partial void Onk3IdChanging(System.Nullable<int> value);
-    partial void Onk3IdChanged();
-    partial void OnunIdChanging(System.Nullable<int> value);
-    partial void OnunIdChanged();
-    partial void OnpriceChanging(System.Nullable<double> value);
-    partial void OnpriceChanged();
-    #endregion
-		
-		public Offer()
-		{
-			this._Entrepreneur = default(EntityRef<Entrepreneur>);
-			this._K0 = default(EntityRef<K0>);
-			this._K1 = default(EntityRef<K1>);
-			this._K2 = default(EntityRef<K2>);
-			this._K3 = default(EntityRef<K3>);
-			this._Un = default(EntityRef<Un>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this.SendPropertyChanged("personType");
+					this.OnpersonTypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entrepreneurId", DbType="Int")]
-		public System.Nullable<int> entrepreneurId
-		{
-			get
-			{
-				return this._entrepreneurId;
-			}
-			set
-			{
-				if ((this._entrepreneurId != value))
-				{
-					if (this._Entrepreneur.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnentrepreneurIdChanging(value);
-					this.SendPropertyChanging();
-					this._entrepreneurId = value;
-					this.SendPropertyChanged("entrepreneurId");
-					this.OnentrepreneurIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_k0Id", DbType="Int")]
-		public System.Nullable<int> k0Id
-		{
-			get
-			{
-				return this._k0Id;
-			}
-			set
-			{
-				if ((this._k0Id != value))
-				{
-					if (this._K0.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onk0IdChanging(value);
-					this.SendPropertyChanging();
-					this._k0Id = value;
-					this.SendPropertyChanged("k0Id");
-					this.Onk0IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_k1Id", DbType="Int")]
-		public System.Nullable<int> k1Id
-		{
-			get
-			{
-				return this._k1Id;
-			}
-			set
-			{
-				if ((this._k1Id != value))
-				{
-					if (this._K1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onk1IdChanging(value);
-					this.SendPropertyChanging();
-					this._k1Id = value;
-					this.SendPropertyChanged("k1Id");
-					this.Onk1IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_k2Id", DbType="Int")]
-		public System.Nullable<int> k2Id
-		{
-			get
-			{
-				return this._k2Id;
-			}
-			set
-			{
-				if ((this._k2Id != value))
-				{
-					if (this._K2.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onk2IdChanging(value);
-					this.SendPropertyChanging();
-					this._k2Id = value;
-					this.SendPropertyChanged("k2Id");
-					this.Onk2IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_k3Id", DbType="Int")]
-		public System.Nullable<int> k3Id
-		{
-			get
-			{
-				return this._k3Id;
-			}
-			set
-			{
-				if ((this._k3Id != value))
-				{
-					if (this._K3.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onk3IdChanging(value);
-					this.SendPropertyChanging();
-					this._k3Id = value;
-					this.SendPropertyChanged("k3Id");
-					this.Onk3IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unId", DbType="Int")]
-		public System.Nullable<int> unId
-		{
-			get
-			{
-				return this._unId;
-			}
-			set
-			{
-				if ((this._unId != value))
-				{
-					if (this._Un.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnunIdChanging(value);
-					this.SendPropertyChanging();
-					this._unId = value;
-					this.SendPropertyChanged("unId");
-					this.OnunIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Float")]
-		public System.Nullable<double> price
-		{
-			get
-			{
-				return this._price;
-			}
-			set
-			{
-				if ((this._price != value))
-				{
-					this.OnpriceChanging(value);
-					this.SendPropertyChanging();
-					this._price = value;
-					this.SendPropertyChanged("price");
-					this.OnpriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Entrepreneur_Offer", Storage="_Entrepreneur", ThisKey="entrepreneurId", OtherKey="id", IsForeignKey=true)]
-		public Entrepreneur Entrepreneur
-		{
-			get
-			{
-				return this._Entrepreneur.Entity;
-			}
-			set
-			{
-				Entrepreneur previousValue = this._Entrepreneur.Entity;
-				if (((previousValue != value) 
-							|| (this._Entrepreneur.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Entrepreneur.Entity = null;
-						previousValue.Offers.Remove(this);
-					}
-					this._Entrepreneur.Entity = value;
-					if ((value != null))
-					{
-						value.Offers.Add(this);
-						this._entrepreneurId = value.id;
-					}
-					else
-					{
-						this._entrepreneurId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Entrepreneur");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K0_Offer", Storage="_K0", ThisKey="k0Id", OtherKey="id", IsForeignKey=true)]
-		public K0 K0
-		{
-			get
-			{
-				return this._K0.Entity;
-			}
-			set
-			{
-				K0 previousValue = this._K0.Entity;
-				if (((previousValue != value) 
-							|| (this._K0.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._K0.Entity = null;
-						previousValue.Offers.Remove(this);
-					}
-					this._K0.Entity = value;
-					if ((value != null))
-					{
-						value.Offers.Add(this);
-						this._k0Id = value.id;
-					}
-					else
-					{
-						this._k0Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("K0");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K1_Offer", Storage="_K1", ThisKey="k1Id", OtherKey="id", IsForeignKey=true)]
-		public K1 K1
-		{
-			get
-			{
-				return this._K1.Entity;
-			}
-			set
-			{
-				K1 previousValue = this._K1.Entity;
-				if (((previousValue != value) 
-							|| (this._K1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._K1.Entity = null;
-						previousValue.Offers.Remove(this);
-					}
-					this._K1.Entity = value;
-					if ((value != null))
-					{
-						value.Offers.Add(this);
-						this._k1Id = value.id;
-					}
-					else
-					{
-						this._k1Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("K1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K2_Offer", Storage="_K2", ThisKey="k2Id", OtherKey="id", IsForeignKey=true)]
-		public K2 K2
-		{
-			get
-			{
-				return this._K2.Entity;
-			}
-			set
-			{
-				K2 previousValue = this._K2.Entity;
-				if (((previousValue != value) 
-							|| (this._K2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._K2.Entity = null;
-						previousValue.Offers.Remove(this);
-					}
-					this._K2.Entity = value;
-					if ((value != null))
-					{
-						value.Offers.Add(this);
-						this._k2Id = value.id;
-					}
-					else
-					{
-						this._k2Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("K2");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="K3_Offer", Storage="_K3", ThisKey="k3Id", OtherKey="id", IsForeignKey=true)]
-		public K3 K3
-		{
-			get
-			{
-				return this._K3.Entity;
-			}
-			set
-			{
-				K3 previousValue = this._K3.Entity;
-				if (((previousValue != value) 
-							|| (this._K3.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._K3.Entity = null;
-						previousValue.Offers.Remove(this);
-					}
-					this._K3.Entity = value;
-					if ((value != null))
-					{
-						value.Offers.Add(this);
-						this._k3Id = value.id;
-					}
-					else
-					{
-						this._k3Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("K3");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Un_Offer", Storage="_Un", ThisKey="unId", OtherKey="id", IsForeignKey=true)]
-		public Un Un
-		{
-			get
-			{
-				return this._Un.Entity;
-			}
-			set
-			{
-				Un previousValue = this._Un.Entity;
-				if (((previousValue != value) 
-							|| (this._Un.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Un.Entity = null;
-						previousValue.Offers.Remove(this);
-					}
-					this._Un.Entity = value;
-					if ((value != null))
-					{
-						value.Offers.Add(this);
-						this._unId = value.id;
-					}
-					else
-					{
-						this._unId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Un");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RealEstateAgent")]
-	public partial class RealEstateAgent : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private EntitySet<House> _Houses;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    #endregion
-		
-		public RealEstateAgent()
-		{
-			this._Houses = new EntitySet<House>(new Action<House>(this.attach_Houses), new Action<House>(this.detach_Houses));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RealEstateAgent_House", Storage="_Houses", ThisKey="id", OtherKey="realEstateAgent")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_House", Storage="_Houses", ThisKey="id", OtherKey="loginId")]
 		public EntitySet<House> Houses
 		{
 			get
@@ -2323,6 +1133,19 @@ namespace HusInfo.Database
 			set
 			{
 				this._Houses.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Offer", Storage="_Offers", ThisKey="id", OtherKey="loginId")]
+		public EntitySet<Offer> Offers
+		{
+			get
+			{
+				return this._Offers;
+			}
+			set
+			{
+				this._Offers.Assign(value);
 			}
 		}
 		
@@ -2349,13 +1172,241 @@ namespace HusInfo.Database
 		private void attach_Houses(House entity)
 		{
 			this.SendPropertyChanging();
-			entity.RealEstateAgent1 = this;
+			entity.Login = this;
 		}
 		
 		private void detach_Houses(House entity)
 		{
 			this.SendPropertyChanging();
-			entity.RealEstateAgent1 = null;
+			entity.Login = null;
+		}
+		
+		private void attach_Offers(Offer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Login = this;
+		}
+		
+		private void detach_Offers(Offer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Login = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Offer")]
+	public partial class Offer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _loginId;
+		
+		private System.Nullable<int> _classificationId;
+		
+		private System.Nullable<double> _price;
+		
+		private EntityRef<Classification> _Classification;
+		
+		private EntityRef<Login> _Login;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnloginIdChanging(System.Nullable<int> value);
+    partial void OnloginIdChanged();
+    partial void OnclassificationIdChanging(System.Nullable<int> value);
+    partial void OnclassificationIdChanged();
+    partial void OnpriceChanging(System.Nullable<double> value);
+    partial void OnpriceChanged();
+    #endregion
+		
+		public Offer()
+		{
+			this._Classification = default(EntityRef<Classification>);
+			this._Login = default(EntityRef<Login>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loginId", DbType="Int")]
+		public System.Nullable<int> loginId
+		{
+			get
+			{
+				return this._loginId;
+			}
+			set
+			{
+				if ((this._loginId != value))
+				{
+					if (this._Login.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnloginIdChanging(value);
+					this.SendPropertyChanging();
+					this._loginId = value;
+					this.SendPropertyChanged("loginId");
+					this.OnloginIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_classificationId", DbType="Int")]
+		public System.Nullable<int> classificationId
+		{
+			get
+			{
+				return this._classificationId;
+			}
+			set
+			{
+				if ((this._classificationId != value))
+				{
+					if (this._Classification.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnclassificationIdChanging(value);
+					this.SendPropertyChanging();
+					this._classificationId = value;
+					this.SendPropertyChanged("classificationId");
+					this.OnclassificationIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Float")]
+		public System.Nullable<double> price
+		{
+			get
+			{
+				return this._price;
+			}
+			set
+			{
+				if ((this._price != value))
+				{
+					this.OnpriceChanging(value);
+					this.SendPropertyChanging();
+					this._price = value;
+					this.SendPropertyChanged("price");
+					this.OnpriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Classification_Offer", Storage="_Classification", ThisKey="classificationId", OtherKey="id", IsForeignKey=true)]
+		public Classification Classification
+		{
+			get
+			{
+				return this._Classification.Entity;
+			}
+			set
+			{
+				Classification previousValue = this._Classification.Entity;
+				if (((previousValue != value) 
+							|| (this._Classification.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Classification.Entity = null;
+						previousValue.Offers.Remove(this);
+					}
+					this._Classification.Entity = value;
+					if ((value != null))
+					{
+						value.Offers.Add(this);
+						this._classificationId = value.id;
+					}
+					else
+					{
+						this._classificationId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Classification");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Offer", Storage="_Login", ThisKey="loginId", OtherKey="id", IsForeignKey=true)]
+		public Login Login
+		{
+			get
+			{
+				return this._Login.Entity;
+			}
+			set
+			{
+				Login previousValue = this._Login.Entity;
+				if (((previousValue != value) 
+							|| (this._Login.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Login.Entity = null;
+						previousValue.Offers.Remove(this);
+					}
+					this._Login.Entity = value;
+					if ((value != null))
+					{
+						value.Offers.Add(this);
+						this._loginId = value.id;
+					}
+					else
+					{
+						this._loginId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Login");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -2369,15 +1420,7 @@ namespace HusInfo.Database
 		
 		private System.Nullable<int> _houseId;
 		
-		private EntitySet<K0> _K0s;
-		
-		private EntitySet<K1> _K1s;
-		
-		private EntitySet<K2> _K2s;
-		
-		private EntitySet<K3> _K3s;
-		
-		private EntitySet<Un> _Uns;
+		private EntitySet<Classification> _Classifications;
 		
 		private EntityRef<House> _House;
 		
@@ -2393,11 +1436,7 @@ namespace HusInfo.Database
 		
 		public Report()
 		{
-			this._K0s = new EntitySet<K0>(new Action<K0>(this.attach_K0s), new Action<K0>(this.detach_K0s));
-			this._K1s = new EntitySet<K1>(new Action<K1>(this.attach_K1s), new Action<K1>(this.detach_K1s));
-			this._K2s = new EntitySet<K2>(new Action<K2>(this.attach_K2s), new Action<K2>(this.detach_K2s));
-			this._K3s = new EntitySet<K3>(new Action<K3>(this.attach_K3s), new Action<K3>(this.detach_K3s));
-			this._Uns = new EntitySet<Un>(new Action<Un>(this.attach_Uns), new Action<Un>(this.detach_Uns));
+			this._Classifications = new EntitySet<Classification>(new Action<Classification>(this.attach_Classifications), new Action<Classification>(this.detach_Classifications));
 			this._House = default(EntityRef<House>);
 			OnCreated();
 		}
@@ -2446,68 +1485,16 @@ namespace HusInfo.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K0", Storage="_K0s", ThisKey="id", OtherKey="reportId")]
-		public EntitySet<K0> K0s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Classification", Storage="_Classifications", ThisKey="id", OtherKey="reportId")]
+		public EntitySet<Classification> Classifications
 		{
 			get
 			{
-				return this._K0s;
+				return this._Classifications;
 			}
 			set
 			{
-				this._K0s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K1", Storage="_K1s", ThisKey="id", OtherKey="reportId")]
-		public EntitySet<K1> K1s
-		{
-			get
-			{
-				return this._K1s;
-			}
-			set
-			{
-				this._K1s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K2", Storage="_K2s", ThisKey="id", OtherKey="reportId")]
-		public EntitySet<K2> K2s
-		{
-			get
-			{
-				return this._K2s;
-			}
-			set
-			{
-				this._K2s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_K3", Storage="_K3s", ThisKey="id", OtherKey="reportId")]
-		public EntitySet<K3> K3s
-		{
-			get
-			{
-				return this._K3s;
-			}
-			set
-			{
-				this._K3s.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Un", Storage="_Uns", ThisKey="id", OtherKey="reportId")]
-		public EntitySet<Un> Uns
-		{
-			get
-			{
-				return this._Uns;
-			}
-			set
-			{
-				this._Uns.Assign(value);
+				this._Classifications.Assign(value);
 			}
 		}
 		
@@ -2565,267 +1552,16 @@ namespace HusInfo.Database
 			}
 		}
 		
-		private void attach_K0s(K0 entity)
+		private void attach_Classifications(Classification entity)
 		{
 			this.SendPropertyChanging();
 			entity.Report = this;
 		}
 		
-		private void detach_K0s(K0 entity)
+		private void detach_Classifications(Classification entity)
 		{
 			this.SendPropertyChanging();
 			entity.Report = null;
-		}
-		
-		private void attach_K1s(K1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_K1s(K1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-		
-		private void attach_K2s(K2 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_K2s(K2 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-		
-		private void attach_K3s(K3 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_K3s(K3 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-		
-		private void attach_Uns(Un entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = this;
-		}
-		
-		private void detach_Uns(Un entity)
-		{
-			this.SendPropertyChanging();
-			entity.Report = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Un")]
-	public partial class Un : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _problem;
-		
-		private System.Data.Linq.Binary _problemPicture;
-		
-		private System.Nullable<int> _reportId;
-		
-		private EntitySet<Offer> _Offers;
-		
-		private EntityRef<Report> _Report;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnproblemChanging(string value);
-    partial void OnproblemChanged();
-    partial void OnproblemPictureChanging(System.Data.Linq.Binary value);
-    partial void OnproblemPictureChanged();
-    partial void OnreportIdChanging(System.Nullable<int> value);
-    partial void OnreportIdChanged();
-    #endregion
-		
-		public Un()
-		{
-			this._Offers = new EntitySet<Offer>(new Action<Offer>(this.attach_Offers), new Action<Offer>(this.detach_Offers));
-			this._Report = default(EntityRef<Report>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problem", DbType="NVarChar(MAX)")]
-		public string problem
-		{
-			get
-			{
-				return this._problem;
-			}
-			set
-			{
-				if ((this._problem != value))
-				{
-					this.OnproblemChanging(value);
-					this.SendPropertyChanging();
-					this._problem = value;
-					this.SendPropertyChanged("problem");
-					this.OnproblemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_problemPicture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary problemPicture
-		{
-			get
-			{
-				return this._problemPicture;
-			}
-			set
-			{
-				if ((this._problemPicture != value))
-				{
-					this.OnproblemPictureChanging(value);
-					this.SendPropertyChanging();
-					this._problemPicture = value;
-					this.SendPropertyChanged("problemPicture");
-					this.OnproblemPictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reportId", DbType="Int")]
-		public System.Nullable<int> reportId
-		{
-			get
-			{
-				return this._reportId;
-			}
-			set
-			{
-				if ((this._reportId != value))
-				{
-					if (this._Report.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnreportIdChanging(value);
-					this.SendPropertyChanging();
-					this._reportId = value;
-					this.SendPropertyChanged("reportId");
-					this.OnreportIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Un_Offer", Storage="_Offers", ThisKey="id", OtherKey="unId")]
-		public EntitySet<Offer> Offers
-		{
-			get
-			{
-				return this._Offers;
-			}
-			set
-			{
-				this._Offers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Report_Un", Storage="_Report", ThisKey="reportId", OtherKey="id", IsForeignKey=true)]
-		public Report Report
-		{
-			get
-			{
-				return this._Report.Entity;
-			}
-			set
-			{
-				Report previousValue = this._Report.Entity;
-				if (((previousValue != value) 
-							|| (this._Report.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Report.Entity = null;
-						previousValue.Uns.Remove(this);
-					}
-					this._Report.Entity = value;
-					if ((value != null))
-					{
-						value.Uns.Add(this);
-						this._reportId = value.id;
-					}
-					else
-					{
-						this._reportId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Report");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.Un = this;
-		}
-		
-		private void detach_Offers(Offer entity)
-		{
-			this.SendPropertyChanging();
-			entity.Un = null;
 		}
 	}
 }

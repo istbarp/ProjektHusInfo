@@ -8,21 +8,10 @@ create table Login
 	check (personType in ('Entreprenur' , 'RealEstateAgent'))	
 )
 
-create table Entrepreneur
-(
-	id int identity primary key,
-)
-
-create table RealEstateAgent
-(
-	id int identity primary key,
-)
-
-
 create table House
 (
 	id int identity primary key,
-	address nvarchar(MAX),
+	[address] nvarchar(MAX),
 	basementAreal float,
 	bruttoprice float,
 	buildingYear int,
@@ -41,7 +30,7 @@ create table House
 	toilets int,
 	webLink nvarchar(MAX),
 	zipCode int,
-	realEstateAgent int foreign key references RealEstateAgent(id)
+	loginId int foreign key references [Login](id)
 )
 
 create table Report
@@ -50,55 +39,21 @@ create table Report
 	houseId int foreign key references House(id)
 )
 
-create table K0
-(
-	id int identity primary key,
-	problem nvarchar(MAX),
-	problemPicture varBinary(MAX),
-	reportId int foreign key references Report(id)
-)
 
-create table K1
+create table Classification
 (
 	id int identity primary key,
 	problem nvarchar(MAX),
 	problemPicture varBinary(MAX),
-	reportId int foreign key references Report(id)
-)
-
-create table K2
-(
-	id int identity primary key,
-	problem nvarchar(MAX),
-	problemPicture varBinary(MAX),
-	reportId int foreign key references Report(id)
-)
-
-create table K3
-(
-	id int identity primary key,
-	problem nvarchar(MAX),
-	problemPicture varBinary(MAX),
-	reportId int foreign key references Report(id)
-)
-
-create table Un
-(
-	id int identity primary key,
-	problem nvarchar(MAX),
-	problemPicture varBinary(MAX),
+	[type] nvarchar(MAX),
 	reportId int foreign key references Report(id)
 )
 
 create table Offer
 (
 	id int identity primary key,
-	entrepreneurId int foreign key references Entrepreneur(id),
-	k0Id int foreign key references K0(id),
-	k1Id int foreign key references K1(id),
-	k2Id int foreign key references K2(id),
-	k3Id int foreign key references K3(id),
-	unId int foreign key references Un(id),
+	loginId int foreign key references [Login](id),
+	classificationId int foreign key references Classification(id),
 	price float
 )
 
