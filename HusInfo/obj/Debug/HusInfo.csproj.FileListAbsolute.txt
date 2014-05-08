@@ -7,7 +7,6 @@ D:\husInfoProjekt\HusInfo\obj\Debug\HusInfo.pdb
 C:\Users\Hoejer\Desktop\SCRUM Projekt\Koden\HusInfo\bin\HusInfo.dll.config
 C:\Users\Hoejer\Desktop\SCRUM Projekt\Koden\HusInfo\bin\HusInfo.dll
 C:\Users\Hoejer\Desktop\SCRUM Projekt\Koden\HusInfo\bin\HusInfo.pdb
-C:\Users\Hoejer\Desktop\SCRUM Projekt\Koden\HusInfo\obj\Debug\HusInfo.csprojResolveAssemblyReference.cache
 C:\Users\Hoejer\Desktop\SCRUM Projekt\Koden\HusInfo\obj\Debug\HusInfo.dll
 C:\Users\Hoejer\Desktop\SCRUM Projekt\Koden\HusInfo\obj\Debug\HusInfo.pdb
 C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\bin\HusInfo.dll.config
