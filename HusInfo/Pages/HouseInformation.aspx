@@ -81,9 +81,14 @@
             }
             #goToRealEstate
             {
-                margin-top: -34px;
+                margin-top: -56px;
                 float: right;
                 padding-bottom: 10px;
+            }
+
+            .btn-default
+            {
+                font-size: 30px;
             }
 
     </style>
