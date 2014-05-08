@@ -1,0 +1,6 @@
+D:\husInfoProjekt\HusInfo\bin\HusInfo.dll.config
+D:\husInfoProjekt\HusInfo\bin\HusInfo.dll
+D:\husInfoProjekt\HusInfo\bin\HusInfo.pdb
+D:\husInfoProjekt\HusInfo\obj\Debug\HusInfo.csprojResolveAssemblyReference.cache
+D:\husInfoProjekt\HusInfo\obj\Debug\HusInfo.dll
+D:\husInfoProjekt\HusInfo\obj\Debug\HusInfo.pdb

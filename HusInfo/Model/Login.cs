@@ -12,5 +12,6 @@ namespace HusInfo
         private string password;
         private string username;
         private int phoneNumber;
+        private string userType;
     }
 }

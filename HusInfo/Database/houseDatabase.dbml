@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="houseDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=balder.ucn.dk;Persist Security Info=True;User ID=dmaa0912JesperH" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Entrepreneur" Member="Entrepreneurs">
+    <Type Name="Entrepreneur">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Entrepreneur_Offer" Member="Offers" ThisKey="id" OtherKey="entrepreneurId" Type="Offer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.House" Member="Houses">
+    <Type Name="House">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="basementAreal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="bruttoprice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="buildingYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cashPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="distToSchool" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="distToShopping" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="energyMark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="floorLevels" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="garageKvm" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="groundAreal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="kvmPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="livingAreal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="nettoPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rooms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="toilets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="webLink" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="zipCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="realEstateAgent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="House_Report" Member="Reports" ThisKey="id" OtherKey="houseId" Type="Report" />
+      <Association Name="RealEstateAgent_House" Member="RealEstateAgent1" ThisKey="realEstateAgent" OtherKey="id" Type="RealEstateAgent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.K0" Member="K0s">
+    <Type Name="K0">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="problemPicture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reportId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="K0_Offer" Member="Offers" ThisKey="id" OtherKey="k0Id" Type="Offer" />
+      <Association Name="Report_K0" Member="Report" ThisKey="reportId" OtherKey="id" Type="Report" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.K1" Member="K1s">
+    <Type Name="K1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="problemPicture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reportId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="K1_Offer" Member="Offers" ThisKey="id" OtherKey="k1Id" Type="Offer" />
+      <Association Name="Report_K1" Member="Report" ThisKey="reportId" OtherKey="id" Type="Report" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.K2" Member="K2s">
+    <Type Name="K2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="problemPicture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reportId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="K2_Offer" Member="Offers" ThisKey="id" OtherKey="k2Id" Type="Offer" />
+      <Association Name="Report_K2" Member="Report" ThisKey="reportId" OtherKey="id" Type="Report" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.K3" Member="K3s">
+    <Type Name="K3">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="problemPicture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reportId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="K3_Offer" Member="Offers" ThisKey="id" OtherKey="k3Id" Type="Offer" />
+      <Association Name="Report_K3" Member="Report" ThisKey="reportId" OtherKey="id" Type="Report" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Login" Member="Logins">
+    <Type Name="Login">
+      <Column Name="company" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="phoneNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="personType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Offer" Member="Offers">
+    <Type Name="Offer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="entrepreneurId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="k0Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="k1Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="k2Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="k3Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="unId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Entrepreneur_Offer" Member="Entrepreneur" ThisKey="entrepreneurId" OtherKey="id" Type="Entrepreneur" IsForeignKey="true" />
+      <Association Name="K0_Offer" Member="K0" ThisKey="k0Id" OtherKey="id" Type="K0" IsForeignKey="true" />
+      <Association Name="K1_Offer" Member="K1" ThisKey="k1Id" OtherKey="id" Type="K1" IsForeignKey="true" />
+      <Association Name="K2_Offer" Member="K2" ThisKey="k2Id" OtherKey="id" Type="K2" IsForeignKey="true" />
+      <Association Name="K3_Offer" Member="K3" ThisKey="k3Id" OtherKey="id" Type="K3" IsForeignKey="true" />
+      <Association Name="Un_Offer" Member="Un" ThisKey="unId" OtherKey="id" Type="Un" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RealEstateAgent" Member="RealEstateAgents">
+    <Type Name="RealEstateAgent">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="RealEstateAgent_House" Member="Houses" ThisKey="id" OtherKey="realEstateAgent" Type="House" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report" Member="Reports">
+    <Type Name="Report">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="houseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Report_K0" Member="K0s" ThisKey="id" OtherKey="reportId" Type="K0" />
+      <Association Name="Report_K1" Member="K1s" ThisKey="id" OtherKey="reportId" Type="K1" />
+      <Association Name="Report_K2" Member="K2s" ThisKey="id" OtherKey="reportId" Type="K2" />
+      <Association Name="Report_K3" Member="K3s" ThisKey="id" OtherKey="reportId" Type="K3" />
+      <Association Name="Report_Un" Member="Uns" ThisKey="id" OtherKey="reportId" Type="Un" />
+      <Association Name="House_Report" Member="House" ThisKey="houseId" OtherKey="id" Type="House" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Un" Member="Uns">
+    <Type Name="Un">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="problemPicture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="reportId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Un_Offer" Member="Offers" ThisKey="id" OtherKey="unId" Type="Offer" />
+      <Association Name="Report_Un" Member="Report" ThisKey="reportId" OtherKey="id" Type="Report" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
