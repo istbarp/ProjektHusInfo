@@ -5,11 +5,6 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HusInfo", "HusInfo\HusInfo.csproj", "{2B7672B4-782E-4E1B-8A8D-EB2D3EB23E55}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{A16971AC-FA79-4783-974C-907FCB5E74BC}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Danny\Desktop\CreateSqlTables.sql = C:\Users\Danny\Desktop\CreateSqlTables.sql
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
