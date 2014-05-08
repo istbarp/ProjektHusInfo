@@ -11,5 +11,6 @@ namespace HusInfo
         private int reportId;
         private string problem;
         private int id;
+        private byte problemPicture;
     }
 }

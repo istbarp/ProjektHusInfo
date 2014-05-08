@@ -6,11 +6,7 @@ using System.ComponentModel;
 
 namespace HusInfo
 {
-    public class K1
+    public class Pictures
     {
-        private int id;
-        private string problem;
-        private int reportId;
-        private byte problemPicture;
     }
 }

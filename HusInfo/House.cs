@@ -32,6 +32,7 @@ namespace HusInfo
         private string city;
         private string webLink;
         private int realEstateAgentId;
+        private byte housePicture;
 
         public Report Report
         {
