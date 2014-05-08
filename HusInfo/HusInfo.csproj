@@ -58,12 +58,32 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="default.aspx" />
     <Content Include="Diagram\DomainModel.cd" />
     <Content Include="Database\houseDatabase.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>houseDatabase.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Images\Ydunsvej7_1.png" />
+    <Content Include="Images\Ydunsvej7_10.png" />
+    <Content Include="Images\Ydunsvej7_11.png" />
+    <Content Include="Images\Ydunsvej7_12.png" />
+    <Content Include="Images\Ydunsvej7_13.png" />
+    <Content Include="Images\Ydunsvej7_2.png" />
+    <Content Include="Images\Ydunsvej7_3.png" />
+    <Content Include="Images\Ydunsvej7_4.png" />
+    <Content Include="Images\Ydunsvej7_5.png" />
+    <Content Include="Images\Ydunsvej7_6.png" />
+    <Content Include="Images\Ydunsvej7_7.png" />
+    <Content Include="Images\Ydunsvej7_8.png" />
+    <Content Include="Images\Ydunsvej7_9.png" />
+    <Content Include="Pages\HouseInformation.aspx" />
+    <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -72,6 +92,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +106,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>houseDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\House.cs" />
     <Compile Include="Model\K0.cs" />
@@ -88,6 +122,13 @@
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\Pictures.cs" />
+    <Compile Include="Pages\HouseInformation.aspx.cs">
+      <DependentUpon>HouseInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\HouseInformation.aspx.designer.cs">
+      <DependentUpon>HouseInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\RealEstateAgent.cs" />
     <Compile Include="Model\Report.cs" />
