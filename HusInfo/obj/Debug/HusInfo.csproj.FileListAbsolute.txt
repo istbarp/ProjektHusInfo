@@ -15,3 +15,4 @@ C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\bin\HusInfo.pdb
 C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\obj\Debug\HusInfo.csprojResolveAssemblyReference.cache
 C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\obj\Debug\HusInfo.dll
 C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\obj\Debug\HusInfo.pdb
+C:\Users\Jonas\Documents\GitHub\ProjektHusInfo\HusInfo\obj\Debug\HusInfo.csprojResolveAssemblyReference.cache
