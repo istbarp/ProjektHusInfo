@@ -35,6 +35,7 @@
       <Column Name="zipCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="loginId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="House_Report" Member="Reports" ThisKey="id" OtherKey="houseId" Type="Report" />
+      <Association Name="House_HousePic" Member="HousePics" ThisKey="id" OtherKey="houseId" Type="HousePic" />
       <Association Name="Login_House" Member="Login" ThisKey="loginId" OtherKey="id" Type="Login" IsForeignKey="true" />
     </Type>
   </Table>
@@ -66,6 +67,14 @@
       <Column Name="houseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Report_Classification" Member="Classifications" ThisKey="id" OtherKey="reportId" Type="Classification" />
       <Association Name="House_Report" Member="House" ThisKey="houseId" OtherKey="id" Type="House" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HousePic" Member="HousePics">
+    <Type Name="HousePic">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="picture" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="houseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="House_HousePic" Member="House" ThisKey="houseId" OtherKey="id" Type="House" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

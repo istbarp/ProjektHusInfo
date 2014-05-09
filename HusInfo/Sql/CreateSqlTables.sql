@@ -1,5 +1,6 @@
 create table Login
 (
+	id int identity primary key,
 	company nvarchar(MAX),
 	password nvarchar(MAX),
 	phoneNumber int,
@@ -32,7 +33,12 @@ create table House
 	zipCode int,
 	loginId int foreign key references [Login](id)
 )
-
+create table HousePic
+(
+	id int identity primary key,
+	picture varBinary(MAX),
+	houseId int foreign key references House(id)
+)
 create table Report
 (
 	id int identity primary key,

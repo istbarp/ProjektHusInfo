@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 10.625" name="houseDatabase">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 11.125" name="houseDatabase">
   <DataContextMoniker Name="/houseDatabaseDataContext" />
   <nestedChildShapes>
     <classShape Id="69623051-9aee-4c86-b2ca-849d1ad39fa6" absoluteBounds="8.75, 6.875, 2, 1.7708968098958331">
@@ -32,39 +32,52 @@
         <elementListCompartment Id="dc2254a3-fe95-4e5c-b15e-d96d01e72dc1" absoluteBounds="6.265, 7.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 7.85659912109375); (3.5 : 7.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.85659912109375); (3.5 : 7.85659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/houseDatabaseDataContext/Login/Login_House" />
       <nodes>
         <classShapeMoniker Id="adc4ddb3-8b17-4a77-b3b3-36a517e0d5c1" />
         <classShapeMoniker Id="c9ba6882-a1b2-4503-91d9-818c7b0b8527" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.75 : 7.88544840494792); (11.2916666666667 : 7.88544840494792 : JumpStart); (11.4583333333333 : 7.88544840494792 : JumpEnd); (11.75 : 7.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.75 : 7.88544840494792); (11.75 : 7.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/houseDatabaseDataContext/Classification/Classification_Offer" />
       <nodes>
         <classShapeMoniker Id="69623051-9aee-4c86-b2ca-849d1ad39fa6" />
         <classShapeMoniker Id="53b6de19-4a3c-42da-9e5b-0b49f89882f1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 6.875); (1.75 : 5.25); (11.375 : 5.25); (11.375 : 8.32577389127604); (11.75 : 8.32577389127604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.85659912109375); (3.25 : 7.85659912109375); (3.25 : 10.5977197265625); (12.75 : 10.5977197265625); (12.75 : 8.70359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/houseDatabaseDataContext/Login/Login_Offer" />
       <nodes>
         <classShapeMoniker Id="adc4ddb3-8b17-4a77-b3b3-36a517e0d5c1" />
         <classShapeMoniker Id="53b6de19-4a3c-42da-9e5b-0b49f89882f1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 7.84699625651042); (8.75 : 7.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 7.84699625651042); (8.41666666666667 : 7.84699625651042 : JumpStart); (8.58333333333333 : 7.84699625651042 : JumpEnd); (8.75 : 7.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/houseDatabaseDataContext/Report/Report_Classification" />
       <nodes>
         <classShapeMoniker Id="8413b91a-dc4c-4beb-9319-b266090cb0af" />
         <classShapeMoniker Id="69623051-9aee-4c86-b2ca-849d1ad39fa6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.84699625651042); (6.25 : 7.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.84699625651042); (6.25 : 7.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/houseDatabaseDataContext/House/House_Report" />
       <nodes>
         <classShapeMoniker Id="c9ba6882-a1b2-4503-91d9-818c7b0b8527" />
         <classShapeMoniker Id="8413b91a-dc4c-4beb-9319-b266090cb0af" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8ae298ae-ce70-4acf-9877-85377deddfed" absoluteBounds="7.25, 4.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/houseDatabaseDataContext/HousePic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dad79897-b147-45cb-9c97-36a2f61a68df" absoluteBounds="7.265, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 9.52805826822917); (8.5 : 9.52805826822917); (8.5 : 5.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/houseDatabaseDataContext/House/House_HousePic" />
+      <nodes>
+        <classShapeMoniker Id="c9ba6882-a1b2-4503-91d9-818c7b0b8527" />
+        <classShapeMoniker Id="8ae298ae-ce70-4acf-9877-85377deddfed" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

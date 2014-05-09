@@ -45,6 +45,9 @@ namespace HusInfo.Database
     partial void InsertReport(Report instance);
     partial void UpdateReport(Report instance);
     partial void DeleteReport(Report instance);
+    partial void InsertHousePic(HousePic instance);
+    partial void UpdateHousePic(HousePic instance);
+    partial void DeleteHousePic(HousePic instance);
     #endregion
 		
 		public houseDatabaseDataContext() : 
@@ -114,6 +117,14 @@ namespace HusInfo.Database
 			get
 			{
 				return this.GetTable<Report>();
+			}
+		}
+		
+		public System.Data.Linq.Table<HousePic> HousePics
+		{
+			get
+			{
+				return this.GetTable<HousePic>();
 			}
 		}
 	}
@@ -395,6 +406,8 @@ namespace HusInfo.Database
 		
 		private EntitySet<Report> _Reports;
 		
+		private EntitySet<HousePic> _HousePics;
+		
 		private EntityRef<Login> _Login;
 		
     #region Extensibility Method Definitions
@@ -448,6 +461,7 @@ namespace HusInfo.Database
 		public House()
 		{
 			this._Reports = new EntitySet<Report>(new Action<Report>(this.attach_Reports), new Action<Report>(this.detach_Reports));
+			this._HousePics = new EntitySet<HousePic>(new Action<HousePic>(this.attach_HousePics), new Action<HousePic>(this.detach_HousePics));
 			this._Login = default(EntityRef<Login>);
 			OnCreated();
 		}
@@ -889,6 +903,19 @@ namespace HusInfo.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="House_HousePic", Storage="_HousePics", ThisKey="id", OtherKey="houseId")]
+		public EntitySet<HousePic> HousePics
+		{
+			get
+			{
+				return this._HousePics;
+			}
+			set
+			{
+				this._HousePics.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_House", Storage="_Login", ThisKey="loginId", OtherKey="id", IsForeignKey=true)]
 		public Login Login
 		{
@@ -950,6 +977,18 @@ namespace HusInfo.Database
 		}
 		
 		private void detach_Reports(Report entity)
+		{
+			this.SendPropertyChanging();
+			entity.House = null;
+		}
+		
+		private void attach_HousePics(HousePic entity)
+		{
+			this.SendPropertyChanging();
+			entity.House = this;
+		}
+		
+		private void detach_HousePics(HousePic entity)
 		{
 			this.SendPropertyChanging();
 			entity.House = null;
@@ -1562,6 +1601,157 @@ namespace HusInfo.Database
 		{
 			this.SendPropertyChanging();
 			entity.Report = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HousePic")]
+	public partial class HousePic : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Data.Linq.Binary _picture;
+		
+		private System.Nullable<int> _houseId;
+		
+		private EntityRef<House> _House;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnpictureChanging(System.Data.Linq.Binary value);
+    partial void OnpictureChanged();
+    partial void OnhouseIdChanging(System.Nullable<int> value);
+    partial void OnhouseIdChanged();
+    #endregion
+		
+		public HousePic()
+		{
+			this._House = default(EntityRef<House>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_picture", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary picture
+		{
+			get
+			{
+				return this._picture;
+			}
+			set
+			{
+				if ((this._picture != value))
+				{
+					this.OnpictureChanging(value);
+					this.SendPropertyChanging();
+					this._picture = value;
+					this.SendPropertyChanged("picture");
+					this.OnpictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_houseId", DbType="Int")]
+		public System.Nullable<int> houseId
+		{
+			get
+			{
+				return this._houseId;
+			}
+			set
+			{
+				if ((this._houseId != value))
+				{
+					if (this._House.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnhouseIdChanging(value);
+					this.SendPropertyChanging();
+					this._houseId = value;
+					this.SendPropertyChanged("houseId");
+					this.OnhouseIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="House_HousePic", Storage="_House", ThisKey="houseId", OtherKey="id", IsForeignKey=true)]
+		public House House
+		{
+			get
+			{
+				return this._House.Entity;
+			}
+			set
+			{
+				House previousValue = this._House.Entity;
+				if (((previousValue != value) 
+							|| (this._House.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._House.Entity = null;
+						previousValue.HousePics.Remove(this);
+					}
+					this._House.Entity = value;
+					if ((value != null))
+					{
+						value.HousePics.Add(this);
+						this._houseId = value.id;
+					}
+					else
+					{
+						this._houseId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("House");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
