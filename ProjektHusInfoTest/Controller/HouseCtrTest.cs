@@ -34,5 +34,30 @@ namespace ProjektHusInfoTest
 			List<Bitmap> bmps = hCtr.GetHousePictures(h);
 
 		}
+
+        [TestMethod]
+        public void getHouseListAddress()
+        {
+            HouseCtr hCtr = new HouseCtr();
+
+            string s = "vejl";
+
+            List<House> H = hCtr.HouseSearch(s);
+
+            Console.WriteLine(H.Count.ToString());
+
+            foreach (var house in H)
+            {
+                Console.WriteLine(house.address);
+            }
+
+            Assert.IsNotNull(H);
+        }
+
+        [TestMethod]
+        public void getTilstandsRapport()
+        {
+
+        }
     }
 }
