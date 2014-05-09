@@ -21,16 +21,25 @@ namespace HusInfo.Controller
             return q.FirstOrDefault();
         }
 
+        //Returns null if no houses found
 		public List<House> HouseSearch(string address)
 		{
 			var db = new houseDatabaseDataContext();
-			
-			var houses =
-				(from h in db.Houses
-				 where h.address.Contains(address)
-				 select h).Take(5).ToList();
 
-			return houses;
+                 try{
+                    var houses =
+                        (from h in db.Houses
+                        where h.address.Contains(address)
+                        select h).Take(5).ToList();
+
+                     return houses;
+                 }
+				 catch(Exception e)
+                 {
+
+                 }
+
+                 return null;
 		}
 
 		public List<Bitmap> getHousePictures(House house)
