@@ -42,7 +42,18 @@ namespace HusInfo.Controller
                  return null;
 		}
 
-		public List<Bitmap> getHousePictures(House house)
+		public void AddHousePicture(House h, string filePath)
+		{
+			FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+			byte[] bytes = new byte[fs.Length];
+			fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
+
+			HousePic hPic = new HousePic() { houseId = h.id, picture = bytes };
+			db.HousePics.InsertOnSubmit(hPic);
+			db.SubmitChanges();
+		}
+
+		public List<Bitmap> GetHousePictures(House house)
 		{
 			var q = from p in db.HousePics
 					where p.houseId == house.id
