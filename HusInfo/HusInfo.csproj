@@ -86,7 +86,6 @@
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="packages.config" />
     <EntityDeploy Include="Model\HouseInfo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HouseInfo.Designer.cs</LastGenOutput>
@@ -104,6 +103,7 @@
       <DependentUpon>HouseInfo.edmx</DependentUpon>
       <LastGenOutput>HouseInfo.cs</LastGenOutput>
     </Content>
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Jobudbud.dk.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
