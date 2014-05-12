@@ -71,10 +71,8 @@ namespace HusInfo.Controller
 
         public IQueryable getReport(int houseId)
         {
-            var db = new houseDatabaseDataContext();
-
-            var report = from r in db.Reports
-                         join c in db.Classifications on r.id equals c.id
+            var report = from r in db.Report
+                         join c in db.Classification on r.id equals c.id
                          select new {id = r.id, classification = c};
 
             //var report = (from r in db.Reports
@@ -87,9 +85,7 @@ namespace HusInfo.Controller
 
         public List<Classification> getReportClassification(Report r)
         {
-            var db = new houseDatabaseDataContext();
-
-            var classification = (from c in db.Classifications
+            var classification = (from c in db.Classification
                                  where c.id == r.id
                                  select c).ToList();
 
