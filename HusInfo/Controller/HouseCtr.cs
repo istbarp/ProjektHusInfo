@@ -1,4 +1,4 @@
-﻿using HusInfo.Database;
+﻿using HusInfo.Model;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,11 +10,11 @@ namespace HusInfo.Controller
 {
     public class HouseCtr
     {
-		houseDatabaseDataContext db = new houseDatabaseDataContext();
+		HouseInfoContext db = new HouseInfoContext();
 
         public House GetHouse(int id)
         {
-			var q = from h in db.Houses
+			var q = from h in db.House
 					where h.id == id
 					select h;
 
@@ -24,11 +24,9 @@ namespace HusInfo.Controller
         //Returns null if no houses found
 		public List<House> HouseSearch(string address)
 		{
-			var db = new houseDatabaseDataContext();
-
                  try{
                     var houses =
-                        (from h in db.Houses
+                        (from h in db.House
                         where h.address.Contains(address)
                         select h).Take(5).ToList();
 
@@ -49,13 +47,13 @@ namespace HusInfo.Controller
 			fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
 
 			HousePic hPic = new HousePic() { houseId = h.id, picture = bytes };
-			db.HousePics.InsertOnSubmit(hPic);
-			db.SubmitChanges();
+			db.HousePic.Add(hPic);
+			db.SaveChanges();
 		}
 
 		public List<Bitmap> GetHousePictures(House house)
 		{
-			var q = from p in db.HousePics
+			var q = from p in db.HousePic
 					where p.houseId == house.id
 					select getBitmap(p.picture.ToArray());
 

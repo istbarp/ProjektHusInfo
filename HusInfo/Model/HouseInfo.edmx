@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Classification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="problem" Type="nvarchar(max)" />
+          <Property Name="problemPicture" Type="varbinary(max)" />
+          <Property Name="type" Type="nvarchar(max)" />
+          <Property Name="reportId" Type="int" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="basementAreal" Type="float" />
+          <Property Name="bruttoprice" Type="float" />
+          <Property Name="buildingYear" Type="int" />
+          <Property Name="cashPrice" Type="float" />
+          <Property Name="city" Type="nvarchar(max)" />
+          <Property Name="distToSchool" Type="float" />
+          <Property Name="distToShopping" Type="float" />
+          <Property Name="energyMark" Type="nvarchar(max)" />
+          <Property Name="floorLevels" Type="int" />
+          <Property Name="garageKvm" Type="float" />
+          <Property Name="groundAreal" Type="float" />
+          <Property Name="kvmPrice" Type="float" />
+          <Property Name="livingAreal" Type="float" />
+          <Property Name="nettoPrice" Type="float" />
+          <Property Name="rooms" Type="int" />
+          <Property Name="toilets" Type="int" />
+          <Property Name="webLink" Type="nvarchar(max)" />
+          <Property Name="zipCode" Type="int" />
+          <Property Name="loginId" Type="int" />
+        </EntityType>
+        <EntityType Name="HousePic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="picture" Type="varbinary(max)" />
+          <Property Name="houseId" Type="int" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="nvarchar(max)" />
+          <Property Name="password" Type="nvarchar(max)" />
+          <Property Name="phoneNumber" Type="int" />
+          <Property Name="username" Type="nvarchar(max)" />
+          <Property Name="personType" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="loginId" Type="int" />
+          <Property Name="classificationId" Type="int" />
+          <Property Name="price" Type="float" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="houseId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Classific__repor__7E02B4CC">
+          <End Role="Report" Type="Self.Report" Multiplicity="0..1" />
+          <End Role="Classification" Type="Self.Classification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Classification">
+              <PropertyRef Name="reportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__House__loginId__74794A92">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="loginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HousePic__houseI__0880433F">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="HousePic" Type="Self.HousePic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HousePic">
+              <PropertyRef Name="houseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Offer__classific__03BB8E22">
+          <End Role="Classification" Type="Self.Classification" Multiplicity="0..1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classification">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="classificationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Offer__loginId__02C769E9">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="loginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Report__houseId__793DFFAF">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="houseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Classification" EntityType="Self.Classification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HousePic" EntityType="Self.HousePic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offer" EntityType="Self.Offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Classific__repor__7E02B4CC" Association="Self.FK__Classific__repor__7E02B4CC">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="Classification" EntitySet="Classification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__House__loginId__74794A92" Association="Self.FK__House__loginId__74794A92">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HousePic__houseI__0880433F" Association="Self.FK__HousePic__houseI__0880433F">
+            <End Role="House" EntitySet="House" />
+            <End Role="HousePic" EntitySet="HousePic" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Offer__classific__03BB8E22" Association="Self.FK__Offer__classific__03BB8E22">
+            <End Role="Classification" EntitySet="Classification" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Offer__loginId__02C769E9" Association="Self.FK__Offer__loginId__02C769E9">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Report__houseId__793DFFAF" Association="Self.FK__Report__houseId__793DFFAF">
+            <End Role="House" EntitySet="House" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Classification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="problemPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="reportId" Type="Int32" />
+          <NavigationProperty Name="Report" Relationship="Self.FK__Classific__repor__7E02B4CC" FromRole="Classification" ToRole="Report" />
+          <NavigationProperty Name="Offer" Relationship="Self.FK__Offer__classific__03BB8E22" FromRole="Classification" ToRole="Offer" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="basementAreal" Type="Double" />
+          <Property Name="bruttoprice" Type="Double" />
+          <Property Name="buildingYear" Type="Int32" />
+          <Property Name="cashPrice" Type="Double" />
+          <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="distToSchool" Type="Double" />
+          <Property Name="distToShopping" Type="Double" />
+          <Property Name="energyMark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="floorLevels" Type="Int32" />
+          <Property Name="garageKvm" Type="Double" />
+          <Property Name="groundAreal" Type="Double" />
+          <Property Name="kvmPrice" Type="Double" />
+          <Property Name="livingAreal" Type="Double" />
+          <Property Name="nettoPrice" Type="Double" />
+          <Property Name="rooms" Type="Int32" />
+          <Property Name="toilets" Type="Int32" />
+          <Property Name="webLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="zipCode" Type="Int32" />
+          <Property Name="loginId" Type="Int32" />
+          <NavigationProperty Name="Login" Relationship="Self.FK__House__loginId__74794A92" FromRole="House" ToRole="Login" />
+          <NavigationProperty Name="HousePic" Relationship="Self.FK__HousePic__houseI__0880433F" FromRole="House" ToRole="HousePic" />
+          <NavigationProperty Name="Report" Relationship="Self.FK__Report__houseId__793DFFAF" FromRole="House" ToRole="Report" />
+        </EntityType>
+        <EntityType Name="HousePic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="houseId" Type="Int32" />
+          <NavigationProperty Name="House" Relationship="Self.FK__HousePic__houseI__0880433F" FromRole="HousePic" ToRole="House" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="personType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="House" Relationship="Self.FK__House__loginId__74794A92" FromRole="Login" ToRole="House" />
+          <NavigationProperty Name="Offer" Relationship="Self.FK__Offer__loginId__02C769E9" FromRole="Login" ToRole="Offer" />
+        </EntityType>
+        <EntityType Name="Offer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="loginId" Type="Int32" />
+          <Property Name="classificationId" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <NavigationProperty Name="Classification" Relationship="Self.FK__Offer__classific__03BB8E22" FromRole="Offer" ToRole="Classification" />
+          <NavigationProperty Name="Login" Relationship="Self.FK__Offer__loginId__02C769E9" FromRole="Offer" ToRole="Login" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="houseId" Type="Int32" />
+          <NavigationProperty Name="Classification" Relationship="Self.FK__Classific__repor__7E02B4CC" FromRole="Report" ToRole="Classification" />
+          <NavigationProperty Name="House" Relationship="Self.FK__Report__houseId__793DFFAF" FromRole="Report" ToRole="House" />
+        </EntityType>
+        <Association Name="FK__Classific__repor__7E02B4CC">
+          <End Role="Report" Type="Self.Report" Multiplicity="0..1" />
+          <End Role="Classification" Type="Self.Classification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Classification">
+              <PropertyRef Name="reportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Offer__classific__03BB8E22">
+          <End Role="Classification" Type="Self.Classification" Multiplicity="0..1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classification">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="classificationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__House__loginId__74794A92">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="loginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HousePic__houseI__0880433F">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="HousePic" Type="Self.HousePic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HousePic">
+              <PropertyRef Name="houseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Report__houseId__793DFFAF">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="houseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Offer__loginId__02C769E9">
+          <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+          <End Role="Offer" Type="Self.Offer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Login">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Offer">
+              <PropertyRef Name="loginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HouseInfoContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classification" EntityType="Self.Classification" />
+          <EntitySet Name="House" EntityType="Self.House" />
+          <EntitySet Name="HousePic" EntityType="Self.HousePic" />
+          <EntitySet Name="Login" EntityType="Self.Login" />
+          <EntitySet Name="Offer" EntityType="Self.Offer" />
+          <EntitySet Name="Report" EntityType="Self.Report" />
+          <AssociationSet Name="FK__Classific__repor__7E02B4CC" Association="Self.FK__Classific__repor__7E02B4CC">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="Classification" EntitySet="Classification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Offer__classific__03BB8E22" Association="Self.FK__Offer__classific__03BB8E22">
+            <End Role="Classification" EntitySet="Classification" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__House__loginId__74794A92" Association="Self.FK__House__loginId__74794A92">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HousePic__houseI__0880433F" Association="Self.FK__HousePic__houseI__0880433F">
+            <End Role="House" EntitySet="House" />
+            <End Role="HousePic" EntitySet="HousePic" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Report__houseId__793DFFAF" Association="Self.FK__Report__houseId__793DFFAF">
+            <End Role="House" EntitySet="House" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Offer__loginId__02C769E9" Association="Self.FK__Offer__loginId__02C769E9">
+            <End Role="Login" EntitySet="Login" />
+            <End Role="Offer" EntitySet="Offer" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="HouseInfoContext">
+          <EntitySetMapping Name="Classification">
+            <EntityTypeMapping TypeName="Model.Classification">
+              <MappingFragment StoreEntitySet="Classification">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="problem" ColumnName="problem" />
+                <ScalarProperty Name="problemPicture" ColumnName="problemPicture" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="reportId" ColumnName="reportId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House">
+            <EntityTypeMapping TypeName="Model.House">
+              <MappingFragment StoreEntitySet="House">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="basementAreal" ColumnName="basementAreal" />
+                <ScalarProperty Name="bruttoprice" ColumnName="bruttoprice" />
+                <ScalarProperty Name="buildingYear" ColumnName="buildingYear" />
+                <ScalarProperty Name="cashPrice" ColumnName="cashPrice" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="distToSchool" ColumnName="distToSchool" />
+                <ScalarProperty Name="distToShopping" ColumnName="distToShopping" />
+                <ScalarProperty Name="energyMark" ColumnName="energyMark" />
+                <ScalarProperty Name="floorLevels" ColumnName="floorLevels" />
+                <ScalarProperty Name="garageKvm" ColumnName="garageKvm" />
+                <ScalarProperty Name="groundAreal" ColumnName="groundAreal" />
+                <ScalarProperty Name="kvmPrice" ColumnName="kvmPrice" />
+                <ScalarProperty Name="livingAreal" ColumnName="livingAreal" />
+                <ScalarProperty Name="nettoPrice" ColumnName="nettoPrice" />
+                <ScalarProperty Name="rooms" ColumnName="rooms" />
+                <ScalarProperty Name="toilets" ColumnName="toilets" />
+                <ScalarProperty Name="webLink" ColumnName="webLink" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="loginId" ColumnName="loginId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HousePic">
+            <EntityTypeMapping TypeName="Model.HousePic">
+              <MappingFragment StoreEntitySet="HousePic">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="houseId" ColumnName="houseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login">
+            <EntityTypeMapping TypeName="Model.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="personType" ColumnName="personType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offer">
+            <EntityTypeMapping TypeName="Model.Offer">
+              <MappingFragment StoreEntitySet="Offer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="loginId" ColumnName="loginId" />
+                <ScalarProperty Name="classificationId" ColumnName="classificationId" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Report">
+            <EntityTypeMapping TypeName="Model.Report">
+              <MappingFragment StoreEntitySet="Report">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="houseId" ColumnName="houseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
