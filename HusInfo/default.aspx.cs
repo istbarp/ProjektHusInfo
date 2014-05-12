@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using HusInfo.Controller;
 
+
 namespace HusInfo
 {
     public partial class _default : System.Web.UI.Page
@@ -20,6 +21,7 @@ namespace HusInfo
 
         public void getData(Object sender, EventArgs e)
         {
+            
             //int zip = Int32.Parse(postnrTB.Text);
             string adress = adresseTB.Text;
 
