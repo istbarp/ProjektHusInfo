@@ -409,6 +409,7 @@ namespace HusInfo.Database
 		private EntitySet<HousePic> _HousePics;
 		
 		private EntityRef<Login> _Login;
+
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();

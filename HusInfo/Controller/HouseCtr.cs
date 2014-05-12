@@ -22,7 +22,7 @@ namespace HusInfo.Controller
         }
 
         //Returns null if no houses found
-		public List<House> HouseSearch(string address)
+		public List<House> getHouseAddress(string address)
 		{
 			var db = new houseDatabaseDataContext();
 
@@ -36,7 +36,7 @@ namespace HusInfo.Controller
                  }
 				 catch(Exception e)
                  {
-
+                     Console.WriteLine("test");
                  }
 
                  return null;
@@ -70,5 +70,33 @@ namespace HusInfo.Controller
 
 			return bmp;
 		}
+
+        public IQueryable getReport(int houseId)
+        {
+            var db = new houseDatabaseDataContext();
+
+            var report = from r in db.Reports
+                         join c in db.Classifications on r.id equals c.id
+                         select new {id = r.id, classification = c};
+
+            //var report = (from r in db.Reports
+            //              where r.houseId == houseId
+            //              select r);
+
+            return report;
+
+        }
+
+        public List<Classification> getReportClassification(Report r)
+        {
+            var db = new houseDatabaseDataContext();
+
+            var classification = (from c in db.Classifications
+                                 where c.id == r.id
+                                 select c).ToList();
+
+            return classification;
+                                 
+        }
     }
 }

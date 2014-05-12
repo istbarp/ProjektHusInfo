@@ -42,7 +42,7 @@ namespace ProjektHusInfoTest
 
             string s = "vejl";
 
-            List<House> H = hCtr.HouseSearch(s);
+            List<House> H = hCtr.getHouseAddress(s);
 
             Console.WriteLine(H.Count.ToString());
 
@@ -57,7 +57,15 @@ namespace ProjektHusInfoTest
         [TestMethod]
         public void getTilstandsRapport()
         {
+            HouseCtr houseCtr = new HouseCtr();
+            List<House> house = houseCtr.getHouseAddress("vej");
 
+            Report report = houseCtr.getReport(house[0].id);
+
+   
+            Console.WriteLine("{0}", report);
+
+            Assert.IsNotNull(report);
         }
     }
 }
