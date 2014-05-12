@@ -47,15 +47,26 @@
             float: left;
             width: 398px;
             min-width: 398px;
+            height: 100%;
             background-color: grey;
             text-align: center;
         }
 
 
-            .leftBp b, .rightBp b {
+            .leftBp b {
                 text-shadow: 1px 1px 1px black;
                 color: white;
                 font-size: 40px;
+                
+            }
+
+            .rightBp span
+            {
+                text-shadow: 1px 1px 1px black;
+                color: white;
+                font-size: 40px;
+                padding-top: 6px;
+                font-weight: bold;
             }
 
             .panel-group
@@ -204,6 +215,7 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </div>
+            <img id="TestBillede" runat="server" />
             <div id="boligPris">
                 <b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px">Villa</b>
                 <div class="wrapper">
@@ -211,7 +223,7 @@
                         <b>Kontantpris</b>
                     </div>
                     <div class="rightBp">
-                        <asp:TextBox ID="CashPriceTB" runat="server"></asp:TextBox>
+                        <asp:label ID="CashPriceTB" runat="server"></asp:label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -219,7 +231,7 @@
                         <b>Kvm. pris</b>
                     </div>
                     <div class="rightBp">
-                        <asp:TextBox ID="KvmPriceTB" runat="server"></asp:TextBox>
+                        <asp:label ID="KvmPriceTB" runat="server"></asp:label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -227,7 +239,7 @@
                         <b>Brutto/Netto</b>
                     </div>
                     <div class="rightBp">
-                        <asp:TextBox ID="BruttoNettoTB" runat="server"></asp:TextBox>
+                        <asp:label ID="BruttoNettoTB" runat="server"></asp:label>
                     </div>
                 </div>
 

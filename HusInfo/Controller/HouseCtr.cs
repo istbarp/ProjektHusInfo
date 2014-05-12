@@ -14,7 +14,7 @@ namespace HusInfo.Controller
 
         public House GetHouse(int id)
         {
-			var q = from h in db.House.Include("Report").Include("Classification")
+			var q = from h in db.House.Include("Report.Classification")
 					where h.id == id
 					select h;
 

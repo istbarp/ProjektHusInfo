@@ -22,13 +22,22 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// TestBillede control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage TestBillede;
+        
+        /// <summary>
         /// CashPriceTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CashPriceTB;
+        protected global::System.Web.UI.WebControls.Label CashPriceTB;
         
         /// <summary>
         /// KvmPriceTB control.
@@ -37,7 +46,7 @@ namespace HusInfo.Pages {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox KvmPriceTB;
+        protected global::System.Web.UI.WebControls.Label KvmPriceTB;
         
         /// <summary>
         /// BruttoNettoTB control.
@@ -46,6 +55,6 @@ namespace HusInfo.Pages {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BruttoNettoTB;
+        protected global::System.Web.UI.WebControls.Label BruttoNettoTB;
     }
 }
