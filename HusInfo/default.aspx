@@ -59,16 +59,18 @@
             <div id="holder">
             <div id="adresseDiv">
                 
-                <asp:DropDownList ID="dropDownListBox" runat="server"></asp:DropDownList>
             <asp:TextBox ID="adresseTB" runat="server" Width="100%" placeholder="Indtast Adresse idiot"></asp:TextBox>
                 </div>
             <div id="postnrDiv">
                 <asp:TextBox ID="postnrTB" runat="server" Width="100%" placeholder="Indtast Post Nummer"></asp:TextBox>
                 </div>
             <div id="hentData">
-                <a class="btn btn-default" href="/Pages/HouseInformation.aspx">Hent Data</a>
+                <asp:Button runat="server" onclick="getData" Text="hentData"></asp:Button>
             </div>
                 </div>
+            <div id="ListDiv">
+                <asp:ListView ID="lv" runat="server" OnSelectedIndexChanged="lv_SelectedIndexChanged"></asp:ListView>
+            </div>
         </div>
     </form>
 </body>

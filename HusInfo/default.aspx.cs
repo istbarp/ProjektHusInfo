@@ -15,9 +15,24 @@ namespace HusInfo
         protected void Page_Load(object sender, EventArgs e)
         {
             List<House> listHouse = hCtr.GetAllHouses();
-            dropDownListBox.DataSource = listHouse;
-            dropDownListBox.DataBind();
+            lv.Visible = false;
         }
 
+        public void getData(Object sender, EventArgs e)
+        {
+            //int zip = Int32.Parse(postnrTB.Text);
+            string adress = adresseTB.Text;
+
+            List<House> ha = hCtr.getHouseAddress(adress);
+
+            lv.DataSource = ha;
+            lv.DataBind();
+            lv.Visible = true;
+        }
+
+        protected void lv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
