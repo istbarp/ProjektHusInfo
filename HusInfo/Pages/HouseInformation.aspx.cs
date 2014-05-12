@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.SessionState;
 using HusInfo.Controller;
-using HusInfo.Database;
+using HusInfo.Model;
 
 namespace HusInfo.Pages
 {
