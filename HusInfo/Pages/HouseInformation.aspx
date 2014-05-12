@@ -127,84 +127,22 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="/Images/Ydunsvej7_1.png" alt="..." />
+                    <%HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
+                        HusInfo.Model.House h = hCtr.GetHouse(4);
+                        int i = 0;
+                        foreach (var item in h.HousePic)
+                       {
+                            %>
+                           
+                     
+                    <div class="<% if (i == 0) Response.Write("item active"); else Response.Write("item"); %>">
+                        <img src="<% Response.Write(item.pictureFilename); %>" alt="..." />
                         <div class="carousel-caption">
                             Ydunsvej 7, 9800 Hjørring
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_2.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_3.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_4.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_5.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_6.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_7.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_8.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_9.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_10.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_11.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_12.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="/Images/Ydunsvej7_13.png" alt="..." />
-                        <div class="carousel-caption">
-                            Ydunsvej 7, 9800 Hjørring
-                        </div>
-                    </div>
+ <% i++;
+                       } %>
                 </div>
 
                 <!-- Controls -->

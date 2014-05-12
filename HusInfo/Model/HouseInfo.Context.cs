@@ -27,9 +27,9 @@ namespace HusInfo.Model
     
         public virtual DbSet<Classification> Classification { get; set; }
         public virtual DbSet<House> House { get; set; }
-        public virtual DbSet<HousePic> HousePic { get; set; }
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Offer> Offer { get; set; }
         public virtual DbSet<Report> Report { get; set; }
+        public virtual DbSet<HousePic> HousePic { get; set; }
     }
 }

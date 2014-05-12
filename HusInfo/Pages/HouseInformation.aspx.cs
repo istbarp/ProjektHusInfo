@@ -17,14 +17,14 @@ namespace HusInfo.Pages
         {
             //Int32 houseId = (int)Session["HouseId"];
 
-            House h = hCtr.GetHouse(3);
+            House h = hCtr.GetHouse(4);
 
             CashPriceTB.Text = h.cashPrice.ToString();
             KvmPriceTB.Text = h.kvmPrice.ToString();
             BruttoNettoTB.Text = h.bruttoprice.ToString() + " / " + h.nettoPrice.ToString();
 
-
-            TestBillede.Src = "data:image/png;base64," + Convert.ToBase64String(h.HousePic.First().picture);
+            int i = h.HousePic.Count;
+            Console.WriteLine(i);
 
 
         }
