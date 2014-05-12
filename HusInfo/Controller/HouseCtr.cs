@@ -42,10 +42,9 @@ namespace HusInfo.Controller
 
         public List<House> GetAllHouses()
         {
-            var db = new houseDatabaseDataContext();
             try
             {
-                var houses = from h in db.Houses
+                var houses = from h in db.House
                               select h;
 
                 return houses.ToList();
