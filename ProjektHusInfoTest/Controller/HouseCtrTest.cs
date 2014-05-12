@@ -58,7 +58,9 @@ namespace ProjektHusInfoTest
         {
             //List<House> house = hCtr.getHouseAddress("vej");
 
+
             //Report report = hCtr.getReport(house[0].id);
+
 
    
             //Console.WriteLine("{0}", report);

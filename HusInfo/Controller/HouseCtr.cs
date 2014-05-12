@@ -86,7 +86,7 @@ namespace HusInfo.Controller
 			return bmp;
 		}
 
-        public IQueryable getReport(int houseId)
+        public Object getReport(int houseId)
         {
             var report = from r in db.Report
                          join c in db.Classification on r.id equals c.id
