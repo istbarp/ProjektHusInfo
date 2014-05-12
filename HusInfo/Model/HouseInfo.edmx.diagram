@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0d6f7c2f5694ba5b5ee254fef159254" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Classification" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.House" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HousePic" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Login" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Offer" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Report" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__Classific__repor__7E02B4CC" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Offer__classific__03BB8E22" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__House__loginId__74794A92" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__HousePic__houseI__0880433F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Report__houseId__793DFFAF" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Offer__loginId__02C769E9" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HusInfo.Controller;
-using HusInfo.Database;
+using HusInfo.Model;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -32,7 +32,6 @@ namespace ProjektHusInfoTest
 			hCtr.AddHousePicture(h, picPath);
 			
 			List<Bitmap> bmps = hCtr.GetHousePictures(h);
-
 		}
 
         [TestMethod]
@@ -42,7 +41,7 @@ namespace ProjektHusInfoTest
 
             string s = "vejl";
 
-            List<House> H = hCtr.HouseSearch(s);
+            List<House> H = hCtr.getHouseAddress(s);
 
             Console.WriteLine(H.Count.ToString());
 
@@ -57,7 +56,14 @@ namespace ProjektHusInfoTest
         [TestMethod]
         public void getTilstandsRapport()
         {
+            //List<House> house = hCtr.getHouseAddress("vej");
 
+            //Report report = hCtr.getReport(house[0].id);
+
+   
+            //Console.WriteLine("{0}", report);
+
+            //Assert.IsNotNull(report);
         }
     }
 }
