@@ -105,6 +105,7 @@
     </Content>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Jobudbud.dk.pubxml" />
+    <None Include="Properties\PublishProfiles\jobudbud.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

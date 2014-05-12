@@ -268,7 +268,7 @@
             <a href="/default.aspx" class="btn btn-default">Tilbage</a>
                 </div>
             <div id="goToRealEstate">
-                <a href="http://home.dk/boligkatalog/hjoerring/9800/huse-villaer/ydunsvej_7_808c00197.aspx" class="btn btn-default" target="_blank">Gå til mægler</a>
+                <a href="<% Response.Write(h.webLink); %>" class="btn btn-default" target="_blank">Gå til mægler</a>
             </div>
         </div>
     </form>

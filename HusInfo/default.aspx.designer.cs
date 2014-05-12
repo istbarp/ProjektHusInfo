@@ -40,12 +40,12 @@ namespace HusInfo {
         protected global::System.Web.UI.WebControls.TextBox postnrTB;
         
         /// <summary>
-        /// lv control.
+        /// dropdownlistbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv;
+        protected global::System.Web.UI.WebControls.DropDownList dropdownlistbox;
     }
 }

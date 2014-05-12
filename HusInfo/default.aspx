@@ -69,10 +69,8 @@
             </div>
                 </div>
             <div id="ListDiv">
-                <asp:ListView ID="lv" runat="server" OnSelectedIndexChanged="lv_SelectedIndexChanged">
-                 <ItemTemplate>
-                     textbox
-                 </ItemTemplate></asp:ListView>
+                <asp:DropDownList ID="dropdownlistbox" runat="server" >
+                 </asp:DropDownList>
             </div>
         </div>
     </form>

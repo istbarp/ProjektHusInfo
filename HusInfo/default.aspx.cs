@@ -16,7 +16,7 @@ namespace HusInfo
         protected void Page_Load(object sender, EventArgs e)
         {
             List<House> listHouse = hCtr.GetAllHouses();
-            lv.Visible = false;
+            dropdownlistbox.Visible = false;
         }
 
         public void getData(Object sender, EventArgs e)
@@ -26,10 +26,14 @@ namespace HusInfo
             string adress = adresseTB.Text;
 
             List<House> ha = hCtr.getHouseAddress(adress);
-
-            lv.DataSource = ha;
-            lv.DataBind();
-            lv.Visible = true;
+            List<string> haddress = new List<string>();
+            foreach (House h in ha)
+            {
+                haddress.Add(h.address + ", " + h.zipCode.ToString() + " " + h.city);
+            }
+            dropdownlistbox.DataSource = haddress;
+            dropdownlistbox.DataBind();
+            dropdownlistbox.Visible = true;
         }
 
         protected void lv_SelectedIndexChanged(object sender, EventArgs e)
