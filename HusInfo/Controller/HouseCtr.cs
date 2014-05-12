@@ -71,7 +71,7 @@ namespace HusInfo.Controller
 			return bmp;
 		}
 
-        public IQueryable getReport(int houseId)
+        public Object getReport(int houseId)
         {
             var db = new houseDatabaseDataContext();
 

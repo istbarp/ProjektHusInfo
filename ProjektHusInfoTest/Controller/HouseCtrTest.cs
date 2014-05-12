@@ -60,7 +60,7 @@ namespace ProjektHusInfoTest
             HouseCtr houseCtr = new HouseCtr();
             List<House> house = houseCtr.getHouseAddress("vej");
 
-            Report report = houseCtr.getReport(house[0].id);
+            Report report = (Report)houseCtr.getReport(house[0].id);
 
    
             Console.WriteLine("{0}", report);
