@@ -47,6 +47,20 @@ namespace ProjektHusInfoTest
             Console.WriteLine(H.Count.ToString());
             Console.WriteLine("-----------------------");
 
+            foreach (var house in H)
+            {
+                Console.WriteLine(house.address);
+            }
+                
+            Assert.IsNotNull(H);
+        }
+
+        [TestMethod]
+        public void getTilstandsRapport()
+        {
+            List<House> H = hCtr.getHouseAddress("vej");
+            //Report report = hCtr.getReport(house[0].id);
+
             List<Report> rep = new List<Report>();
             List<Classification> cla = new List<Classification>();
 
@@ -54,32 +68,19 @@ namespace ProjektHusInfoTest
             {
                 Console.WriteLine(house.address);
 
-                foreach(var repo in house.Report)
+                foreach (var repo in house.Report)
                 {
                     rep.Add(repo);
+                    Console.WriteLine("id: {0}", repo.id);
 
-                    foreach(var clas in repo.Classification)
+                    foreach (var clas in repo.Classification)
                     {
                         cla.Add(clas);
-                        Console.WriteLine(clas.problem);
+                        Console.WriteLine("problem: {0} og type {1}", clas.problem, clas.type);
                     }
                 }
                 Console.WriteLine("-----------------------");
             }
-
-            Assert.IsNotNull(H);
-        }
-
-        [TestMethod]
-        public void getTilstandsRapport()
-        {
-            //List<House> house = hCtr.getHouseAddress("vej");
-
-
-            //Report report = hCtr.getReport(house[0].id);
-
-
-   
             //Console.WriteLine("{0}", report);
 
             //Assert.IsNotNull(report);

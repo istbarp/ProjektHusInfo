@@ -87,9 +87,13 @@ namespace HusInfo.Controller
 
         public Object getReport(int houseId)
         {
-            var report = from r in db.Report
-                         join c in db.Classification on r.id equals c.id
-                         select new {id = r.id, classification = c};
+            //var report = from r in db.Report
+            //             join c in db.Classification on r.id equals c.id
+            //             select new {id = r.id, classification = c};
+
+            var report = (from r in db.Report
+                          where r.houseId == houseId
+                          select r);
 
             return report;
 

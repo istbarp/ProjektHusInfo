@@ -154,3 +154,4 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+packages/EntityFramework.6.1.0/tools/EntityFramework.PowerShell.Utility.dll
