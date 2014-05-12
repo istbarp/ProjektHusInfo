@@ -42,6 +42,23 @@ namespace HusInfo.Controller
                  return null;
 		}
 
+        public List<House> GetAllHouses()
+        {
+            var db = new houseDatabaseDataContext();
+            try
+            {
+                var houses = from h in db.Houses
+                              select h;
+
+                return houses.ToList();
+            }
+            catch(Exception e)
+            {
+
+            }
+            return null;
+        }
+
 		public void AddHousePicture(House h, string filePath)
 		{
 			FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);

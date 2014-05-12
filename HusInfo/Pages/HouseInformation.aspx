@@ -211,7 +211,7 @@
                         <b>Kontantpris</b>
                     </div>
                     <div class="rightBp">
-                        <b>1.045.000 kr.</b>
+                        <asp:TextBox ID="CashPriceTB" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -219,7 +219,7 @@
                         <b>Kvm. pris</b>
                     </div>
                     <div class="rightBp">
-                        <b>9.500 kr/m2</b>
+                        <asp:TextBox ID="KvmPriceTB" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -227,7 +227,7 @@
                         <b>Brutto/Netto</b>
                     </div>
                     <div class="rightBp">
-                        <b>6771 / 6245 kr.</b>
+                        <asp:TextBox ID="BruttoNettoTB" runat="server"></asp:TextBox>
                     </div>
                 </div>
 

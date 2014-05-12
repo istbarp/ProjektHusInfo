@@ -11,6 +11,7 @@
     <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
+
     <style>
         body {
             width: 400px;
@@ -47,13 +48,17 @@
             margin: auto;
             padding-bottom: 5%;
         }
+
     </style>
+
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="back">
             <div id="holder">
             <div id="adresseDiv">
+                <asp:DropDownList ID="dropDownListBox" runat="server"></asp:DropDownList>
             <asp:TextBox ID="adresseTB" runat="server" Width="100%" placeholder="Indtast Adresse idiot"></asp:TextBox>
                 </div>
             <div id="postnrDiv">
@@ -66,4 +71,5 @@
         </div>
     </form>
 </body>
+
 </html>
