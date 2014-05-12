@@ -21,18 +21,18 @@ namespace ProjektHusInfoTest
 			Assert.IsNotNull(h);
         }
 
-		[TestMethod]
-		public void AddHousePictureTest()
-		{
-			House h = hCtr.GetHouse(3);
-			Assert.IsNotNull(h);
+        //[TestMethod]
+        //public void AddHousePictureTest()
+        //{
+        //    House h = hCtr.GetHouse(3);
+        //    Assert.IsNotNull(h);
 
-			String picPath = @"C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\Images\Ydunsvej7_1.png";
+        //    String picPath = @"C:\Users\Bruno\Documents\GitHub\ProjektHusInfo\HusInfo\Images\Ydunsvej7_1.png";
 
-			hCtr.AddHousePicture(h, picPath);
+        //    hCtr.AddHousePicture(h, picPath);
 			
-			List<Bitmap> bmps = hCtr.GetHousePictures(h);
-		}
+        //    List<Bitmap> bmps = hCtr.GetHousePictures(h);
+        //}
 
         [TestMethod]
         public void getHouseListAddress()

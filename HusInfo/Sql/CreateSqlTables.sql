@@ -36,7 +36,7 @@ create table House
 create table HousePic
 (
 	id int identity primary key,
-	picture varBinary(MAX),
+	pictureFilename nvarchar(MAX),
 	houseId int foreign key references House(id)
 )
 create table Report
