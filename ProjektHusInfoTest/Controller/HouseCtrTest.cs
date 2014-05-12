@@ -39,15 +39,32 @@ namespace ProjektHusInfoTest
         {
             HouseCtr hCtr = new HouseCtr();
 
-            string s = "vejl";
+            string s = "vej";
 
             List<House> H = hCtr.getHouseAddress(s);
 
+            Console.WriteLine("Count of houses");
             Console.WriteLine(H.Count.ToString());
+            Console.WriteLine("-----------------------");
+
+            List<Report> rep = new List<Report>();
+            List<Classification> cla = new List<Classification>();
 
             foreach (var house in H)
             {
                 Console.WriteLine(house.address);
+
+                foreach(var repo in house.Report)
+                {
+                    rep.Add(repo);
+
+                    foreach(var clas in repo.Classification)
+                    {
+                        cla.Add(clas);
+                        Console.WriteLine(clas.problem);
+                    }
+                }
+                Console.WriteLine("-----------------------");
             }
 
             Assert.IsNotNull(H);

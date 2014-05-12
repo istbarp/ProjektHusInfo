@@ -23,10 +23,10 @@ namespace HusInfo.Controller
 
         //Returns null if no houses found
 		public List<House> getHouseAddress(string address)
-		{
+		{      
                  try{
                     var houses =
-                        (from h in db.House.Include("Report").Include("Classification")
+                        (from h in db.House.Include("Report.Classification")
                         where h.address.Contains(address)
                         select h).Take(5).ToList();
 
@@ -91,10 +91,6 @@ namespace HusInfo.Controller
                          join c in db.Classification on r.id equals c.id
                          select new {id = r.id, classification = c};
 
-            //var report = (from r in db.Reports
-            //              where r.houseId == houseId
-            //              select r);
-
             return report;
 
         }
@@ -105,8 +101,7 @@ namespace HusInfo.Controller
                                  where c.id == r.id
                                  select c).ToList();
 
-            return classification;
-                                 
+            return classification;                         
         }
     }
 }
