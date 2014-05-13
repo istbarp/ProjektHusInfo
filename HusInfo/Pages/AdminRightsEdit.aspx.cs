@@ -16,11 +16,12 @@ namespace HusInfo.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             List<House> ha = hC.GetAllHouses();
+            List<string> haddress = new List<string>(); 
             foreach (House h in ha)
             {
-                ha.Add(h);
+                haddress.Add(h.address);
             }
-            DropDownListEdit.DataSource = ha;
+            DropDownListEdit.DataSource = haddress;
             DropDownListEdit.DataBind();
         }
 
@@ -28,20 +29,20 @@ namespace HusInfo.Pages
         {
             House h = new House();
             h.address = AddressTbe.Text;
-            h.basementAreal = Int32.Parse(BasementArealTbe.Text);
-            h.bruttoprice = Int32.Parse(BruttoPriceTbe.Text);
+            h.basementAreal = double.Parse(BasementArealTbe.Text);
+            h.bruttoprice = double.Parse(BruttoPriceTbe.Text);
             h.buildingYear = Int32.Parse(BuildingYearTbe.Text);
-            h.cashPrice = Int32.Parse(CashPriceTbe.Text);
+            h.cashPrice = double.Parse(CashPriceTbe.Text);
             h.city = CityTbe.Text;
-            h.distToSchool = Int32.Parse(DistToSchoolTbe.Text);
-            h.distToShopping = Int32.Parse(DistToShppingTbe.Text);
+            h.distToSchool = double.Parse(DistToSchoolTbe.Text);
+            h.distToShopping = double.Parse(DistToShppingTbe.Text);
             h.energyMark = EnergyMarkTbe.Text;
             h.floorLevels = Int32.Parse(FloorLevelsTbe.Text);
-            h.garageKvm = Int32.Parse(GarageArealTbe.Text);
-            h.groundAreal = Int32.Parse(GroundArealTbe.Text);
-            h.kvmPrice = Int32.Parse(KvmPriceTbe.Text);
-            h.livingAreal = Int32.Parse(LivingArealTbe.Text);
-            h.nettoPrice = Int32.Parse(NettoPriceTbe.Text);
+            h.garageKvm = double.Parse(GarageArealTbe.Text);
+            h.groundAreal = double.Parse(GroundArealTbe.Text);
+            h.kvmPrice = double.Parse(KvmPriceTbe.Text);
+            h.livingAreal = double.Parse(LivingArealTbe.Text);
+            h.nettoPrice = double.Parse(NettoPriceTbe.Text);
             h.rooms = Int32.Parse(RoomsTbe.Text);
             h.toilets = Int32.Parse(ToiletsTbe.Text);
             h.webLink = WebLinkTbe.Text;
