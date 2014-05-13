@@ -54,6 +54,27 @@ namespace HusInfo.Pages
 
         protected void DropDownListEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
+            House H = hC.getHouseAddress(DropDownListEdit.SelectedItem.Text)[0];
+
+            AddressTbe.Text = H.address;
+            BasementArealTbe.Text = H.basementAreal.ToString();
+            BruttoPriceTbe.Text = H.bruttoprice.ToString();
+            BuildingYearTbe.Text = H.buildingYear.ToString();
+            CashPriceTbe.Text = H.cashPrice.ToString();
+            CityTbe.Text = H.city;
+            DistToSchoolTbe.Text = H.distToSchool.ToString();
+            DistToShppingTbe.Text = H.distToSchool.ToString();
+            EnergyMarkTbe.Text = H.energyMark;
+            FloorLevelsTbe.Text = H.floorLevels.ToString();
+            GarageArealTbe.Text = H.garageKvm.ToString();
+            GroundArealTbe.Text = H.groundAreal.ToString();
+            KvmPriceTbe.Text = H.kvmPrice.ToString();
+            LivingArealTbe.Text = H.livingAreal.ToString();
+            NettoPriceTbe.Text = H.nettoPrice.ToString();
+            RoomsTbe.Text = H.rooms.ToString();
+            ToiletsTbe.Text = H.toilets.ToString();
+            WebLinkTbe.Text = H.webLink;
+            ZipcodeTbe.Text = H.zipCode.ToString();
         }
     }
 }
