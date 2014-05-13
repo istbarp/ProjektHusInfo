@@ -80,6 +80,8 @@
     <Content Include="Images\Ydunsvej7_7.png" />
     <Content Include="Images\Ydunsvej7_8.png" />
     <Content Include="Images\Ydunsvej7_9.png" />
+    <Content Include="Pages\AdminRightsEdit.aspx" />
+    <Content Include="Pages\AdminRightsCreate.aspx" />
     <Content Include="Pages\HouseInformation.aspx" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css.map" />
@@ -162,6 +164,20 @@
     </Compile>
     <Compile Include="Model\Offer.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminRightsEdit.aspx.cs">
+      <DependentUpon>AdminRightsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminRightsEdit.aspx.designer.cs">
+      <DependentUpon>AdminRightsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminRightsCreate.aspx.cs">
+      <DependentUpon>AdminRightsCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminRightsCreate.aspx.designer.cs">
+      <DependentUpon>AdminRightsCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\HouseInformation.aspx.cs">
       <DependentUpon>HouseInformation.aspx</DependentUpon>

@@ -27,6 +27,35 @@ namespace HusInfo.Controller
             db.SaveChanges();
         }
 
+        public void editHouse(House houseUpdate)
+        {
+            House house = db.House.FirstOrDefault(h => h.id == houseUpdate.id);
+            house.address = houseUpdate.address;
+            house.basementAreal = houseUpdate.basementAreal;
+            house.bruttoprice = houseUpdate.bruttoprice;
+            house.buildingYear = houseUpdate.buildingYear;
+            house.cashPrice = houseUpdate.cashPrice;
+            house.city = houseUpdate.city;
+            house.distToSchool = houseUpdate.distToSchool;
+            house.distToShopping = houseUpdate.distToShopping;
+            house.energyMark = houseUpdate.energyMark;
+            house.floorLevels = houseUpdate.floorLevels;
+            house.garageKvm = houseUpdate.garageKvm;
+            house.groundAreal = houseUpdate.groundAreal;
+            house.kvmPrice = houseUpdate.kvmPrice;
+            house.livingAreal = houseUpdate.livingAreal;
+            house.Login = houseUpdate.Login;
+            house.loginId = houseUpdate.loginId;
+            house.nettoPrice = houseUpdate.nettoPrice;
+            house.Report = houseUpdate.Report;
+            house.rooms = houseUpdate.rooms;
+            house.toilets = houseUpdate.toilets;
+            house.webLink = houseUpdate.webLink;
+            house.zipCode = houseUpdate.zipCode;
+
+            db.SaveChanges();
+        }
+
         //Returns null if no houses found
 		public List<House> getHouseAddress(string address)
 		{      
