@@ -24,6 +24,7 @@ namespace HusInfo.Controller
         public void insertHouse(House h)
         {
             db.House.Add(h);
+            db.SaveChanges();
         }
 
         //Returns null if no houses found
