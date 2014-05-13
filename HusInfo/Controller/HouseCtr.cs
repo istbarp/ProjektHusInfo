@@ -21,6 +21,12 @@ namespace HusInfo.Controller
             return q.FirstOrDefault();
         }
 
+        public void insertHouse(House h)
+        {
+            db.House.Add(h);
+            db.SaveChanges();
+        }
+
         //Returns null if no houses found
 		public List<House> getHouseAddress(string address)
 		{      

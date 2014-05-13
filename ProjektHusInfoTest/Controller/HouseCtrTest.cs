@@ -56,6 +56,32 @@ namespace ProjektHusInfoTest
         }
 
         [TestMethod]
+        public void insertHouse()
+        {
+            HouseCtr hCtr = new HouseCtr();
+
+            House h = new House();
+            h.address = "Testvej 1";
+            h.basementAreal = 1234;
+            h.bruttoprice = 1234;
+            h.buildingYear = 1990;
+            h.cashPrice = 1234567;
+            h.city = "testByen";
+            h.distToSchool = 123;
+            h.distToShopping = 234;
+            h.energyMark = "A";
+            h.floorLevels = 2;
+            h.garageKvm = 20;
+            h.groundAreal = 2500;
+            h.kvmPrice = 9000;
+            h.livingAreal = 10;
+
+            hCtr.insertHouse(h);
+
+            Assert.AreEqual("Testvej 1", h.address);
+        }
+
+        [TestMethod]
         public void getTilstandsRapport()
         {
             List<House> H = hCtr.getHouseAddress("vej");
