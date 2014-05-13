@@ -53,6 +53,8 @@ create table Classification
 	problemPicture varBinary(MAX),
 	[type] nvarchar(MAX),
 	reportId int foreign key references Report(id)
+
+	check ([type] in ('k3' , 'k2', 'k1', 'k0', 'un')),
 )
 
 create table Offer
