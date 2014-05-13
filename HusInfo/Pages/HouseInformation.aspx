@@ -197,7 +197,7 @@
                         </a>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
-							<asp:Label ID="k3" runat="server"></asp:Label>
+							<asp:Label ID="k3" runat="server">N/A</asp:Label>
 						</div>
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                         </a>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-							<asp:Label ID="k2" runat="server"></asp:Label>
+							<asp:Label ID="k2" runat="server">N/A</asp:Label>
 						</div>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                         </a>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <asp:Label ID="k1" runat="server"></asp:Label>
+                            <asp:Label ID="k1" runat="server">N/A</asp:Label>
                         </div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@
                          </a>
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <asp:Label ID="k0" runat="server"></asp:Label>
+                            <asp:Label ID="k0" runat="server">N/A</asp:Label>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                          </a>
                     <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <asp:Label ID="un" runat="server"></asp:Label>
+                            <asp:Label ID="un" runat="server">N/A</asp:Label>
                         </div>
                     </div>
                 </div>
