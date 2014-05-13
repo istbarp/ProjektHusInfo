@@ -70,12 +70,33 @@
             </div>
                 </div>
             <div id="ListDiv">
-                <asp:DropDownList ID="dropdownlistbox" runat="server" >
+				
+                <!--<asp:DropDownList ID="dropdownlistbox" runat="server" >
                  </asp:DropDownList>
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />-->
             </div>
         </div>
     </form>
+	<% if (!string.IsNullOrEmpty(Request.Form["adresseTB"])) { %>
+	<form action="Pages/HouseInformation.aspx" method="post">
+        <div>
+			<div>
+				Søgeresultater:
+			</div>
+			<select name="houseSelect">
+				<% string adr = Request.Form["adresseTB"];
+					HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
+					List<HusInfo.Model.House> ha = hCtr.getHouseAddress(adr);
+
+					foreach (var item in ha) {
+					%>
+				<option value="<%= item.id %>"><%= item.address %></option>
+				<% } %>
+			</select>
+			<button type="submit">Vælg</button>
+		</div>
+	</form>
+	<% } %>
 </body>
 
 </html>

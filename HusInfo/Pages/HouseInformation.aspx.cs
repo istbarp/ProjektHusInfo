@@ -17,7 +17,9 @@ namespace HusInfo.Pages
         {
             //Int32 houseId = (int)Session["HouseId"];
 
-            House h = hCtr.GetHouse(4);
+			int id = int.Parse(Request.Form["houseSelect"]);
+
+            House h = hCtr.GetHouse(id);
 
             CashPriceTB.Text = h.cashPrice.ToString();
             KvmPriceTB.Text = h.kvmPrice.ToString();

@@ -127,8 +127,10 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    <%HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
-                        HusInfo.Model.House h = hCtr.GetHouse(4);
+                    <%
+						int id = int.Parse(Request.Form["houseSelect"]); 
+						HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
+                        HusInfo.Model.House h = hCtr.GetHouse(id);
                         int i = 0;
                         foreach (var item in h.HousePic)
                        {
