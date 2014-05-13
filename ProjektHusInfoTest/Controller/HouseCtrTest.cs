@@ -78,7 +78,7 @@ namespace ProjektHusInfoTest
 
             hCtr.insertHouse(h);
 
-            Assert.AreEqual("Testvej 1", h.address);
+            Assert.AreEqual(hCtr.getHouseAddress("Testvej")[0].address, h.address);
         }
 
         [TestMethod]
