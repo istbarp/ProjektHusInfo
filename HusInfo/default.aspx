@@ -23,6 +23,7 @@
             margin: auto;
             width: 100%;
             background-color: #FF7400;
+            height: 144px;
         }
         
         #holder
@@ -71,6 +72,7 @@
             <div id="ListDiv">
                 <asp:DropDownList ID="dropdownlistbox" runat="server" >
                  </asp:DropDownList>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             </div>
         </div>
     </form>

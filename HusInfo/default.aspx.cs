@@ -12,6 +12,7 @@ namespace HusInfo
 {
     public partial class _default : System.Web.UI.Page
     {
+        List<int> idList = new List<int>();
         HouseCtr hCtr = new HouseCtr();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,6 +31,7 @@ namespace HusInfo
             foreach (House h in ha)
             {
                 haddress.Add(h.address + ", " + h.zipCode.ToString() + " " + h.city);
+                idList.Add(h.id);
             }
             dropdownlistbox.DataSource = haddress;
             dropdownlistbox.DataBind();
@@ -38,7 +40,13 @@ namespace HusInfo
 
         protected void lv_SelectedIndexChanged(object sender, EventArgs e)
         {
+            postnrTB.Text = idList[dropdownlistbox.SelectedIndex].ToString();
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //postnrTB.Text = idList[dropdownlistbox.SelectedIndex].ToString();
+            //postnrTB.Text = dropdownlistbox.SelectedIndex.ToString();
         }
     }
 }
