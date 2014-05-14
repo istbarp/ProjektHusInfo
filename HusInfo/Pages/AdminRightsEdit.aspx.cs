@@ -15,19 +15,54 @@ namespace HusInfo.Pages
         HouseCtr hC = new HouseCtr();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //List<House> ha = hC.GetAllHouses();
+            //List<string> haddress = new List<string>(); 
+            //foreach (House h in ha)
+            //{
+            //    haddress.Add(h.address);
+            //}
+            //DropDownListEdit.DataSource = haddress;
+            //DropDownListEdit.DataBind();
+
             List<House> ha = hC.GetAllHouses();
-            List<string> haddress = new List<string>(); 
-            foreach (House h in ha)
-            {
-                haddress.Add(h.address);
-            }
-            DropDownListEdit.DataSource = haddress;
+            var datasource = from h in ha
+                             select new
+                             {
+                                 h.id,
+                                 h.address,
+                                 h.zipCode,
+                                 h.bruttoprice,
+                                 h.buildingYear,
+                                 h.basementAreal,
+                                 h.cashPrice,
+                                 h.city,
+                                 h.distToSchool,
+                                 h.distToShopping,
+                                 h.energyMark,
+                                 h.floorLevels,
+                                 h.garageKvm,
+                                 h.groundAreal,
+                                 h.kvmPrice,
+                                 h.livingAreal,
+                                 h.nettoPrice,
+                                 h.rooms,
+                                 h.toilets,
+                                 h.webLink,
+                                 DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
+
+
+  
+                             };
+            DropDownListEdit.DataSource = datasource;
+            DropDownListEdit.DataValueField = "id";
+            DropDownListEdit.DataTextField = "DisplayField";
             DropDownListEdit.DataBind();
         }
 
         protected void ButtonEdit_Click(object sender, EventArgs e)
         {
             House h = new House();
+            h.id = Int32.Parse(DropDownListEdit.SelectedValue);
             h.address = AddressTbe.Text;
             h.basementAreal = double.Parse(BasementArealTbe.Text);
             h.bruttoprice = double.Parse(BruttoPriceTbe.Text);
@@ -54,27 +89,31 @@ namespace HusInfo.Pages
 
         protected void DropDownListEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            House H = hC.getHouseAddress(DropDownListEdit.SelectedItem.Text)[0];
+                int id = int.Parse(DropDownListEdit.SelectedValue);
 
-            AddressTbe.Text = H.address;
-            BasementArealTbe.Text = H.basementAreal.ToString();
-            BruttoPriceTbe.Text = H.bruttoprice.ToString();
-            BuildingYearTbe.Text = H.buildingYear.ToString();
-            CashPriceTbe.Text = H.cashPrice.ToString();
-            CityTbe.Text = H.city;
-            DistToSchoolTbe.Text = H.distToSchool.ToString();
-            DistToShppingTbe.Text = H.distToSchool.ToString();
-            EnergyMarkTbe.Text = H.energyMark;
-            FloorLevelsTbe.Text = H.floorLevels.ToString();
-            GarageArealTbe.Text = H.garageKvm.ToString();
-            GroundArealTbe.Text = H.groundAreal.ToString();
-            KvmPriceTbe.Text = H.kvmPrice.ToString();
-            LivingArealTbe.Text = H.livingAreal.ToString();
-            NettoPriceTbe.Text = H.nettoPrice.ToString();
-            RoomsTbe.Text = H.rooms.ToString();
-            ToiletsTbe.Text = H.toilets.ToString();
-            WebLinkTbe.Text = H.webLink;
-            ZipcodeTbe.Text = H.zipCode.ToString();
+                var H = hC.GetHouse(id);
+
+
+                AddressTbe.Text = H.address.ToString();
+                BasementArealTbe.Text = H.basementAreal.ToString();
+                BruttoPriceTbe.Text = H.bruttoprice.ToString();
+                BuildingYearTbe.Text = H.buildingYear.ToString();
+                CashPriceTbe.Text = H.cashPrice.ToString();
+                CityTbe.Text = H.city;
+                DistToSchoolTbe.Text = H.distToSchool.ToString();
+                DistToShppingTbe.Text = H.distToSchool.ToString();
+                EnergyMarkTbe.Text = H.energyMark;
+                FloorLevelsTbe.Text = H.floorLevels.ToString();
+                GarageArealTbe.Text = H.garageKvm.ToString();
+                GroundArealTbe.Text = H.groundAreal.ToString();
+                KvmPriceTbe.Text = H.kvmPrice.ToString();
+                LivingArealTbe.Text = H.livingAreal.ToString();
+                NettoPriceTbe.Text = H.nettoPrice.ToString();
+                RoomsTbe.Text = H.rooms.ToString();
+                ToiletsTbe.Text = H.toilets.ToString();
+                WebLinkTbe.Text = H.webLink;
+                ZipcodeTbe.Text = H.zipCode.ToString();
+
         }
     }
 }
