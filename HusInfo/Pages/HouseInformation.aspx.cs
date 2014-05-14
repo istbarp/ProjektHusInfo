@@ -21,7 +21,7 @@ namespace HusInfo.Pages
 
             House h = hCtr.GetHouse(id);
 
-			addressLbl.Text = h.address;
+			addressLbl.Text = h.address + ", " + h.zipCode.ToString() + " " + h.city;
             CashPriceTB.Text = h.cashPrice.ToString();
             KvmPriceTB.Text = h.kvmPrice.ToString();
             BruttoNettoTB.Text = h.bruttoprice.ToString() + " / " + h.nettoPrice.ToString();

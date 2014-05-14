@@ -90,7 +90,7 @@
 
 					foreach (var item in ha) {
 					%>
-				<option value="<%= item.id %>"><%= item.address %></option>
+				<option value="<%= item.id %>"><%= item.address + ", " + item.zipCode.ToString() + " " + item.city %></option>
 				<% } %>
 			</select>
 			<button type="submit">Vælg</button>

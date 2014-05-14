@@ -22,7 +22,7 @@ namespace HusInfo
 
         public void getData(Object sender, EventArgs e)
         {
-            
+
             //int zip = Int32.Parse(postnrTB.Text);
             string adress = adresseTB.Text;
 
