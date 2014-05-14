@@ -60,7 +60,7 @@
             <div id="holder">
             <div id="adresseDiv">
                 
-            <asp:TextBox ID="adresseTB" runat="server" Width="100%" placeholder="Indtast Adresse idiot"></asp:TextBox>
+            <asp:TextBox ID="adresseTB" runat="server" Width="100%" placeholder="Indtast Adresse"></asp:TextBox>
                 </div>
             <div id="postnrDiv">
                 <asp:TextBox ID="postnrTB" runat="server" Width="100%" placeholder="Indtast Post Nummer"></asp:TextBox>
