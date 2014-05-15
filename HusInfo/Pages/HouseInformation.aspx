@@ -298,82 +298,39 @@
 
             <!--Her er der collapsables -->
             <div class="panel-group" id="accordion">
+                <%string[] typesOfK = { "k3", "k2", "k1", "k0", "un" };
+                  int counter = 1;
+                  foreach (string type in typesOfK)
+                  {
+                      %>
                 <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#<%=counter %>">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <b>+ K3</b>
+                            <b>+ <%=type.ToUpper() %></b>
                             
                         </h4>
                     </div>
                         </a>
-                    <div id="collapseOne" class="panel-collapse collapse">
+                    <div id="<%=counter %>" class="panel-collapse collapse">
                         <div class="panel-body">
-							<asp:Label ID="k3" runat="server">N/A</asp:Label>
+                            <%HusInfo.Model.Report r = h.Report.FirstOrDefault();
+                              var q = from c in r.Classification
+                                      where c.type.Equals(type)
+                                      select c;
+
+                              foreach (HusInfo.Model.Classification c in q)
+                              {%>
+                                  <label><%=c.problem %></label> <br />
+                                  <img src="http://www.pro-skadeservice.dk/wp-content/uploads/vandskade2-300x225.jpg" alt="vandskader"/>"
+                            <%  
+                            }
+                              %>
 						</div>
                     </div>
-                </div>
-                <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <b>+ K2</b>
-                            
-                        </h4>
-                    </div>
-                        </a>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-							<asp:Label ID="k2" runat="server">N/A</asp:Label>
-						</div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <b>+ K1</b>
-                            
-                        </h4>
-                            
-                    </div>
-                        </a>
-                    <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <asp:Label ID="k1" runat="server">N/A</asp:Label>
-                        </div>
-                    </div>
-                </div>
-                 <div class="panel panel-default">
-                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <b>+ K0</b>
-                            
-                        </h4>
-                    </div>
-                         </a>
-                    <div id="collapseFour" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <asp:Label ID="k0" runat="server">N/A</asp:Label>
-                        </div>
-                    </div>
-                </div>
-                 <div class="panel panel-default">
-                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <b>+ UN</b>
-                            
-                        </h4>
-                    </div>
-                         </a>
-                    <div id="collapseFive" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <asp:Label ID="un" runat="server">N/A</asp:Label>
-                        </div>
-                    </div>
-                </div>
+                </div><% counter++;
+                  } %>
+                
             </div>
 
             <!--Knapper i footeren-->

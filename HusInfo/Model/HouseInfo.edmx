@@ -59,6 +59,9 @@
           <Property Name="phoneNumber" Type="int" />
           <Property Name="username" Type="nvarchar(max)" />
           <Property Name="personType" Type="nvarchar(max)" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="lastname" Type="nvarchar(max)" />
+          <Property Name="cvrNumber" Type="int" />
         </EntityType>
         <EntityType Name="Offer">
           <Key>
@@ -238,6 +241,9 @@
           <Property Name="personType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="House" Relationship="Self.FK__House__loginId__74794A92" FromRole="Login" ToRole="House" />
           <NavigationProperty Name="Offer" Relationship="Self.FK__Offer__loginId__02C769E9" FromRole="Login" ToRole="Offer" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cvrNumber" Type="Int32" />
         </EntityType>
         <EntityType Name="Offer">
           <Key>
@@ -420,6 +426,9 @@
           <EntitySetMapping Name="Login">
             <EntityTypeMapping TypeName="Model.Login">
               <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="cvrNumber" ColumnName="cvrNumber" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="company" ColumnName="company" />
                 <ScalarProperty Name="password" ColumnName="password" />

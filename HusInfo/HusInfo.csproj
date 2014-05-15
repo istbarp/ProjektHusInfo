@@ -80,6 +80,7 @@
     <Content Include="Images\Ydunsvej7_7.png" />
     <Content Include="Images\Ydunsvej7_8.png" />
     <Content Include="Images\Ydunsvej7_9.png" />
+    <Content Include="Pages\AddUser.aspx" />
     <Content Include="Pages\AdminRightsEdit.aspx" />
     <Content Include="Pages\AdminRightsCreate.aspx" />
     <Content Include="Pages\HouseInformation.aspx" />
@@ -127,6 +128,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\PersonCtr.cs" />
     <Compile Include="Model\Classification.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
     </Compile>
@@ -164,6 +166,13 @@
     </Compile>
     <Compile Include="Model\Offer.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminRightsEdit.aspx.cs">
       <DependentUpon>AdminRightsEdit.aspx</DependentUpon>

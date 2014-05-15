@@ -155,3 +155,9 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 packages/EntityFramework.6.1.0/tools/EntityFramework.PowerShell.Utility.dll
+packages/EntityFramework.6.1.0/lib/net40/EntityFramework.SqlServer.dll
+packages/EntityFramework.6.1.0/lib/net45/EntityFramework.SqlServer.dll
+packages/EntityFramework.6.1.0/lib/net45/EntityFramework.dll
+packages/EntityFramework.6.1.0/tools/EntityFramework.PowerShell.dll
+packages/EntityFramework.6.1.0/tools/migrate.exe
+packages/EntityFramework.6.1.0/lib/net40/EntityFramework.dll

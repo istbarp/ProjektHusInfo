@@ -39,31 +39,8 @@ namespace HusInfo.Pages
             DistToShoppingTB.Text = h.distToShopping.ToString();
             EnergyMarkTB.Text = h.energyMark;
 
-			Report r = h.Report.FirstOrDefault();
-			if (r != null)
-			{
-				foreach (var c in r.Classification)
-				{
-					switch (c.type)
-					{
-						case "k0":
-							k0.Text = c.problem;
-							break;
-						case "k1":
-							k1.Text = c.problem;
-							break;
-						case "k2":
-							k2.Text = c.problem;
-							break;
-						case "k3":
-							k3.Text = c.problem;
-							break;
-						case "un":
-							un.Text = c.problem;
-							break;
-					}
-				}
-			}
+			
+			
         }
     }
 }
