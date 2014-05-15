@@ -35,11 +35,12 @@ namespace HusInfo.Pages
 
             person.company = ELabelCompany.Text;
             person.password = ELabelPassword.Text;
-            person.Name = ELabelName.Text;
+            person.name = ELabelName.Text;
+            person.lastname = ELabelLastname.Text;
             person.username = ELabelUserName.Text;
             person.phoneNumber = Convert.ToInt32(ELabelPhone.Text);
             person.personType = DropDownListType.Text;
-            person.CVRNumber = Convert.ToInt32(ELabelCVR.Text);
+            person.cvrNumber = Convert.ToInt32(ELabelCVR.Text);
 
             pCtr.addUser(person);           
         }
