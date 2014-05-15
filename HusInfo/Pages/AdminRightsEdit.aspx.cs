@@ -42,6 +42,26 @@ namespace HusInfo.Pages
                 DropDownListEdit.DataTextField = "DisplayField";
                 DropDownListEdit.DataBind();
             }
+
+            if (!Page.IsPostBack)
+            {
+                List<House> ha = hC.GetAllHouses();
+                var datasource = from h in ha
+                                 select new
+                                 {
+                                     h.id,
+                                     h.address,
+                                     h.zipCode,
+                                     DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
+
+
+
+                                 };
+                DropDownListDelete.DataSource = datasource;
+                DropDownListDelete.DataValueField = "id";
+                DropDownListDelete.DataTextField = "DisplayField";
+                DropDownListDelete.DataBind();
+            }
         }
 
         protected void ButtonEdit_Click(object sender, EventArgs e)
