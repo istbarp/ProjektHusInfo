@@ -176,6 +176,9 @@
         <asp:Button ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
         </div>
          </div>
+        <div id="DivDeleteHouse">
+
+        </div>
     </form>
 </body>
 </html>
