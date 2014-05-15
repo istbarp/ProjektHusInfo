@@ -38,9 +38,9 @@ namespace HusInfo.Pages
             person.name = ELabelName.Text;
             person.lastname = ELabelLastname.Text;
             person.username = ELabelUserName.Text;
-            person.phoneNumber = Int32.Parse(ELabelPhone.Text);
+            person.phoneNumber = int.Parse(ELabelPhone.Text);
             person.personType = DropDownListType.Text;
-            person.cvrNumber = Int32.Parse(ELabelCVR.Text);
+            person.cvrNumber = int.Parse(ELabelCVR.Text);
 
             pCtr.addPerson(person);           
         }
