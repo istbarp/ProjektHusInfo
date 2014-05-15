@@ -177,7 +177,12 @@
         </div>
          </div>
         <div id="DivDeleteHouse">
+            <div id="DropdownlistDeleteDiv">
+                <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
+            </div>
+            <div id="ButtonDeleteDiv">
 
+            </div>
         </div>
     </form>
 </body>
