@@ -23,40 +23,25 @@ namespace HusInfo.Pages
             //}
             //DropDownListEdit.DataSource = haddress;
             //DropDownListEdit.DataBind();
-
-            List<House> ha = hC.GetAllHouses();
-            var datasource = from h in ha
-                             select new
-                             {
-                                 h.id,
-                                 h.address,
-                                 h.zipCode,
-                                 h.bruttoprice,
-                                 h.buildingYear,
-                                 h.basementAreal,
-                                 h.cashPrice,
-                                 h.city,
-                                 h.distToSchool,
-                                 h.distToShopping,
-                                 h.energyMark,
-                                 h.floorLevels,
-                                 h.garageKvm,
-                                 h.groundAreal,
-                                 h.kvmPrice,
-                                 h.livingAreal,
-                                 h.nettoPrice,
-                                 h.rooms,
-                                 h.toilets,
-                                 h.webLink,
-                                 DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
+            if (!Page.IsPostBack)
+            {
+                List<House> ha = hC.GetAllHouses();
+                var datasource = from h in ha
+                                 select new
+                                 {
+                                     h.id,
+                                     h.address,
+                                     h.zipCode,
+                                     DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
 
 
-  
-                             };
-            DropDownListEdit.DataSource = datasource;
-            DropDownListEdit.DataValueField = "id";
-            DropDownListEdit.DataTextField = "DisplayField";
-            DropDownListEdit.DataBind();
+
+                                 };
+                DropDownListEdit.DataSource = datasource;
+                DropDownListEdit.DataValueField = "id";
+                DropDownListEdit.DataTextField = "DisplayField";
+                DropDownListEdit.DataBind();
+            }
         }
 
         protected void ButtonEdit_Click(object sender, EventArgs e)
@@ -84,15 +69,16 @@ namespace HusInfo.Pages
             h.zipCode = Int32.Parse(ZipcodeTbe.Text);
 
             hC.editHouse(h);
+            Response.Redirect(Request.RawUrl);
 
         }
 
-        protected void DropDownListEdit_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ButtonGetHouse_Click(object sender, EventArgs e)
         {
+            
                 int id = int.Parse(DropDownListEdit.SelectedValue);
 
                 var H = hC.GetHouse(id);
-
 
                 AddressTbe.Text = H.address.ToString();
                 BasementArealTbe.Text = H.basementAreal.ToString();
@@ -113,7 +99,36 @@ namespace HusInfo.Pages
                 ToiletsTbe.Text = H.toilets.ToString();
                 WebLinkTbe.Text = H.webLink;
                 ZipcodeTbe.Text = H.zipCode.ToString();
+   
+        }
+
+
+        protected void ButtonCreate_Click(object sender, EventArgs e)
+        {
+            House h = new House();
+            h.address = AddressTb.Text;
+            h.basementAreal = Double.Parse(BasementArealTb.Text);
+            h.bruttoprice = double.Parse(BruttoPriceTb.Text);
+            h.buildingYear = Int32.Parse(BuildingYearTb.Text);
+            h.cashPrice = double.Parse(CashPriceTb.Text);
+            h.city = CityTb.Text;
+            h.distToSchool = double.Parse(DistToSchoolTb.Text);
+            h.distToShopping = double.Parse(DistToShppingTb.Text);
+            h.energyMark = EnergyMarkTb.Text;
+            h.floorLevels = Int32.Parse(FloorLevelsTb.Text);
+            h.garageKvm = double.Parse(GarageArealTb.Text);
+            h.groundAreal = double.Parse(GroundArealTb.Text);
+            h.kvmPrice = double.Parse(KvmPriceTb.Text);
+            h.livingAreal = double.Parse(LivingArealTb.Text);
+            h.nettoPrice = double.Parse(NettoPriceTb.Text);
+            h.rooms = Int32.Parse(RoomsTb.Text);
+            h.toilets = Int32.Parse(ToiletsTb.Text);
+            h.webLink = WebLinkTb.Text;
+            h.zipCode = Int32.Parse(ZipcodeTb.Text);
+
+            hC.insertHouse(h);
 
         }
+
     }
 }
