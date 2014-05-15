@@ -157,7 +157,31 @@
             </div>
             <div id="boligPris">
                 <b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px">Villa</b>
-				<b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px; float:right"><asp:Label ID="addressLbl" runat="server"></asp:Label></b>
+				<%--<b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px; float:right"><asp:Label ID="addressLbl" runat="server"></asp:Label></b>--%>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Addresse</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="AddressTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>By</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="CityTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Postnummer</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="ZipCodeTB" runat="server"></asp:label>
+                    </div>
+                </div>
                 <div class="wrapper">
                     <div class="leftBp">
                         <b>Kontantpris</b>
@@ -174,12 +198,100 @@
                         <asp:label ID="KvmPriceTB" runat="server"></asp:label>
                     </div>
                 </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Byggeår</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="BuildingYearTB" runat="server"></asp:label>
+                    </div>
+                </div>
                 <div class="wrapper">
                     <div class="leftBp">
                         <b>Brutto/Netto</b>
                     </div>
                     <div class="rightBp">
                         <asp:label ID="BruttoNettoTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Grund areal</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="GroundArealTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Kælder areal</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="BasementArealTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Garage areal</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="GarageArealTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Stue areal</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="LivingArealTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                  <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Antal rum</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="RoomsTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Toiletter</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="ToiletTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Antal plan</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="FloorLevelsTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Distance til skole</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="DistToSchoolTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Nærmeste varehus</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="DistToShoppingTB" runat="server"></asp:label>
+                    </div>
+                </div>
+                 <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Energi mærke</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:label ID="EnergyMarkTB" runat="server"></asp:label>
                     </div>
                 </div>
             </div>

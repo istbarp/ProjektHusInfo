@@ -22,13 +22,31 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// addressLbl control.
+        /// AddressTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addressLbl;
+        protected global::System.Web.UI.WebControls.Label AddressTB;
+        
+        /// <summary>
+        /// CityTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CityTB;
+        
+        /// <summary>
+        /// ZipCodeTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ZipCodeTB;
         
         /// <summary>
         /// CashPriceTB control.
@@ -49,6 +67,15 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label KvmPriceTB;
         
         /// <summary>
+        /// BuildingYearTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BuildingYearTB;
+        
+        /// <summary>
         /// BruttoNettoTB control.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,96 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label BruttoNettoTB;
+        
+        /// <summary>
+        /// GroundArealTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GroundArealTB;
+        
+        /// <summary>
+        /// BasementArealTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BasementArealTB;
+        
+        /// <summary>
+        /// GarageArealTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label GarageArealTB;
+        
+        /// <summary>
+        /// LivingArealTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LivingArealTB;
+        
+        /// <summary>
+        /// RoomsTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RoomsTB;
+        
+        /// <summary>
+        /// ToiletTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ToiletTB;
+        
+        /// <summary>
+        /// FloorLevelsTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FloorLevelsTB;
+        
+        /// <summary>
+        /// DistToSchoolTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DistToSchoolTB;
+        
+        /// <summary>
+        /// DistToShoppingTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DistToShoppingTB;
+        
+        /// <summary>
+        /// EnergyMarkTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EnergyMarkTB;
         
         /// <summary>
         /// k3 control.
