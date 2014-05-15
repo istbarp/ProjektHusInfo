@@ -57,11 +57,9 @@
                 text-shadow: 1px 1px 1px black;
                 color: white;
                 font-size: 40px;
-                
             }
 
-            .rightBp span
-            {
+            .rightBp span {
                 text-shadow: 1px 1px 1px black;
                 color: white;
                 font-size: 40px;
@@ -69,38 +67,39 @@
                 font-weight: bold;
             }
 
-            .panel-group
-            {
-                margin-top: 10px;
-            }
+        .panel-group {
+            margin-top: 10px;
+        }
 
-            .panel-group .panel
-            {
+            .panel-group .panel {
                 border-radius: 5px !important;
                 border: solid 2px !important;
             }
 
-            .panel-title b
-            {
-                font-size: 35px;
-                color: black !important;
-            }
+        .panel-title b {
+            font-size: 35px;
+            color: black !important;
+        }
 
-            #gotBackBtn
-            {
-                padding-bottom: 10px;
-            }
-            #goToRealEstate
-            {
-                margin-top: -56px;
-                float: right;
-                padding-bottom: 10px;
-            }
 
-            .btn-default
-            {
-                font-size: 30px;
-            }
+        #footerWrap
+        {
+            width: 800px;
+            min-width: 800px;
+            height: 100px;
+            min-height: 100px;
+            overflow: hidden;
+        }
+
+        #goBackBtn {
+            float:left;
+        }
+
+        #goToRealEstate {
+           float: right;
+
+        }
+
 
     </style>
 </head>
@@ -127,24 +126,25 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    <%
-						int id = int.Parse(Request.Form["houseSelect"]); 
-						HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
-                        HusInfo.Model.House h = hCtr.GetHouse(id);
-                        int i = 0;
-                        foreach (var item in h.HousePic)
-                       {
-                            %>
-                           
-                     
+                    <% 
+                           int id = int.Parse(Request.Form["houseSelect"]);
+                           HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
+                           HusInfo.Model.House h = hCtr.GetHouse(id);
+                           int i = 0;
+                           foreach (var item in h.HousePic)
+                           {
+                    %>
+
+
                     <div class="<% if (i == 0) Response.Write("item active"); else Response.Write("item"); %>">
                         <img src="<% Response.Write(item.pictureFilename); %>" alt="..." />
                         <div class="carousel-caption">
                             Ydunsvej 7, 9800 Hjørring
                         </div>
                     </div>
- <% i++;
-                       } %>
+                    <% i++;
+                           }
+                        %>
                 </div>
 
                 <!-- Controls -->
@@ -157,13 +157,13 @@
             </div>
             <div id="boligPris">
                 <b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px">Villa</b>
-				<%--<b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px; float:right"><asp:Label ID="addressLbl" runat="server"></asp:Label></b>--%>
+                <%--<b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px; float:right"><asp:Label ID="addressLbl" runat="server"></asp:Label></b>--%>
                 <div class="wrapper">
                     <div class="leftBp">
                         <b>Addresse</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="AddressTB" runat="server"></asp:label>
+                        <asp:Label ID="AddressTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -171,7 +171,7 @@
                         <b>By</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="CityTB" runat="server"></asp:label>
+                        <asp:Label ID="CityTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -179,7 +179,7 @@
                         <b>Postnummer</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="ZipCodeTB" runat="server"></asp:label>
+                        <asp:Label ID="ZipCodeTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -187,7 +187,7 @@
                         <b>Kontantpris</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="CashPriceTB" runat="server"></asp:label>
+                        <asp:Label ID="CashPriceTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -195,15 +195,15 @@
                         <b>Kvm. pris</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="KvmPriceTB" runat="server"></asp:label>
+                        <asp:Label ID="KvmPriceTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Byggeår</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="BuildingYearTB" runat="server"></asp:label>
+                        <asp:Label ID="BuildingYearTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -211,7 +211,7 @@
                         <b>Brutto/Netto</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="BruttoNettoTB" runat="server"></asp:label>
+                        <asp:Label ID="BruttoNettoTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -219,7 +219,7 @@
                         <b>Grund areal</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="GroundArealTB" runat="server"></asp:label>
+                        <asp:Label ID="GroundArealTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -227,15 +227,15 @@
                         <b>Kælder areal</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="BasementArealTB" runat="server"></asp:label>
+                        <asp:Label ID="BasementArealTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Garage areal</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="GarageArealTB" runat="server"></asp:label>
+                        <asp:Label ID="GarageArealTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -243,55 +243,55 @@
                         <b>Stue areal</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="LivingArealTB" runat="server"></asp:label>
+                        <asp:Label ID="LivingArealTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                  <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Antal rum</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="RoomsTB" runat="server"></asp:label>
+                        <asp:Label ID="RoomsTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Toiletter</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="ToiletTB" runat="server"></asp:label>
+                        <asp:Label ID="ToiletTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Antal plan</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="FloorLevelsTB" runat="server"></asp:label>
+                        <asp:Label ID="FloorLevelsTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Distance til skole</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="DistToSchoolTB" runat="server"></asp:label>
+                        <asp:Label ID="DistToSchoolTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Nærmeste varehus</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="DistToShoppingTB" runat="server"></asp:label>
+                        <asp:Label ID="DistToShoppingTB" runat="server"></asp:Label>
                     </div>
                 </div>
-                 <div class="wrapper">
+                <div class="wrapper">
                     <div class="leftBp">
                         <b>Energi mærke</b>
                     </div>
                     <div class="rightBp">
-                        <asp:label ID="EnergyMarkTB" runat="server"></asp:label>
+                        <asp:Label ID="EnergyMarkTB" runat="server"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -300,18 +300,19 @@
             <div class="panel-group" id="accordion">
                 <%string[] typesOfK = { "k3", "k2", "k1", "k0", "un" };
                   int counter = 1;
+                  string modalCount = "myModal" + counter.ToString();
                   foreach (string type in typesOfK)
                   {
-                      %>
+                %>
                 <div class="panel panel-default">
                     <a data-toggle="collapse" data-parent="#accordion" href="#<%=counter %>">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <b>+ <%=type.ToUpper() %></b>
-                            
-                        </h4>
-                    </div>
-                        </a>
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <b>+ <%=type.ToUpper() %></b>
+
+                            </h4>
+                        </div>
+                    </a>
                     <div id="<%=counter %>" class="panel-collapse collapse">
                         <div class="panel-body">
                             <%HusInfo.Model.Report r = h.Report.FirstOrDefault();
@@ -321,27 +322,51 @@
 
                               foreach (HusInfo.Model.Classification c in q)
                               {%>
-                                  <label><%=c.problem %></label> <br />
-                                  <img src="http://www.pro-skadeservice.dk/wp-content/uploads/vandskade2-300x225.jpg" height="100" alt="vandskader"/>
-                            <button href="#">Giv tilbud</button>
-                            <br /><br />
+                            <label><%=c.problem %></label>
+                            <br />
+                            <img src="http://www.pro-skadeservice.dk/wp-content/uploads/vandskade2-300x225.jpg" height="200" alt="vandskader" />
+                            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#<%=modalCount %>">Giv tilbud</button>
+
+                            <!-- Tilbuds popup her -->
+                            <div class="modal fade" id="<%=modalCount %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Dit tilbud</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
+                                            <button type="button" class="btn btn-primary">Færdig!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
                             <%  
-                            }
-                              %>
-						</div>
+                              }
+                            %>
+                        </div>
                     </div>
-                </div><% counter++;
+                </div>
+                <% counter++;
+                   modalCount = modalCount + counter.ToString();
                   } %>
-                
             </div>
 
             <!--Knapper i footeren-->
+            <div id="footerWrap">
             <div id="goBackBtn">
-            <a href="/default.aspx" class="btn btn-default">Tilbage</a>
-                </div>
-            <div id="goToRealEstate">
-                <a href="<% Response.Write(h.webLink); %>" class="btn btn-default" target="_blank">Gå til mægler</a>
+                <a href="/default.aspx" class="btn btn-default"><p style="font-size: 30px;">Tilbage</p></a>
             </div>
+            <div id="goToRealEstate">
+                <a href="<% Response.Write(h.webLink); %>" class="btn btn-default" target="_blank"><p style="font-size: 30px;">Gå til mægler</p></a>
+            </div>
+                </div>
         </div>
     </form>
 </body>
