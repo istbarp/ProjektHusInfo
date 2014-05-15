@@ -158,6 +158,31 @@
             <div id="boligPris">
                 <b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px">Villa</b>
                 <%--<b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px; float:right"><asp:Label ID="addressLbl" runat="server"></asp:Label></b>--%>
+                
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Kontantpris</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:Label ID="CashPriceTB" runat="server"></asp:Label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Kvm. pris</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:Label ID="KvmPriceTB" runat="server"></asp:Label>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="leftBp">
+                        <b>Brutto/Netto</b>
+                    </div>
+                    <div class="rightBp">
+                        <asp:Label ID="BruttoNettoTB" runat="server"></asp:Label>
+                    </div>
+                </div>
                 <div class="wrapper">
                     <div class="leftBp">
                         <b>Addresse</b>
@@ -184,34 +209,10 @@
                 </div>
                 <div class="wrapper">
                     <div class="leftBp">
-                        <b>Kontantpris</b>
-                    </div>
-                    <div class="rightBp">
-                        <asp:Label ID="CashPriceTB" runat="server"></asp:Label>
-                    </div>
-                </div>
-                <div class="wrapper">
-                    <div class="leftBp">
-                        <b>Kvm. pris</b>
-                    </div>
-                    <div class="rightBp">
-                        <asp:Label ID="KvmPriceTB" runat="server"></asp:Label>
-                    </div>
-                </div>
-                <div class="wrapper">
-                    <div class="leftBp">
                         <b>Byggeår</b>
                     </div>
                     <div class="rightBp">
                         <asp:Label ID="BuildingYearTB" runat="server"></asp:Label>
-                    </div>
-                </div>
-                <div class="wrapper">
-                    <div class="leftBp">
-                        <b>Brutto/Netto</b>
-                    </div>
-                    <div class="rightBp">
-                        <asp:Label ID="BruttoNettoTB" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -337,7 +338,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div style="text-align: center">
-                                            <asp:TextBox ID="OfferPrice" runat="server" placeholder="Indtast pris"></asp:TextBox><br /><br />
+                                            <asp:TextBox ID="OfferPrice" runat="server" placeholder="Indtast pris" width="200px"></asp:TextBox><br /><br />
                                             <asp:TextBox ID="OfferComment" runat="server" placeholder="Indtast kommentar" textmode="MultiLine" style="resize:none; width: 200px; height: 200px;"></asp:TextBox>
                                         </div>
                                             </div>

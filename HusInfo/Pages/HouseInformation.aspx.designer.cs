@@ -22,6 +22,33 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// CashPriceTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CashPriceTB;
+        
+        /// <summary>
+        /// KvmPriceTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label KvmPriceTB;
+        
+        /// <summary>
+        /// BruttoNettoTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BruttoNettoTB;
+        
+        /// <summary>
         /// AddressTB control.
         /// </summary>
         /// <remarks>
@@ -49,24 +76,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ZipCodeTB;
         
         /// <summary>
-        /// CashPriceTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CashPriceTB;
-        
-        /// <summary>
-        /// KvmPriceTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label KvmPriceTB;
-        
-        /// <summary>
         /// BuildingYearTB control.
         /// </summary>
         /// <remarks>
@@ -74,15 +83,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label BuildingYearTB;
-        
-        /// <summary>
-        /// BruttoNettoTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label BruttoNettoTB;
         
         /// <summary>
         /// GroundArealTB control.
