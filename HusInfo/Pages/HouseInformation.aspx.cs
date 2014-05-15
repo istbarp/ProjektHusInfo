@@ -21,10 +21,23 @@ namespace HusInfo.Pages
 
             House h = hCtr.GetHouse(id);
 
-			addressLbl.Text = h.address + ", " + h.zipCode.ToString() + " " + h.city;
+            AddressTB.Text = h.address;
+            CityTB.Text = h.city;
+            ZipCodeTB.Text = h.zipCode.ToString();
             CashPriceTB.Text = h.cashPrice.ToString();
             KvmPriceTB.Text = h.kvmPrice.ToString();
+            BuildingYearTB.Text = h.buildingYear.ToString();
             BruttoNettoTB.Text = h.bruttoprice.ToString() + " / " + h.nettoPrice.ToString();
+            GroundArealTB.Text = h.groundAreal.ToString();
+            BasementArealTB.Text = h.basementAreal.ToString();
+            GarageArealTB.Text = h.groundAreal.ToString();
+            LivingArealTB.Text = h.livingAreal.ToString();
+            RoomsTB.Text = h.rooms.ToString();
+            ToiletTB.Text = h.toilets.ToString();
+            FloorLevelsTB.Text = h.floorLevels.ToString();
+            DistToSchoolTB.Text = h.distToSchool.ToString();
+            DistToShoppingTB.Text = h.distToShopping.ToString();
+            EnergyMarkTB.Text = h.energyMark;
 
 			
 			
