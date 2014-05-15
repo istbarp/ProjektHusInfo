@@ -68,6 +68,7 @@
           <Property Name="loginId" Type="int" />
           <Property Name="classificationId" Type="int" />
           <Property Name="price" Type="float" />
+          <Property Name="comment" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
@@ -248,6 +249,7 @@
           <Property Name="price" Type="Double" />
           <NavigationProperty Name="Classification" Relationship="Self.FK__Offer__classific__03BB8E22" FromRole="Offer" ToRole="Classification" />
           <NavigationProperty Name="Login" Relationship="Self.FK__Offer__loginId__02C769E9" FromRole="Offer" ToRole="Login" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
@@ -430,6 +432,7 @@
           <EntitySetMapping Name="Offer">
             <EntityTypeMapping TypeName="Model.Offer">
               <MappingFragment StoreEntitySet="Offer">
+                <ScalarProperty Name="comment" ColumnName="comment" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="loginId" ColumnName="loginId" />
                 <ScalarProperty Name="classificationId" ColumnName="classificationId" />
