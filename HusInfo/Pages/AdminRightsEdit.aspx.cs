@@ -151,5 +151,16 @@ namespace HusInfo.Pages
 
         }
 
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            //House hd = new House();
+
+            //hd = DropDownListDelete.
+
+            //hC.deleteHouse(hd);
+
+            //Response.Redirect(Request.RawUrl);
+        }
+
     }
 }
