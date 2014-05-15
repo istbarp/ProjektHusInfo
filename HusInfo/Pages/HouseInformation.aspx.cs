@@ -26,31 +26,8 @@ namespace HusInfo.Pages
             KvmPriceTB.Text = h.kvmPrice.ToString();
             BruttoNettoTB.Text = h.bruttoprice.ToString() + " / " + h.nettoPrice.ToString();
 
-			Report r = h.Report.FirstOrDefault();
-			if (r != null)
-			{
-				foreach (var c in r.Classification)
-				{
-					switch (c.type)
-					{
-						case "k0":
-							k0.Text = c.problem;
-							break;
-						case "k1":
-							k1.Text = c.problem;
-							break;
-						case "k2":
-							k2.Text = c.problem;
-							break;
-						case "k3":
-							k3.Text = c.problem;
-							break;
-						case "un":
-							un.Text = c.problem;
-							break;
-					}
-				}
-			}
+			
+			
         }
     }
 }
