@@ -59,6 +59,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controller\HouseCtrTest.cs" />
+    <Compile Include="Controller\OfferCtrTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
