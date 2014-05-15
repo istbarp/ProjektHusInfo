@@ -181,7 +181,7 @@
                 <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
             </div>
             <div id="ButtonDeleteDiv">
-
+                <asp:Button ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click"/>
             </div>
         </div>
     </form>
