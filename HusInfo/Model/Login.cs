@@ -26,6 +26,9 @@ namespace HusInfo.Model
         public Nullable<int> phoneNumber { get; set; }
         public string username { get; set; }
         public string personType { get; set; }
+        public string name { get; set; }
+        public string lastname { get; set; }
+        public Nullable<int> cvrNumber { get; set; }
     
         public virtual ICollection<House> House { get; set; }
         public virtual ICollection<Offer> Offer { get; set; }

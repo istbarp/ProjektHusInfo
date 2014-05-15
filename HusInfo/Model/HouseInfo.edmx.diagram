@@ -17,6 +17,7 @@
         <AssociationConnector Association="Model.FK__Offer__loginId__02C769E9" ManuallyRouted="false" />
         <EntityTypeShape EntityType="Model.HousePic" Width="1.5" PointX="5.25" PointY="1.25" />
         <AssociationConnector Association="Model.FK__HousePic__houseI__19AACF41" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
