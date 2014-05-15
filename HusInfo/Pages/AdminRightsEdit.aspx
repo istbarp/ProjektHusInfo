@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="DivEditHouse">
+        <div id="DivEditHouse" title="EditHouse">
         <div id="DivGetHouse">
         </div>
         <div id="dropdownEdit">
@@ -95,84 +95,84 @@
         <asp:Button ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
         </div>
             </div>
-        <div id="DivCreateHouse">
-        <div id="AddressDivCreate" style="float:right">
+        <div id="DivCreateHouse" title="Create House">
+        <div id="AddressDivCreate">
         <asp:Label ID="LabelAddress" runat="server" Text="adresse"></asp:Label>
         <asp:TextBox ID="AddressTb" runat="server"></asp:TextBox>
         </div>
-        <div id="CityDivCreate" style="float:right">
+        <div id="CityDivCreate">
         <asp:Label ID="LabelCity" runat="server" Text="By:"></asp:Label>
         <asp:TextBox ID="CityTb" runat="server"></asp:TextBox>
         </div>
-        <div id="ZipcodeDivCreate" style="float:right">
+        <div id="ZipcodeDivCreate">
         <asp:Label ID="LabelZipcode" runat="server" Text="Post nr:"></asp:Label>
         <asp:TextBox ID="ZipcodeTb" runat="server"></asp:TextBox>
         </div>
-        <div id ="LivingArealDivCreate" style="float:right">
+        <div id ="LivingArealDivCreate">
         <asp:Label ID="LabelLivingAreal" runat="server" Text="Boligareal:"></asp:Label>
         <asp:TextBox ID="LivingArealTb" runat="server"></asp:TextBox>
         </div>
-        <div id="GroundArealDivCreate" style="float:right">
+        <div id="GroundArealDivCreate">
         <asp:Label ID="LabelGroundAreal" runat="server" Text="Grundareal:"></asp:Label>
         <asp:TextBox ID="GroundArealTb" runat="server"></asp:TextBox>
         </div>
-        <div id="BasementArealDivCreate" style="float:right">
+        <div id="BasementArealDivCreate">
         <asp:Label ID="LabelBasementAreal" runat="server" Text="Kælderareal:"></asp:Label>
         <asp:TextBox ID="BasementArealTb" runat="server"></asp:TextBox>
         </div>
-        <div id="GarageArealDivCreate" style="float:right">
+        <div id="GarageArealDivCreate">
         <asp:Label ID="LabelGarageAreal" runat="server" Text="Garageareal:"></asp:Label>
         <asp:TextBox ID="GarageArealTb" runat="server"></asp:TextBox>
         </div>
-        <div id="RoomsDivCreate" style="float:right">
+        <div id="RoomsDivCreate">
         <asp:Label ID="LabelRooms" runat="server" Text="Rum:"></asp:Label>
         <asp:TextBox ID="RoomsTb" runat="server"></asp:TextBox>
         </div>
-        <div id="ToiletsDivCreate" style="float:right">
+        <div id="ToiletsDivCreate">
         <asp:Label ID="LabelToilets" runat="server" Text="Toiletter:"></asp:Label>
         <asp:TextBox ID="ToiletsTb" runat="server"></asp:TextBox>
         </div>
-        <div id="FloorLevelsDivCreate" style="float:right">
+        <div id="FloorLevelsDivCreate">
         <asp:Label ID="LabelFloorLevels" runat="server" Text="Antal plan:"></asp:Label>
         <asp:TextBox ID="FloorLevelsTb" runat="server"></asp:TextBox>
         </div>
-        <div id="BuildingYearDivCreate" style="float:right">
+        <div id="BuildingYearDivCreate">
         <asp:Label ID="LabelBuildingYear" runat="server" Text="Byggeår:"></asp:Label>
         <asp:TextBox ID="BuildingYearTb" runat="server"></asp:TextBox>
         </div>
-        <div id="DistToSchoolDivCreate" style="float:right">
+        <div id="DistToSchoolDivCreate">
         <asp:Label ID="LabelDistToSchool" runat="server" Text="Afstand til skole:"></asp:Label>
         <asp:TextBox ID="DistToSchoolTb" runat="server"></asp:TextBox>
         </div>
-        <div id="DistToShoppingDivCreate" style="float:right">
+        <div id="DistToShoppingDivCreate">
         <asp:Label ID="LabelDistToShopping" runat="server" Text="Afstand til indkøb:"></asp:Label>
         <asp:TextBox ID="DistToShppingTb" runat="server"></asp:TextBox>
         </div>
-        <div id="EnergyMarkDivCreate" style="float:right">
+        <div id="EnergyMarkDivCreate">
         <asp:Label ID="LabelEnergyMark" runat="server" Text="energimærke:"></asp:Label>
         <asp:TextBox ID="EnergyMarkTb" runat="server"></asp:TextBox>
         </div>
-        <div id="KvmPriceDivCreate" style="float:right">
+        <div id="KvmPriceDivCreate">
         <asp:Label ID="LabelKvmPrice" runat="server" Text="Kvm pris:"></asp:Label>
         <asp:TextBox ID="KvmPriceTb" runat="server"></asp:TextBox>
         </div>
-        <div id="BruttoPriceDivCreate" style="float:right">
+        <div id="BruttoPriceDivCreate">
         <asp:Label ID="LabelBruttoPrice" runat="server" Text="Brutto pris"></asp:Label>
         <asp:TextBox ID="BruttoPriceTb" runat="server"></asp:TextBox>
         </div>
-        <div id="NettoPriceDivCreate" style="float:right">
+        <div id="NettoPriceDivCreate">
         <asp:Label ID="LabelNettoPrice" runat="server" Text="Netto pris"></asp:Label>
         <asp:TextBox ID="NettoPriceTb" runat="server"></asp:TextBox>
         </div>
-        <div id="CashPriceDivCreate" style="float:right">
+        <div id="CashPriceDivCreate">
         <asp:Label ID="LabelCashPrice" runat="server" Text="Cash pris"></asp:Label>
         <asp:TextBox ID="CashPriceTb" runat="server"></asp:TextBox>
         </div>
-        <div id="WebLinkDivCreate" style="float:right">
+        <div id="WebLinkDivCreate">
         <asp:Label ID="LabelWebLink" runat="server" Text="Web link"></asp:Label>
         <asp:TextBox ID="WebLinkTb" runat="server"></asp:TextBox>
         </div>
-        <div id="buttonCreateDiv" style="float:right">
+        <div id="buttonCreateDiv">
         <asp:Button ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
         </div>
          </div>

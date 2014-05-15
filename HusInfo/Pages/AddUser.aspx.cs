@@ -22,6 +22,7 @@ namespace HusInfo.Pages
 
             DropDownListType.DataSource = personTyper;
             DropDownListType.DataBind();
+
         }
 
         protected void DropDownListType_SelectedIndexChanged(object sender, EventArgs e)

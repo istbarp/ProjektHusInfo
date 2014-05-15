@@ -127,6 +127,7 @@ namespace HusInfo.Pages
             h.zipCode = Int32.Parse(ZipcodeTb.Text);
 
             hC.insertHouse(h);
+            Response.Redirect(Request.RawUrl);
 
         }
 
