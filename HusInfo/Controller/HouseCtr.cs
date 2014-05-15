@@ -142,5 +142,11 @@ namespace HusInfo.Controller
 
             return classification;                         
         }
+
+        public void deleteHouse(House h)
+        {
+            db.House.Remove(h);
+            db.SaveChanges();
+        }
     }
 }
