@@ -42,7 +42,15 @@ namespace HusInfo.Pages
             person.personType = DropDownListType.Text;
             person.cvrNumber = int.Parse(CVRTbe.Text);
 
-            pCtr.addPerson(person);           
+            pCtr.addPerson(person);
+
+            CompanyTbe.Text = "";
+            PasswordTbe.Text = "";
+            NameTbe.Text = "";
+            LastNameTbe.Text = "";
+            UsernameTbe.Text = "";
+            PhoneTbe.Text = "";
+            CVRTbe.Text = "";
         }
     }
 }
