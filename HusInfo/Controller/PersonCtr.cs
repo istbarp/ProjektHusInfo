@@ -5,7 +5,7 @@ using System.Web;
 using HusInfo.Model;
 
 namespace HusInfo.Controller
-{
+{//hej
     public class PersonCtr
     {
         HouseInfoContext db = new HouseInfoContext();
