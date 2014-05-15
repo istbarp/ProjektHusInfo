@@ -59,6 +59,9 @@
           <Property Name="phoneNumber" Type="int" />
           <Property Name="username" Type="nvarchar(max)" />
           <Property Name="personType" Type="nvarchar(max)" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="lastname" Type="nvarchar(max)" />
+          <Property Name="cvrNumber" Type="int" />
         </EntityType>
         <EntityType Name="Offer">
           <Key>
@@ -68,6 +71,7 @@
           <Property Name="loginId" Type="int" />
           <Property Name="classificationId" Type="int" />
           <Property Name="price" Type="float" />
+          <Property Name="comment" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
@@ -75,6 +79,16 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="houseId" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK__Classific__repor__7E02B4CC">
           <End Role="Report" Type="Self.Report" Multiplicity="0..1" />
@@ -155,6 +169,7 @@
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offer" EntityType="Self.Offer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Classific__repor__7E02B4CC" Association="Self.FK__Classific__repor__7E02B4CC">
             <End Role="Report" EntitySet="Report" />
             <End Role="Classification" EntitySet="Classification" />
@@ -237,6 +252,9 @@
           <Property Name="personType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="House" Relationship="Self.FK__House__loginId__74794A92" FromRole="Login" ToRole="House" />
           <NavigationProperty Name="Offer" Relationship="Self.FK__Offer__loginId__02C769E9" FromRole="Login" ToRole="Offer" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cvrNumber" Type="Int32" />
         </EntityType>
         <EntityType Name="Offer">
           <Key>
@@ -248,6 +266,7 @@
           <Property Name="price" Type="Double" />
           <NavigationProperty Name="Classification" Relationship="Self.FK__Offer__classific__03BB8E22" FromRole="Offer" ToRole="Classification" />
           <NavigationProperty Name="Login" Relationship="Self.FK__Offer__loginId__02C769E9" FromRole="Offer" ToRole="Login" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
@@ -349,6 +368,7 @@
             <End Role="House" EntitySet="House" />
             <End Role="HousePic" EntitySet="HousePic" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="HousePic">
           <Key>
@@ -371,6 +391,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -418,6 +448,9 @@
           <EntitySetMapping Name="Login">
             <EntityTypeMapping TypeName="Model.Login">
               <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="cvrNumber" ColumnName="cvrNumber" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="company" ColumnName="company" />
                 <ScalarProperty Name="password" ColumnName="password" />
@@ -430,6 +463,7 @@
           <EntitySetMapping Name="Offer">
             <EntityTypeMapping TypeName="Model.Offer">
               <MappingFragment StoreEntitySet="Offer">
+                <ScalarProperty Name="comment" ColumnName="comment" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="loginId" ColumnName="loginId" />
                 <ScalarProperty Name="classificationId" ColumnName="classificationId" />
@@ -451,6 +485,17 @@
                 <ScalarProperty Name="houseId" ColumnName="houseId" />
                 <ScalarProperty Name="pictureFilename" ColumnName="pictureFilename" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

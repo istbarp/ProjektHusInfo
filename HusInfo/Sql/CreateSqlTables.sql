@@ -62,6 +62,7 @@ create table Offer
 	id int identity primary key,
 	loginId int foreign key references [Login](id),
 	classificationId int foreign key references Classification(id),
+	comment nvarchar(MAX),
 	price float
 )
 
