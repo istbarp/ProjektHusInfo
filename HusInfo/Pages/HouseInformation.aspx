@@ -333,11 +333,14 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel">Dit tilbud</h4>
+                                            <h4 class="modal-title" id="myModalLabel" style="text-align: center">Dit tilbud</h4>
                                         </div>
                                         <div class="modal-body">
-                                            ...
+                                            <div style="text-align: center">
+                                            <asp:TextBox ID="OfferPrice" runat="server" placeholder="Indtast pris"></asp:TextBox><br /><br />
+                                            <asp:TextBox ID="OfferComment" runat="server" placeholder="Indtast kommentar" textmode="MultiLine" style="resize:none; width: 200px; height: 200px;"></asp:TextBox>
                                         </div>
+                                            </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
                                             <button type="button" class="btn btn-primary">Færdig!</button>

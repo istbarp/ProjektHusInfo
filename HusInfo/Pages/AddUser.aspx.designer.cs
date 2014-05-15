@@ -49,13 +49,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelName;
         
         /// <summary>
-        /// AddressTbe control.
+        /// NameTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddressTbe;
+        protected global::System.Web.UI.WebControls.TextBox NameTbe;
         
         /// <summary>
         /// ELabelLastname control.
@@ -67,13 +67,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelLastname;
         
         /// <summary>
-        /// TextBox1 control.
+        /// LastNameTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox LastNameTbe;
         
         /// <summary>
         /// ELabelUserName control.
@@ -85,13 +85,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelUserName;
         
         /// <summary>
-        /// TextBox2 control.
+        /// UsernameTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox UsernameTbe;
         
         /// <summary>
         /// ELabelPassword control.
@@ -103,13 +103,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelPassword;
         
         /// <summary>
-        /// TextBox3 control.
+        /// PasswordTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox PasswordTbe;
         
         /// <summary>
         /// ELabelCompany control.
@@ -121,13 +121,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelCompany;
         
         /// <summary>
-        /// TextBox4 control.
+        /// CompanyTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox CompanyTbe;
         
         /// <summary>
         /// ELabelPhone control.
@@ -139,13 +139,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelPhone;
         
         /// <summary>
-        /// TextBox5 control.
+        /// PhoneTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox PhoneTbe;
         
         /// <summary>
         /// ELabelCVR control.
@@ -157,13 +157,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label ELabelCVR;
         
         /// <summary>
-        /// TextBox6 control.
+        /// CVRTbe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox CVRTbe;
         
         /// <summary>
         /// ButtonAddUser control.

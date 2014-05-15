@@ -34,16 +34,24 @@ namespace HusInfo.Pages
         {
             HusInfo.Model.Login person = new HusInfo.Model.Login();
 
-            person.company = ELabelCompany.Text;
-            person.password = ELabelPassword.Text;
-            person.name = ELabelName.Text;
-            person.lastname = ELabelLastname.Text;
-            person.username = ELabelUserName.Text;
-            person.phoneNumber = Int32.Parse(ELabelPhone.Text);
+            person.company = CompanyTbe.Text;
+            person.password = PasswordTbe.Text;
+            person.name = NameTbe.Text;
+            person.lastname = LastNameTbe.Text;
+            person.username = UsernameTbe.Text;
+            person.phoneNumber = int.Parse(PhoneTbe.Text);
             person.personType = DropDownListType.Text;
-            person.cvrNumber = Int32.Parse(ELabelCVR.Text);
+            person.cvrNumber = int.Parse(CVRTbe.Text);
 
-            pCtr.addPerson(person);           
+            pCtr.addPerson(person);
+
+            CompanyTbe.Text = "";
+            PasswordTbe.Text = "";
+            NameTbe.Text = "";
+            LastNameTbe.Text = "";
+            UsernameTbe.Text = "";
+            PhoneTbe.Text = "";
+            CVRTbe.Text = "";
         }
     }
 }
