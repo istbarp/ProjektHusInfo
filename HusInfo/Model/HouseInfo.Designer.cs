@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Patrick\Documents\GitHub\ProjektHusInfo\HusInfo\Model\HouseInfo.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Hoejer\Desktop\SCRUM Projekt\HusInfo V1\HusInfo\Model\HouseInfo.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

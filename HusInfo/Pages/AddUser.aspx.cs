@@ -42,7 +42,7 @@ namespace HusInfo.Pages
             person.personType = DropDownListType.Text;
             person.cvrNumber = Convert.ToInt32(ELabelCVR.Text);
 
-            pCtr.addUser(person);           
+            pCtr.addPerson(person);           
         }
     }
 }

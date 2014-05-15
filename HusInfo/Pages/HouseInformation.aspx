@@ -210,6 +210,7 @@
                               foreach (HusInfo.Model.Classification c in q)
                               {%>
                                   <label><%=c.problem %></label> <br />
+                                  <img src="http://www.pro-skadeservice.dk/wp-content/uploads/vandskade2-300x225.jpg" alt="vandskader"/>"
                             <%  
                             }
                               %>

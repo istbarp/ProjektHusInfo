@@ -31,6 +31,5 @@ namespace HusInfo.Model
         public virtual DbSet<Offer> Offer { get; set; }
         public virtual DbSet<Report> Report { get; set; }
         public virtual DbSet<HousePic> HousePic { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
