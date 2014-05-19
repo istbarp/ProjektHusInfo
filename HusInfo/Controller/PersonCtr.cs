@@ -17,10 +17,11 @@ namespace HusInfo.Controller
             //    where p.username.Equals(username) && p.password.Equals(password)
             //    select p;
 
-            var pers = db.Login.Single(p => p.username.Equals(username) && p.password.Equals(password));
+            var pers = db.Login.SingleOrDefault(p => p.username.Equals(username) && p.password.Equals(password));
               
             return pers;
         }
+
 
         public void addPerson(Login s)
         {
