@@ -115,7 +115,6 @@ namespace HusInfo.Pages
             {
                     Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
             }
-            
 
         }
 
