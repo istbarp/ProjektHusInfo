@@ -23,6 +23,8 @@
         <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click"/>
     </div>
 
+        <asp:Label ID="Lebeltest" runat="server" Text="Label"></asp:Label>
+
     </form>
 </body>
 </html>

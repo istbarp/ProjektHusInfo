@@ -83,6 +83,7 @@
     <Content Include="Pages\AddUser.aspx" />
     <Content Include="Pages\AdminRightsEdit.aspx" />
     <Content Include="Pages\HouseInformation.aspx" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css.map" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="Pages\HouseInformation.aspx.designer.cs">
       <DependentUpon>HouseInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Report.cs">
