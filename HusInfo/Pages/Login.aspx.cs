@@ -37,10 +37,11 @@ namespace HusInfo.Pages
 
             if(l != null)
             {  
+                //Session["Login"] = l;
                 Session["Login"] = l;
-                var test = (Model.Login)Session["Login"];
-                Lebeltest.Text = test.name;
-                //Response.Redirect("/default.aspx");
+                //var test = (Model.Login)Session["Login"];
+                //Lebeltest.Text = test.name;
+                Response.Redirect("testHp.aspx");
             }
             else
             {
