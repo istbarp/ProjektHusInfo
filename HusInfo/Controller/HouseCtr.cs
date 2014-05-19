@@ -164,10 +164,10 @@ namespace HusInfo.Controller
             Regex checkZipcode = new Regex("^[0-9]{4}$");
             Regex onlyDigits = new Regex("^[0-9]+$");
             Regex onlyLetters = new Regex(@"^[a-zA-Z]+$");
-            Regex onlyLettersAndNumbers = new Regex(@"^[a-z-Z0-9]+$");
+            Regex onlyLettersAndNumbers = new Regex(@"[a-zæøå 0-9]+");
             Regex onlyWebLink = new Regex(@"^(http|https|ftp|)\://|[a-zA-Z0-9\-\.]+\.[a-zA-Z](:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$");
 
-            if (string.IsNullOrEmpty(h.address) || !onlyLettersAndNumbers.IsMatch(h.address))
+            if (string.IsNullOrEmpty(h.address) || (!onlyLettersAndNumbers.IsMatch(h.address.ToLower())))
                 throw new Exception("Addresen er ikke korrekt indtastet");
 
             if ((string.IsNullOrEmpty(h.energyMark)) || (!onlyLetters.IsMatch(h.energyMark)))

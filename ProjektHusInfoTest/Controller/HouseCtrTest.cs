@@ -73,6 +73,11 @@ namespace ProjektHusInfoTest
             h.groundAreal = 2500;
             h.kvmPrice = 9000;
             h.livingAreal = 10;
+            h.nettoPrice = 432;
+            h.rooms = 23;
+            h.toilets = 10;
+            h.zipCode = 9000;
+            h.webLink = "http://localhost:45294/Pages/AdminRightsEdit.dk";
 
             hCtr.insertHouse(h);
 
@@ -112,12 +117,12 @@ namespace ProjektHusInfoTest
 
         [TestMethod]
         public void deleteHouse()
-        {
+            {
             HouseCtr hCtr = new HouseCtr();
 
             House h = new House();
 
-            h.address = "TestvejDelete";
+            h.address = "Testvej 435";
             h.basementAreal = 1234;
             h.bruttoprice = 1234;
             h.buildingYear = 1990;
@@ -131,6 +136,11 @@ namespace ProjektHusInfoTest
             h.groundAreal = 2500;
             h.kvmPrice = 9000;
             h.livingAreal = 10;
+            h.nettoPrice = 432;
+            h.rooms = 23;
+            h.toilets = 10;
+            h.zipCode = 9000;
+            h.webLink = "http://localhost:45294/Pages/AdminRightsEdit.dk";
 
             hCtr.insertHouse(h);
 
