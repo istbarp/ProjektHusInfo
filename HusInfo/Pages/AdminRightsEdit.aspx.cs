@@ -113,7 +113,14 @@ namespace HusInfo.Pages
 
              catch(Exception ex)
             {
-                    Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
+                    //Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
+                    //Response.Write("<script language='javascript'>alert(\"" + ex.Message.ToString() + "\")</script>");
+
+                    string strm = ex.Message.Replace('\'', ' ');
+                    string str = "<script language='javascript'>";
+                    str += "alert('" + strm + "')";
+                    str += "</script>";
+                    ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str); 
             }
             
 
@@ -181,7 +188,11 @@ namespace HusInfo.Pages
 
             catch(Exception exc)
             {
-                    Response.Write("<script>alert(' " + exc.Message.ToString() + " ')</script>");
+                string strm = exc.Message.Replace('\'', ' ');
+                string str = "<script language='javascript'>";
+                str += "alert('" + strm + "')";
+                str += "</script>";
+                ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str); 
             }
 
 
