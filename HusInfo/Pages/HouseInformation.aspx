@@ -301,12 +301,12 @@
             <div class="panel-group" id="accordion">
                 <%string[] typesOfK = { "k3", "k2", "k1", "k0", "un" };
                   int counter = 1;
-                  string modalCount = "myModal" + counter.ToString();
+                  int modalCount = 0;
                   foreach (string type in typesOfK)
                   {
                 %>
                 <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#<%=counter %>">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#<%=counter %>x">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <b>+ <%=type.ToUpper() %></b>
@@ -314,7 +314,7 @@
                             </h4>
                         </div>
                     </a>
-                    <div id="<%=counter %>" class="panel-collapse collapse">
+                    <div id="<%=counter %>x" class="panel-collapse collapse">
                         <div class="panel-body">
                             <%HusInfo.Model.Report r = h.Report.FirstOrDefault();
                               var q = from c in r.Classification
@@ -329,7 +329,7 @@
                             <button class="btn btn-default" type="button" data-toggle="modal" data-target="#<%=modalCount %>">Giv tilbud</button>
 
                             <!-- Tilbuds popup her -->
-                            <div class="modal fade" id="<%=modalCount %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="<%=modalCount++ %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -338,13 +338,13 @@
                                         </div>
                                         <div class="modal-body">
                                             <div style="text-align: center">
-                                            <asp:TextBox ID="OfferPrice" runat="server" placeholder="Indtast pris" width="200px"></asp:TextBox><br /><br />
-                                            <asp:TextBox ID="OfferComment" runat="server" placeholder="Indtast kommentar" textmode="MultiLine" style="resize:none; width: 200px; height: 200px;"></asp:TextBox>
+                                            <asp:TextBox ID="TxtBoxOfferPrice" runat="server" placeholder="Indtast pris" width="200px"></asp:TextBox><br /><br />
+                                            <asp:TextBox ID="TxtBoxOfferComment" runat="server" placeholder="Indtast kommentar" textmode="MultiLine" style="resize:none; width: 200px; height: 200px;"></asp:TextBox>
                                         </div>
                                             </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
-                                            <button type="button" class="btn btn-primary">Færdig!</button>
+                                            <asp:button OnClick="BtnFinish_Click" type="button" class="btn btn-primary" runat="server" Text="Færdig!" />
                                         </div>
                                     </div>
                                 </div>
@@ -358,7 +358,6 @@
                     </div>
                 </div>
                 <% counter++;
-                   modalCount = modalCount + counter.ToString();
                   } %>
             </div>
 

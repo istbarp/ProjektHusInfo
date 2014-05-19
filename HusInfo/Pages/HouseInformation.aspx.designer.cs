@@ -175,21 +175,21 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Label EnergyMarkTB;
         
         /// <summary>
-        /// OfferPrice control.
+        /// TxtBoxOfferPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox OfferPrice;
+        protected global::System.Web.UI.WebControls.TextBox TxtBoxOfferPrice;
         
         /// <summary>
-        /// OfferComment control.
+        /// TxtBoxOfferComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox OfferComment;
+        protected global::System.Web.UI.WebControls.TextBox TxtBoxOfferComment;
     }
 }
