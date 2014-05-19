@@ -93,7 +93,7 @@ namespace HusInfo.Pages
                 h.cashPrice = double.Parse(CashPriceTbe.Text);
                 h.city = CityTbe.Text;
                 h.distToSchool = double.Parse(DistToSchoolTbe.Text);
-                h.distToShopping = double.Parse(DistToShppingTbe.Text);
+                h.distToShopping = double.Parse(DistToShoppingTbe.Text);
                 h.energyMark = EnergyMarkTbe.Text;
                 h.floorLevels = int.Parse(FloorLevelsTbe.Text);
                 h.garageKvm = double.Parse(GarageArealTbe.Text);
@@ -103,7 +103,7 @@ namespace HusInfo.Pages
                 h.nettoPrice = double.Parse(NettoPriceTbe.Text);
                 h.rooms = int.Parse(RoomsTbe.Text);
                 h.toilets = int.Parse(ToiletsTbe.Text);
-                h.webLink = WebLinkTbe.Text;
+                h.webLink = WeblinkTbe.Text;
                 h.zipCode = int.Parse(ZipcodeTbe.Text);
 
                 hC.editHouse(h);
@@ -113,7 +113,7 @@ namespace HusInfo.Pages
 
              catch(Exception ex)
             {
-                Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
+                    Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
             }
             
 
@@ -133,7 +133,7 @@ namespace HusInfo.Pages
                 CashPriceTbe.Text = H.cashPrice.ToString();
                 CityTbe.Text = H.city;
                 DistToSchoolTbe.Text = H.distToSchool.ToString();
-                DistToShppingTbe.Text = H.distToSchool.ToString();
+                DistToShoppingTbe.Text = H.distToSchool.ToString();
                 EnergyMarkTbe.Text = H.energyMark;
                 FloorLevelsTbe.Text = H.floorLevels.ToString();
                 GarageArealTbe.Text = H.garageKvm.ToString();
@@ -143,7 +143,7 @@ namespace HusInfo.Pages
                 NettoPriceTbe.Text = H.nettoPrice.ToString();
                 RoomsTbe.Text = H.rooms.ToString();
                 ToiletsTbe.Text = H.toilets.ToString();
-                WebLinkTbe.Text = H.webLink;
+                WeblinkTbe.Text = H.webLink;
                 ZipcodeTbe.Text = H.zipCode.ToString();
    
         }
@@ -181,7 +181,7 @@ namespace HusInfo.Pages
 
             catch(Exception exc)
             {
-                Response.Write("<script>alert(' " + exc.Message + " ')</script>");
+                    Response.Write("<script>alert(' " + exc.Message.ToString() + " ')</script>");
             }
 
 

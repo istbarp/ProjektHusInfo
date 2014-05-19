@@ -221,81 +221,157 @@
                                     <asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
                                     <asp:Button ID="ButtonGetHouse" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
                                 </div>
-                                <div id="AddressDiv">
-                                    <asp:Label ID="ELabelAddress" runat="server" Text="adresse"></asp:Label>
-                                    <asp:TextBox ID="AddressTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ELabelAddress" runat="server" Text="Adresse"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="AddressTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="CityDiv">
-                                    <asp:Label ID="ELabelCity" runat="server" Text="By:"></asp:Label>
-                                    <asp:TextBox ID="CityTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ELabelCity" runat="server" Text="By:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="CityTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="ZipcodeDiv">
-                                    <asp:Label ID="ELabelZipcode" runat="server" Text="Post nr:"></asp:Label>
-                                    <asp:TextBox ID="ZipcodeTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ELabelZipcode" runat="server" Text="Post nr:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="ZipcodeTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="LivingArealDiv">
-                                    <asp:Label ID="ELabelLivingAreal" runat="server" Text="Boligareal:"></asp:Label>
-                                    <asp:TextBox ID="LivingArealTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelLivingAreal" runat="server" Text="Boligareal:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="LivingArealTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="GroundArealDiv">
-                                    <asp:Label ID="ELabelGroundAreal" runat="server" Text="Grundareal:"></asp:Label>
-                                    <asp:TextBox ID="GroundArealTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelGroundAreal" runat="server" Text="Grundareal:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="GroundArealTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="BasementArealDiv">
-                                    <asp:Label ID="ELabelBasementAreal" runat="server" Text="Kælderareal:"></asp:Label>
-                                    <asp:TextBox ID="BasementArealTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelBasementAreal" runat="server" Text="Kælderareal:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="BasementArealTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="GarageArealDiv">
-                                    <asp:Label ID="ELabelGarageAreal" runat="server" Text="Garageareal:"></asp:Label>
-                                    <asp:TextBox ID="GarageArealTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelGarageAreal" runat="server" Text="Garageareal:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="GarageArealTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="RoomsDiv">
-                                    <asp:Label ID="ELabelRooms" runat="server" Text="Rum:"></asp:Label>
-                                    <asp:TextBox ID="RoomsTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ELabelRooms" runat="server" Text="Rum:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="RoomsTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="ToiletsDiv">
-                                    <asp:Label ID="ELabelToilets" runat="server" Text="Toiletter:"></asp:Label>
-                                    <asp:TextBox ID="ToiletsTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelToilets" runat="server" Text="Toiletter:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="ToiletsTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="FloorLevelsDiv">
-                                    <asp:Label ID="ELabelFloorLevels" runat="server" Text="Antal plan:"></asp:Label>
-                                    <asp:TextBox ID="FloorLevelsTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelFloorLevels" runat="server" Text="Antal plan:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="FloorLevelsTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="BuildingYearDiv">
-                                    <asp:Label ID="ELabelBuildingYear" runat="server" Text="Byggeår:"></asp:Label>
-                                    <asp:TextBox ID="BuildingYearTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelBuildingYear" runat="server" Text="Byggeår:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="BuildingYearTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="DistToSchoolDiv">
-                                    <asp:Label ID="ELabelDistToSchool" runat="server" Text="Afstand til skole:"></asp:Label>
-                                    <asp:TextBox ID="DistToSchoolTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelDistToSchool" runat="server" Text="Afstand til skole:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="DistToSchoolTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="DistToShoppingDiv">
-                                    <asp:Label ID="ELabelDistToShopping" runat="server" Text="Afstand til indkøb:"></asp:Label>
-                                    <asp:TextBox ID="DistToShppingTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelDistToShopping" runat="server" Text="Afstand til indkøb:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="DistToShoppingTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="EnergyMarkDiv">
-                                    <asp:Label ID="ELabelEnergyMark" runat="server" Text="energimærke:"></asp:Label>
-                                    <asp:TextBox ID="EnergyMarkTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelEnergyMark" runat="server" Text="Energimærke:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="EnergyMarkTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="KvmPriceDiv">
-                                    <asp:Label ID="ELabelKvmPrice" runat="server" Text="Kvm pris:"></asp:Label>
-                                    <asp:TextBox ID="KvmPriceTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelKvmPrice" runat="server" Text="Kvm pris:"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="KvmPriceTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="BruttoPriceDiv">
-                                    <asp:Label ID="ELabelBruttoPrice" runat="server" Text="Brutto pris"></asp:Label>
-                                    <asp:TextBox ID="BruttoPriceTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelBruttoPrice" runat="server" Text="Brutto pris"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="BruttoPriceTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="NettoPriceDiv">
-                                    <asp:Label ID="ELabelNettoPrice" runat="server" Text="Netto pris"></asp:Label>
-                                    <asp:TextBox ID="NettoPriceTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ElabelNettoPrice" runat="server" Text="Netto pris"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="NettoPriceTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="CashPriceDiv">
-                                    <asp:Label ID="ELabelCashPrice" runat="server" Text="Cash pris"></asp:Label>
-                                    <asp:TextBox ID="CashPriceTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ELabelCashPrice" runat="server" Text="Cash pris"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="CashPriceTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
-                                <div id="WebLinkDiv">
-                                    <asp:Label ID="ELabelWebLink" runat="server" Text="Web link"></asp:Label>
-                                    <asp:TextBox ID="WebLinkTbe" runat="server"></asp:TextBox>
+                                <div class="wrap">
+                                    <div class="leftlbl">
+                                        <asp:Label ID="ELabelWeblink" runat="server" Text="Web link"></asp:Label>
+                                    </div>
+                                    <div class="rightTxt">
+                                        <asp:TextBox ID="WeblinkTbe" runat="server" Width="300px"></asp:TextBox>
+                                    </div>
                                 </div>
                                 <div id="buttonEditDiv">
                                     <asp:Button ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
@@ -307,7 +383,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">slet hus
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Slet hus
                             </a>
                         </h4>
                     </div>
@@ -324,11 +400,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-
-            <div id="DivShowAllHouses">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Alle huse
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                             <div id="DivShowAllHouses">
                 <div id="ListBoxShowAllHousesDiv">
                     <asp:ListBox ID="ListBoxAllHouses" runat="server"></asp:ListBox>
                 </div>
@@ -350,7 +431,12 @@
                     </tr>
                 </table>
             </div>
-        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
     </form>
 </body>
 </html>
