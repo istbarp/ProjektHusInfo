@@ -41,11 +41,6 @@ namespace HusInfo.Pages
 			}
         }
 
-		protected void BtnFinish_Click(object sender, EventArgs e)
-		{
-			string comment = TxtBoxOfferComment.Text.ToString();
-			double price = double.Parse(TxtBoxOfferPrice.Text.ToString());
-
-		}
+		
     }
 }

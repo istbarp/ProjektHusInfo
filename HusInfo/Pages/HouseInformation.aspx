@@ -82,8 +82,7 @@
         }
 
 
-        #footerWrap
-        {
+        #footerWrap {
             width: 800px;
             min-width: 800px;
             height: 100px;
@@ -92,15 +91,12 @@
         }
 
         #goBackBtn {
-            float:left;
+            float: left;
         }
 
         #goToRealEstate {
-           float: right;
-
+            float: right;
         }
-
-
     </style>
 </head>
 <body>
@@ -127,12 +123,12 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <% 
-                           int id = int.Parse(Request.Form["houseSelect"]);
-                           HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
-                           HusInfo.Model.House h = hCtr.GetHouse(id);
-                           int i = 0;
-                           foreach (var item in h.HousePic)
-                           {
+                        int id = int.Parse(Request.Form["houseSelect"]);
+                        HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
+                        HusInfo.Model.House h = hCtr.GetHouse(id);
+                        int i = 0;
+                        foreach (var item in h.HousePic)
+                        {
                     %>
 
 
@@ -143,8 +139,8 @@
                         </div>
                     </div>
                     <% i++;
-                           }
-                        %>
+                        }
+                    %>
                 </div>
 
                 <!-- Controls -->
@@ -158,7 +154,7 @@
             <div id="boligPris">
                 <b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px">Villa</b>
                 <%--<b style="text-shadow: 1px 1px 1px black; color: white; font-size: 40px; float:right"><asp:Label ID="addressLbl" runat="server"></asp:Label></b>--%>
-                
+
                 <div class="wrapper">
                     <div class="leftBp">
                         <b>Kontantpris</b>
@@ -301,7 +297,6 @@
             <div class="panel-group" id="accordion">
                 <%string[] typesOfK = { "k3", "k2", "k1", "k0", "un" };
                   int counter = 1;
-                  int modalCount = 0;
                   foreach (string type in typesOfK)
                   {
                 %>
@@ -326,29 +321,8 @@
                             <label><%=c.problem %></label>
                             <br />
                             <img src="http://www.pro-skadeservice.dk/wp-content/uploads/vandskade2-300x225.jpg" height="200" alt="vandskader" />
-                            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#<%=modalCount %>">Giv tilbud</button>
+                            <a href="GiverOffer.aspx?id=<%=c.id%>" class="btn btn-default">Giv tilbud</a>
 
-                            <!-- Tilbuds popup her -->
-                            <div class="modal fade" id="<%=modalCount++ %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel" style="text-align: center">Dit tilbud</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div style="text-align: center">
-                                            <asp:TextBox ID="TxtBoxOfferPrice" runat="server" placeholder="Indtast pris" width="200px"></asp:TextBox><br /><br />
-                                            <asp:TextBox ID="TxtBoxOfferComment" runat="server" placeholder="Indtast kommentar" textmode="MultiLine" style="resize:none; width: 200px; height: 200px;"></asp:TextBox>
-                                        </div>
-                                            </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
-                                            <asp:button OnClick="BtnFinish_Click" type="button" class="btn btn-primary" runat="server" Text="Færdig!" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <br />
                             <br />
                             <%  
@@ -363,13 +337,17 @@
 
             <!--Knapper i footeren-->
             <div id="footerWrap">
-            <div id="goBackBtn">
-                <a href="/default.aspx" class="btn btn-default"><p style="font-size: 30px;">Tilbage</p></a>
-            </div>
-            <div id="goToRealEstate">
-                <a href="<% Response.Write(h.webLink); %>" class="btn btn-default" target="_blank"><p style="font-size: 30px;">Gå til mægler</p></a>
-            </div>
+                <div id="goBackBtn">
+                    <a href="/default.aspx" class="btn btn-default">
+                        <p style="font-size: 30px;">Tilbage</p>
+                    </a>
                 </div>
+                <div id="goToRealEstate">
+                    <a href="<% Response.Write(h.webLink); %>" class="btn btn-default" target="_blank">
+                        <p style="font-size: 30px;">Gå til mægler</p>
+                    </a>
+                </div>
+            </div>
         </div>
     </form>
 </body>
