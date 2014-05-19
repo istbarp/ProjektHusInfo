@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="HusInfo.Pages.Login" %>
+﻿<%@ Page EnableSessionState="ReadOnly" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="HusInfo.Pages.Login" %>
 
 <!DOCTYPE html>
 
