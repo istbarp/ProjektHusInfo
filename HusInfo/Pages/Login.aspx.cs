@@ -12,23 +12,16 @@ namespace HusInfo.Pages
 {
     public partial class Login : System.Web.UI.Page
     {
-
         PersonCtr pCtr = new PersonCtr();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
-            //if (IsPostBack)
-            //{
-            //    Model.Login l = pCtr.GetPerson(UsernameTbe.Text, PasswordTbe.Text);
-            //    Session["Login"] = l;
-
-            //    Model.Login test = (Model.Login) Session["Login"];
-
-            //    Lebeltest.Text = test.name;
-            //}
-           
+			string logout = Request.QueryString["Logout"] ?? "false";
+			if (logout == "true")
+			{
+				Session.Clear();
+				Response.Redirect("/default.aspx");
+			}
         }
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
@@ -37,18 +30,13 @@ namespace HusInfo.Pages
 
             if(l != null)
             {  
-                //Session["Login"] = l;
                 Session["Login"] = l;
-                //var test = (Model.Login)Session["Login"];
-                //Lebeltest.Text = test.name;
-                Response.Redirect("testHp.aspx");
+                Response.Redirect("/default.aspx");
             }
             else
             {
                 Lebeltest.Text = "fail";
             }
         }
-
-
     }
 }

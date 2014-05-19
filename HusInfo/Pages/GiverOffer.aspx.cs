@@ -15,8 +15,8 @@ namespace HusInfo.Pages
 		OfferCtr oCtr = new OfferCtr();
         protected void Page_Load(object sender, EventArgs e)
         {
-			//var test = (Model.Login)Session["Login"];
-			//loginId = test.id;
+			var test = (Model.Login)Session["Login"];
+			loginId = test.id;
 			id = int.Parse(Request.QueryString["id"].ToString());
         }
 
@@ -24,7 +24,7 @@ namespace HusInfo.Pages
         {
 			HusInfo.Model.Offer o = new HusInfo.Model.Offer();
 			o.classificationId = id;
-			o.loginId = 5;
+			o.loginId = loginId;
 			o.comment = comment.Text.ToString();
 			o.price = double.Parse(price.Text.ToString());
 			oCtr.addOffer(o);

@@ -55,6 +55,13 @@
     
 </head>
 <body>
+	<% if (Session["Login"] == null) { %>
+	<a href="/Pages/login.aspx">Login</a>
+	<% } else { %>
+	Velkommen <%=((HusInfo.Model.Login)Session["Login"]).name %>
+	<a href="/Pages/login.aspx?logout=true">Log ud</a>
+	<% } %>
+
     <form id="form1" runat="server">
         <div id="back">
             <div id="holder">
