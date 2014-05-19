@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using HusInfo.Model;
 
@@ -10,9 +11,15 @@ namespace HusInfo.Controller
     {
         HouseInfoContext db = new HouseInfoContext();
 
-        public Login getPerson()
+        public Login GetPerson(string username, string password)
         {
-            return null;
+            //var person = from p in db.Login
+            //    where p.username.Equals(username) && p.password.Equals(password)
+            //    select p;
+
+            var pers = db.Login.Single(p => p.username.Equals(username) && p.password.Equals(password));
+              
+            return pers;
         }
 
         public void addPerson(Login s)
