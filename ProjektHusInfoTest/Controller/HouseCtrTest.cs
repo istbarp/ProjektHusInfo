@@ -16,7 +16,7 @@ namespace ProjektHusInfoTest
         [TestMethod]
         public void GetHouseTest()
         {
-            House h = hCtr.GetHouse(3);
+            House h = hCtr.GetHouse(4);
 
 			Assert.IsNotNull(h);
         }
@@ -119,7 +119,7 @@ namespace ProjektHusInfoTest
 
             House h = new House();
 
-            h.address = "Testvej 1";
+            h.address = "TestvejDelete";
             h.basementAreal = 1234;
             h.bruttoprice = 1234;
             h.buildingYear = 1990;
@@ -134,7 +134,9 @@ namespace ProjektHusInfoTest
             h.kvmPrice = 9000;
             h.livingAreal = 10;
 
-            hCtr.deleteHouse(h);
+            hCtr.insertHouse(h);
+
+            hCtr.deleteHouse(15);
         }
     }
 }

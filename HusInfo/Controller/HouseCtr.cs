@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Text.RegularExpressions;
 
 namespace HusInfo.Controller
 {
@@ -23,12 +24,16 @@ namespace HusInfo.Controller
 
         public void insertHouse(House h)
         {
+            validationOfHouse(h);
+
             db.House.Add(h);
             db.SaveChanges();
         }
 
         public void editHouse(House houseUpdate)
         {
+            validationOfHouse(houseUpdate);
+
             House house = db.House.FirstOrDefault(h => h.id == houseUpdate.id);
             house.address = houseUpdate.address;
             house.basementAreal = houseUpdate.basementAreal;
@@ -143,10 +148,82 @@ namespace HusInfo.Controller
             return classification;                         
         }
 
-        public void deleteHouse(House h)
+        public void deleteHouse(int id)
         {
+            House h = new House { id = id };
+            db.House.Attach(h);
             db.House.Remove(h);
             db.SaveChanges();
+
+
         }
+
+        private void validationOfHouse(House h)
+        {
+
+            Regex checkZipcode = new Regex("^[0-9]{4}$");
+            Regex onlyDigits = new Regex("^[0-9]+$");
+            Regex onlyLetters = new Regex(@"^[a-zA-Z]+$");
+            Regex onlyLettersAndNumbers = new Regex(@"^[a-z-Z0-9]+$");
+            Regex onlyWebLink = new Regex(@"^(http|https|ftp|)\://|[a-zA-Z0-9\-\.]+\.[a-zA-Z](:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$");
+
+            if (string.IsNullOrEmpty(h.address) || !onlyLettersAndNumbers.IsMatch(h.address))
+                throw new Exception("Addresen er ikke korrekt indtastet");
+
+            if ((string.IsNullOrEmpty(h.energyMark)) || (!onlyLetters.IsMatch(h.energyMark)))
+                throw new Exception("du har ikke indtastet et invalid energimærke");
+
+            if (string.IsNullOrEmpty(h.webLink) || (!onlyWebLink.IsMatch(h.webLink)))
+                throw new Exception("du har ikke indtastet et weblink");
+
+            if (!checkZipcode.IsMatch(h.zipCode.ToString()))
+                throw new Exception("indtast en korrekt postnr");
+
+            if (!onlyDigits.IsMatch(h.basementAreal.ToString()))
+                throw new Exception("indtast et korrekt kælderareal");
+
+            if(!onlyDigits.IsMatch(h.bruttoprice.ToString()))
+                throw new Exception("indtast en korrekt brutopris");
+
+            if(!onlyDigits.IsMatch(h.buildingYear.ToString()))
+                throw new Exception("indtast korrekt byggeår");
+
+            if(!onlyDigits.IsMatch(h.cashPrice.ToString()))
+                throw new Exception("indtast korrekt kontantpris");
+
+            if(string.IsNullOrEmpty(h.city))
+                throw new Exception("Indtast en by");
+
+            if(!onlyDigits.IsMatch(h.distToSchool.ToString()))
+                throw new Exception("indtast korrekt afstand til skole");
+
+            if(!onlyDigits.IsMatch(h.distToShopping.ToString()))
+                throw new Exception("indtast korrekt afstand til indkøb");
+
+            if(!onlyDigits.IsMatch(h.floorLevels.ToString()))
+               throw new Exception("indtast korrekt antal plan");
+
+            if(!onlyDigits.IsMatch(h.garageKvm.ToString()))
+                throw new Exception("indtast korrekt garage kvm");
+
+            if(!onlyDigits.IsMatch(h.groundAreal.ToString()))
+                throw new Exception("indtast korrekt grundareal");
+
+            if(!onlyDigits.IsMatch(h.kvmPrice.ToString()))
+                throw new Exception("indtast korrekt kvadretmeter for huset");
+
+            if(!onlyDigits.IsMatch(h.livingAreal.ToString()))
+                throw new Exception("indtast korrekt boligareal");
+
+            if(!onlyDigits.IsMatch(h.nettoPrice.ToString()))
+                throw new Exception("indtast korrekt nettopris");
+
+            if(!onlyDigits.IsMatch(h.rooms.ToString()))
+                throw new Exception("indtast korrekt antal rum");
+
+            if(!onlyDigits.IsMatch(h.toilets.ToString()))
+                throw new Exception("indtast korrekt antal toiletter");
+        }
+
     }
 }

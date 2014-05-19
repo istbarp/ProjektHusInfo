@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using HusInfo.Controller;
 
 namespace HusInfo.Pages
 {
@@ -15,14 +14,8 @@ namespace HusInfo.Pages
         HouseCtr hC = new HouseCtr();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //List<House> ha = hC.GetAllHouses();
-            //List<string> haddress = new List<string>(); 
-            //foreach (House h in ha)
-            //{
-            //    haddress.Add(h.address);
-            //}
-            //DropDownListEdit.DataSource = haddress;
-            //DropDownListEdit.DataBind();
+
+            //fill dropdownlist edit
             if (!Page.IsPostBack)
             {
                 List<House> ha = hC.GetAllHouses();
@@ -43,6 +36,8 @@ namespace HusInfo.Pages
                 DropDownListEdit.DataBind();
             }
 
+
+            //fill dropdownlist delete
             if (!Page.IsPostBack)
             {
                 List<House> ha = hC.GetAllHouses();
@@ -53,43 +48,74 @@ namespace HusInfo.Pages
                                      h.address,
                                      h.zipCode,
                                      DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
-
-
-
                                  };
+
                 DropDownListDelete.DataSource = datasource;
                 DropDownListDelete.DataValueField = "id";
                 DropDownListDelete.DataTextField = "DisplayField";
                 DropDownListDelete.DataBind();
             }
+
+            if (!Page.IsPostBack)
+            {
+                //fill listbox
+                List<House> hou = hC.GetAllHouses();
+                var houseSource = from h in hou
+                                  select new
+                                  {
+                                      h.id,
+                                      h.address,
+                                      h.zipCode,
+                                      DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
+                                  };
+
+                ListBoxAllHouses.DataSource = houseSource;
+                ListBoxAllHouses.DataTextField = "DisplayField";
+                ListBoxAllHouses.DataBind();
+            }
+
+
+
+           
+
         }
 
         protected void ButtonEdit_Click(object sender, EventArgs e)
         {
-            House h = new House();
-            h.id = Int32.Parse(DropDownListEdit.SelectedValue);
-            h.address = AddressTbe.Text;
-            h.basementAreal = double.Parse(BasementArealTbe.Text);
-            h.bruttoprice = double.Parse(BruttoPriceTbe.Text);
-            h.buildingYear = Int32.Parse(BuildingYearTbe.Text);
-            h.cashPrice = double.Parse(CashPriceTbe.Text);
-            h.city = CityTbe.Text;
-            h.distToSchool = double.Parse(DistToSchoolTbe.Text);
-            h.distToShopping = double.Parse(DistToShppingTbe.Text);
-            h.energyMark = EnergyMarkTbe.Text;
-            h.floorLevels = Int32.Parse(FloorLevelsTbe.Text);
-            h.garageKvm = double.Parse(GarageArealTbe.Text);
-            h.groundAreal = double.Parse(GroundArealTbe.Text);
-            h.kvmPrice = double.Parse(KvmPriceTbe.Text);
-            h.livingAreal = double.Parse(LivingArealTbe.Text);
-            h.nettoPrice = double.Parse(NettoPriceTbe.Text);
-            h.rooms = Int32.Parse(RoomsTbe.Text);
-            h.toilets = Int32.Parse(ToiletsTbe.Text);
-            h.webLink = WebLinkTbe.Text;
-            h.zipCode = Int32.Parse(ZipcodeTbe.Text);
+            try
+            {
+                House h = new House();
+                h.id = Int32.Parse(DropDownListEdit.SelectedValue);
+                h.address = AddressTbe.Text;
+                h.basementAreal = double.Parse(BasementArealTbe.Text);
+                h.bruttoprice = double.Parse(BruttoPriceTbe.Text);
+                h.buildingYear = int.Parse(BuildingYearTbe.Text);
+                h.cashPrice = double.Parse(CashPriceTbe.Text);
+                h.city = CityTbe.Text;
+                h.distToSchool = double.Parse(DistToSchoolTbe.Text);
+                h.distToShopping = double.Parse(DistToShppingTbe.Text);
+                h.energyMark = EnergyMarkTbe.Text;
+                h.floorLevels = int.Parse(FloorLevelsTbe.Text);
+                h.garageKvm = double.Parse(GarageArealTbe.Text);
+                h.groundAreal = double.Parse(GroundArealTbe.Text);
+                h.kvmPrice = double.Parse(KvmPriceTbe.Text);
+                h.livingAreal = double.Parse(LivingArealTbe.Text);
+                h.nettoPrice = double.Parse(NettoPriceTbe.Text);
+                h.rooms = int.Parse(RoomsTbe.Text);
+                h.toilets = int.Parse(ToiletsTbe.Text);
+                h.webLink = WebLinkTbe.Text;
+                h.zipCode = int.Parse(ZipcodeTbe.Text);
 
-            hC.editHouse(h);
-            Response.Redirect(Request.RawUrl);
+                hC.editHouse(h);
+
+                Response.Redirect(Request.RawUrl);
+            }
+
+             catch(Exception ex)
+            {
+                Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
+            }
+            
 
         }
 
@@ -125,41 +151,50 @@ namespace HusInfo.Pages
 
         protected void ButtonCreate_Click(object sender, EventArgs e)
         {
-            House h = new House();
-            h.address = AddressTb.Text;
-            h.basementAreal = Double.Parse(BasementArealTb.Text);
-            h.bruttoprice = double.Parse(BruttoPriceTb.Text);
-            h.buildingYear = Int32.Parse(BuildingYearTb.Text);
-            h.cashPrice = double.Parse(CashPriceTb.Text);
-            h.city = CityTb.Text;
-            h.distToSchool = double.Parse(DistToSchoolTb.Text);
-            h.distToShopping = double.Parse(DistToShppingTb.Text);
-            h.energyMark = EnergyMarkTb.Text;
-            h.floorLevels = Int32.Parse(FloorLevelsTb.Text);
-            h.garageKvm = double.Parse(GarageArealTb.Text);
-            h.groundAreal = double.Parse(GroundArealTb.Text);
-            h.kvmPrice = double.Parse(KvmPriceTb.Text);
-            h.livingAreal = double.Parse(LivingArealTb.Text);
-            h.nettoPrice = double.Parse(NettoPriceTb.Text);
-            h.rooms = Int32.Parse(RoomsTb.Text);
-            h.toilets = Int32.Parse(ToiletsTb.Text);
-            h.webLink = WebLinkTb.Text;
-            h.zipCode = Int32.Parse(ZipcodeTb.Text);
+            try
+            {
+                House h = new House();
+                h.address = AddressTb.Text;
+                h.basementAreal = Double.Parse(BasementArealTb.Text);
+                h.bruttoprice = double.Parse(BruttoPriceTb.Text);
+                h.buildingYear = int.Parse(BuildingYearTb.Text);
+                h.cashPrice = double.Parse(CashPriceTb.Text);
+                h.city = CityTb.Text;
+                h.distToSchool = double.Parse(DistToSchoolTb.Text);
+                h.distToShopping = double.Parse(DistToShppingTb.Text);
+                h.energyMark = EnergyMarkTb.Text;
+                h.floorLevels = int.Parse(FloorLevelsTb.Text);
+                h.garageKvm = double.Parse(GarageArealTb.Text);
+                h.groundAreal = double.Parse(GroundArealTb.Text);
+                h.kvmPrice = double.Parse(KvmPriceTb.Text);
+                h.livingAreal = double.Parse(LivingArealTb.Text);
+                h.nettoPrice = double.Parse(NettoPriceTb.Text);
+                h.rooms = int.Parse(RoomsTb.Text);
+                h.toilets = int.Parse(ToiletsTb.Text);
+                h.webLink = WebLinkTb.Text;
+                h.zipCode = int.Parse(ZipcodeTb.Text);
 
-            hC.insertHouse(h);
-            Response.Redirect(Request.RawUrl);
+                hC.insertHouse(h);
+
+                Response.Redirect(Request.RawUrl);
+            }
+
+            catch(Exception exc)
+            {
+                Response.Write("<script>alert(' " + exc.Message + " ')</script>");
+            }
+
+
 
         }
 
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
-            //House hd = new House();
+            int id = int.Parse(DropDownListDelete.SelectedValue);
 
-            //hd = DropDownListDelete.
+            hC.deleteHouse(id);
 
-            //hC.deleteHouse(hd);
-
-            //Response.Redirect(Request.RawUrl);
+            Response.Redirect(Request.RawUrl);
         }
 
     }

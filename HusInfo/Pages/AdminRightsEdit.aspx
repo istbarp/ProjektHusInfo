@@ -5,7 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+        <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <form id="form1" runat="server">
         <div id="DivEditHouse" title="EditHouse">
@@ -182,6 +186,29 @@
             </div>
             <div id="ButtonDeleteDiv">
                 <asp:Button ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click"/>
+            </div>
+        </div>
+        <div id="DivShowAllHouses">
+            <div id= "ListBoxShowAllHousesDiv">
+                <asp:ListBox ID="ListBoxAllHouses" runat="server"></asp:ListBox>
+            </div>
+            <table style="width: 100%;" id="tableHouses" runat="server">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
             </div>
         </div>
     </form>
