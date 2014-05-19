@@ -113,15 +113,21 @@ namespace HusInfo.Pages
 
              catch(Exception ex)
             {
-                    Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
+                    //Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
+                    //Response.Write("<script language='javascript'>alert(\"" + ex.Message.ToString() + "\")</script>");
+
+                    string strm = ex.Message.Replace('\'', ' ');
+                    string str = "<script language='javascript'>";
+                    str += "alert('" + strm + "')";
+                    str += "</script>";
+                    ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str); 
             }
-            
 
         }
 
         protected void ButtonGetHouse_Click(object sender, EventArgs e)
         {
-            
+
                 int id = int.Parse(DropDownListEdit.SelectedValue);
 
                 var H = hC.GetHouse(id);
@@ -181,7 +187,11 @@ namespace HusInfo.Pages
 
             catch(Exception exc)
             {
-                    Response.Write("<script>alert(' " + exc.Message.ToString() + " ')</script>");
+                string strm = exc.Message.Replace('\'', ' ');
+                string str = "<script language='javascript'>";
+                str += "alert('" + strm + "')";
+                str += "</script>";
+                ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str); 
             }
 
 
