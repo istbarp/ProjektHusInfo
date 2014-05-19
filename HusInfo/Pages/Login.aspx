@@ -16,8 +16,7 @@
 
     <div id="PasswordDiv">
         <asp:Label ID="ELabelPassword" runat="server" Text="Adgangskode:"></asp:Label>
-        <asp:TextBox ID="PasswordTbe" runat="server"></asp:TextBox>
-        </div>
+        <asp:TextBox id="PasswordTbe" type="password" runat="server" /></div>
 
     <div id="ButtonLoginDiv">
         <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click"/>
