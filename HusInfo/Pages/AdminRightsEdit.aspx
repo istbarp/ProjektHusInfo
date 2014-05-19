@@ -43,7 +43,7 @@
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
+                    <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivCreateHouse" title="Create House">
                                 <div class="wrap">

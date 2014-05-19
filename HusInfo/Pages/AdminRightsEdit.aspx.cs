@@ -127,7 +127,7 @@ namespace HusInfo.Pages
 
         protected void ButtonGetHouse_Click(object sender, EventArgs e)
         {
-            
+
                 int id = int.Parse(DropDownListEdit.SelectedValue);
 
                 var H = hC.GetHouse(id);
