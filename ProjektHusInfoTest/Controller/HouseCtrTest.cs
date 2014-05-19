@@ -16,7 +16,11 @@ namespace ProjektHusInfoTest
         [TestMethod]
         public void GetHouseTest()
         {
+<<<<<<< HEAD
             House h = hCtr.GetHouse(4);
+=======
+            House h = hCtr.GetHouse(5);
+>>>>>>> 496ec5366fb00aa9d4d9f4dad35c4185c033ec29
 
 			Assert.IsNotNull(h);
         }
@@ -115,6 +119,7 @@ namespace ProjektHusInfoTest
         [TestMethod]
         public void deleteHouse()
         {
+<<<<<<< HEAD
             HouseCtr hCtr = new HouseCtr();
 
             House h = new House();
@@ -137,6 +142,13 @@ namespace ProjektHusInfoTest
             hCtr.insertHouse(h);
 
             hCtr.deleteHouse(15);
+=======
+            House h = hCtr.GetHouse(4);
+
+            hCtr.deleteHouse(h);
+
+            Assert.IsNotNull(h);
+>>>>>>> 496ec5366fb00aa9d4d9f4dad35c4185c033ec29
         }
     }
 }
