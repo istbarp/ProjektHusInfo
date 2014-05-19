@@ -15,7 +15,7 @@ namespace HusInfo.Pages
 
             if (Session["Login"] != null)
             {
-                LabelTest.Text = Session["Login"].ToString();
+                LabelTest.Text = test.name;
             }
 
         }
