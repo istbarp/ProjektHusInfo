@@ -25,7 +25,7 @@ namespace HusInfo.Pages
 
             if(l != null)
             {
-                Response.Redirect("AddUser.aspx");
+                Response.Redirect("/default.aspx");
             }
             else
             {
