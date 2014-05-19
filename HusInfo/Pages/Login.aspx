@@ -4,26 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
+	<link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
- 
-    <div id="UsernameDiv">
-        <asp:Label ID="ELabelUsername" runat="server" Text="Brugernavn:"></asp:Label>
-        <asp:TextBox ID="UsernameTbe" runat="server"></asp:TextBox>
-        </div>
+    
+	<div class="container">
 
-    <div id="PasswordDiv">
-        <asp:Label ID="ELabelPassword" runat="server" Text="Adgangskode:"></asp:Label>
-        <asp:TextBox id="PasswordTbe" type="password" runat="server" /></div>
+      <form class="form-signin" role="form" runat="server">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <asp:TextBox ID="UsernameTbe" class="form-control" placeholder="Indtast brugernavn" runat="server" required autofocus/>
+        <asp:TextBox ID="PasswordTbe" type="password" class="form-control" placeholder="Password" runat="server" required/>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <asp:button OnClick="ButtonLogin_Click" class="btn btn-lg btn-primary btn-block" type="submit" Text="Sign in" runat="server" />
+      </form>
 
-    <div id="ButtonLoginDiv">
-        <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="ButtonLogin_Click"/>
-    </div>
+    </div> <!-- /container -->
 
-        <asp:Label ID="Lebeltest" runat="server" Text="Label"></asp:Label>
-
-    </form>
 </body>
 </html>

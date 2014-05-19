@@ -35,7 +35,7 @@ namespace HusInfo.Pages
             }
             else
             {
-                Lebeltest.Text = "fail";
+                //Lebeltest.Text = "fail";
             }
         }
     }
