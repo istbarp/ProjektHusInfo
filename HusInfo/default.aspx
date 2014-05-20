@@ -56,7 +56,11 @@
 <body>
 	<% if (Session["Login"] == null) { %>
 	<a href="/Pages/login.aspx">Login</a>
-	<% } else { %>
+	<% } %>
+    
+   
+
+    <% else { %>
 	Velkommen <%=((HusInfo.Model.Login)Session["Login"]).name %>
 	<a href="/Pages/login.aspx?logout=true">Log ud</a>
 	<% } %>
@@ -105,13 +109,22 @@
 	</form>
 	<% } %>
 
+    <% if (Session["Login"] != null) {
+           var e = (HusInfo.Model.Login)Session["Login"];
+           
+           if(e.personType.Contains("Entreprenur")) { %>
+               <a href="/Pages/AdminRightsEdit.aspx" class="btn btn-default">
+                  Bolig Animistration
+               </a>
+        <% } 
+           
+     } %>
+
     <a href="/Pages/addUser.aspx" class="btn btn-default">
         Opret bruger
     </a>
 
-    <a href="/Pages/AdminRightsEdit.aspx" class="btn btn-default">
-        Bolig Animistration
-    </a>
+    
 
 </body>
 

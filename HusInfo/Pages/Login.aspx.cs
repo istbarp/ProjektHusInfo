@@ -32,6 +32,7 @@ namespace HusInfo.Pages
             {  
                 Session["Login"] = l;
                 Response.Redirect("/default.aspx");
+                
             }
             else
             {
