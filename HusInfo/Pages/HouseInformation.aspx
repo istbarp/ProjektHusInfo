@@ -49,7 +49,7 @@
             min-width: 398px;
             height: 100%;
             background-color: grey;
-            text-align: center;
+            text-align: left;
         }
 
 
