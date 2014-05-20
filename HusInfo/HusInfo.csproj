@@ -80,17 +80,29 @@
     <Content Include="Images\Ydunsvej7_7.png" />
     <Content Include="Images\Ydunsvej7_8.png" />
     <Content Include="Images\Ydunsvej7_9.png" />
+    <Content Include="Pages2\houseInfo.aspx" />
+    <Content Include="Pages2\login.aspx" />
+    <Content Include="Pages2\search.aspx" />
     <Content Include="Pages\AddUser.aspx" />
     <Content Include="Pages\AdminRightsEdit.aspx" />
     <Content Include="Pages\GiverOffer.aspx" />
     <Content Include="Pages\HouseInformation.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\testHp.aspx" />
+    <Content Include="Scripts\bootstrap2\css\bootstrap-theme.css" />
+    <Content Include="Scripts\bootstrap2\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\bootstrap2\css\bootstrap.css" />
+    <Content Include="Scripts\bootstrap2\css\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap2\css\jumbotron-narrow.css" />
+    <Content Include="Scripts\bootstrap2\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap2\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap2\js\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css.map" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="default2.aspx" />
     <EntityDeploy Include="Model\HouseInfo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HouseInfo.Designer.cs</LastGenOutput>
@@ -111,6 +123,11 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Jobudbud.dk.pubxml" />
     <None Include="Properties\PublishProfiles\jobudbud.pubxml" />
+    <Content Include="Scripts\bootstrap2\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap2\css\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap2\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bootstrap2\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\bootstrap2\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,6 +187,27 @@
     <Compile Include="Model\Offer.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages2\houseInfo.aspx.cs">
+      <DependentUpon>houseInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages2\houseInfo.aspx.designer.cs">
+      <DependentUpon>houseInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages2\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages2\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages2\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages2\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -215,6 +253,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Report.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="default2.aspx.cs">
+      <DependentUpon>default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default2.aspx.designer.cs">
+      <DependentUpon>default2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
