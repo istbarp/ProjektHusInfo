@@ -57,9 +57,6 @@
 	<% if (Session["Login"] == null) { %>
 	<a href="/Pages/login.aspx">Login</a>
 	<% } %>
-    
-   
-
     <% else { %>
 	Velkommen <%=((HusInfo.Model.Login)Session["Login"]).name %>
 	<a href="/Pages/login.aspx?logout=true">Log ud</a>
@@ -114,7 +111,7 @@
            
            if(e.personType.Contains("Entreprenur")) { %>
                <a href="/Pages/AdminRightsEdit.aspx" class="btn btn-default">
-                  Bolig Animistration
+                  Bolig Administration
                </a>
         <% } 
            
