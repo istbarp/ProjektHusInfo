@@ -17,7 +17,7 @@ namespace HusInfo.Pages
         {
 			if (!Page.IsPostBack)
 			{
-				int id = int.Parse(Request.Form["houseSelect"]);
+				int id = int.Parse(Request.QueryString["id"]);
 
 				House h = hCtr.GetHouse(id);
 

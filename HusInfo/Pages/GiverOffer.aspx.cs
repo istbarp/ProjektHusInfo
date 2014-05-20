@@ -10,20 +10,28 @@ namespace HusInfo.Pages
 {
     public partial class GiverOffer : System.Web.UI.Page
     {
-		int id;
+		int classificationId;
 		int loginId;
 		OfferCtr oCtr = new OfferCtr();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-			var test = (Model.Login)Session["Login"];
-			loginId = test.id;
-			id = int.Parse(Request.QueryString["id"].ToString());
+			Model.Login l = (Model.Login)Session["Login"];
+			if (l != null)
+			{
+				loginId = l.id;
+
+				classificationId = int.Parse(Request.QueryString["id"].ToString());
+			}
         }
 
         protected void giveOffer_Click(object sender, EventArgs e)
         {
+			if (loginId == 0)
+				return;
+
 			HusInfo.Model.Offer o = new HusInfo.Model.Offer();
-			o.classificationId = id;
+			o.classificationId = classificationId;
 			o.loginId = loginId;
 			o.comment = comment.Text.ToString();
 			o.price = double.Parse(price.Text.ToString());

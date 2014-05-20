@@ -85,12 +85,12 @@
         </div>
     </form>
 	<% if (!string.IsNullOrEmpty(Request.Form["adresseTB"])) { %>
-	<form action="Pages/HouseInformation.aspx" method="post">
+	<form action="Pages/HouseInformation.aspx" method="get">
         <div>
 			<div>
 				Søgeresultater:
 			</div>
-			<select name="houseSelect">
+			<select name="id">
 				<% string adr = Request.Form["adresseTB"];
 					HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
 					List<HusInfo.Model.House> ha = hCtr.getHouseAddress(adr);
