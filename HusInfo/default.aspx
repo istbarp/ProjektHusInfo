@@ -49,7 +49,6 @@
             margin: auto;
             padding-bottom: 5%;
         }
-
     </style>
 
     
@@ -102,8 +101,18 @@
 			</select>
 			<button type="submit">Vælg</button>
 		</div>
+        
 	</form>
 	<% } %>
+
+    <a href="/Pages/addUser.aspx" class="btn btn-default">
+        Opret bruger
+    </a>
+
+    <a href="/Pages/AdminRightsEdit.aspx" class="btn btn-default">
+        Bolig Animistration
+    </a>
+
 </body>
 
 </html>
