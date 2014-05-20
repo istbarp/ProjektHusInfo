@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="HusInfo.Pages2.login" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Content.Master.cs" Inherits="HusInfo.ContentMasterSite" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,9 @@
     <meta name="author" content="">
 
     <title>Narrow Jumbotron Template for Bootstrap</title>
+	  
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/Scripts/bootstrap2/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="/Scripts/bootstrap2/css/bootstrap.min.css" rel="stylesheet">
@@ -30,34 +33,30 @@
   <body>
 
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/default2.aspx">Forside</a></li>
-          <li><a href="/Pages2/houses.aspsx">Boliger</a></li>
-          <li><a href="/Pages2/search.aspx">Søg</a></li>
-          <li class="active"><a href="/Pages2/login.aspx">Login</a></li>
-        </ul>
-        <h3 class="text-muted">HusInfo</h3>
-      </div>
 
-      <div class="jumbotron">
-		  <form class="form-signin" role="form">
-			  <h2 class="form-signin-heading">Log ind</h2>
-			  <input type="email" class="form-control" placeholder="Brugernavn" required autofocus>
-			  <input type="password" class="form-control" placeholder="Adgangskode" required>
-			  <label class="checkbox">
-				  <input type="checkbox" value="remember-me">
-				  Husk mig
-			  </label>
-			  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-		  </form>
-      </div>
+		<div class="header">
+			<ul class="nav nav-pills pull-right">
+				<li <% if (SelectedMenu == "frontpage") Response.Write("class=\"active\""); %>><a href="/default.aspx">Forside</a></li>
+				<li <% if (SelectedMenu == "houses") Response.Write("class=\"active\""); %>><a href="/Pages/homes.aspsx">Boliger</a></li>
+				<li <% if (SelectedMenu == "search") Response.Write("class=\"active\""); %>><a href="/Pages/search.aspx">Søg</a></li>
 
-      <div class="footer">
-        <p>&copy; Company 2014</p>
-      </div>
+				<% if (Session["Login"] == null) { %>
+				<li <% if (SelectedMenu == "login") Response.Write("class=\"active\""); %>><a href="/Pages/login.aspx">Login</a></li>
+				<% } %>
+				<% else { %>
+				<li>Velkommen <%=((HusInfo.Model.Login)Session["Login"]).name %> | <a href="/Pages/login.aspx?logout=true">Log ud</a></li>
+				<% } %>
+				
+			</ul>
+			<h3 class="text-muted">HusInfo</h3>
+		</div>
 
-    </div> <!-- /container -->
+		<!-- SHIT GOES HERE -->
+        <asp:ContentPlaceHolder ID="ContainerPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+		<!-- SHIT GOES HERE -->
+
+	</div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript

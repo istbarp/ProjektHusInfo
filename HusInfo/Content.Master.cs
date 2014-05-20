@@ -7,12 +7,18 @@ using System.Web.UI.WebControls;
 
 namespace HusInfo
 {
-	public partial class WebForm1 : System.Web.UI.Page
+	public partial class ContentMasterSite : System.Web.UI.MasterPage
 	{
+		private string page = "frontpage";
+
+		public string SelectedMenu
+		{
+			get { return page; }
+			set { page = value; }
+		}
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			ContentMasterSite s = Page.Master as ContentMasterSite;
-			s.SelectedMenu = "frontpage";
 		}
 	}
 }

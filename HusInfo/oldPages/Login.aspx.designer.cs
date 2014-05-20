@@ -10,7 +10,7 @@
 namespace HusInfo.Pages {
     
     
-    public partial class login {
+    public partial class Login {
         
         /// <summary>
         /// UsernameTbe control.

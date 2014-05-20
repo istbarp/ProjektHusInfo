@@ -1,128 +1,38 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="HusInfo._default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/content.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="HusInfo.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
 
-<!DOCTYPE html>
+	<div class="jumbotron">
+		<h1>Jumbotron heading</h1>
+		<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+		<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+	</div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>HusInfo</title>
-    <meta name="viewport" content="width=device-width; initial-scale=1.2; maximum-scale=1.0; user-scalable=no;" />
-<meta name="MobileOptimized" content="width" />
-<meta name="HandheldFriendly" content="true" />
-    <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
+	<div class="row marketing">
+		<div class="col-lg-6">
+			<h4>Subheading</h4>
+			<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-    <style>
-        body {
-            width: 400px;
-            margin: 50px auto;
-            
-        }
+			<h4>Subheading</h4>
+			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-        #back {
-            margin: auto;
-            width: 100%;
-            background-color: #FF7400;
-            height: 144px;
-        }
-        
-        #holder
-        {
-            width: 100%;
-        }
-
-        #adresseDiv
-        {
-            width: 90%;
-            margin: auto;
-            padding-top: 5%;
-            padding-bottom: 0.5%;
-        }
-        #postnrDiv
-        {   width: 90%;
-            margin:auto;
-            padding-bottom: 2%;
-        }
-
-        #hentData {
-            width: 25%;
-            margin: auto;
-            padding-bottom: 5%;
-        }
-    </style>
-
-    
-</head>
-<body>
-	<% if (Session["Login"] == null) { %>
-	<a href="/Pages/login.aspx">Login</a>
-	<% } %>
-    <% else { %>
-	Velkommen <%=((HusInfo.Model.Login)Session["Login"]).name %>
-	<a href="/Pages/login.aspx?logout=true">Log ud</a>
-	<% } %>
-
-    <form id="form1" runat="server">
-        <div id="back">
-            <div id="holder">
-            <div id="adresseDiv">
-                
-            <asp:TextBox ID="adresseTB" runat="server" Width="100%" placeholder="Indtast Adresse"></asp:TextBox>
-                </div>
-            <div id="postnrDiv">
-                <asp:TextBox ID="postnrTB" runat="server" Width="100%" placeholder="Indtast Post Nummer"></asp:TextBox>
-                </div>
-            <div id="hentData">
-                <asp:Button runat="server" onclick="getData" Text="hentData"></asp:Button>
-            </div>
-                </div>
-            <div id="ListDiv">
-				
-                <!--<asp:DropDownList ID="dropdownlistbox" runat="server" >
-                 </asp:DropDownList>
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />-->
-            </div>
-        </div>
-    </form>
-	<% if (!string.IsNullOrEmpty(Request.Form["adresseTB"])) { %>
-	<form action="Pages/HouseInformation.aspx" method="get">
-        <div>
-			<div>
-				Søgeresultater:
-			</div>
-			<select name="id">
-				<% string adr = Request.Form["adresseTB"];
-					HusInfo.Controller.HouseCtr hCtr = new HusInfo.Controller.HouseCtr();
-					List<HusInfo.Model.House> ha = hCtr.getHouseAddress(adr);
-
-					foreach (var item in ha) {
-					%>
-				<option value="<%= item.id %>"><%= item.address + ", " + item.zipCode.ToString() + " " + item.city %></option>
-				<% } %>
-			</select>
-			<button type="submit">Vælg</button>
+			<h4>Subheading</h4>
+			<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 		</div>
-        
-	</form>
-	<% } %>
 
-    <% if (Session["Login"] != null) {
-           var e = (HusInfo.Model.Login)Session["Login"];
-           
-           if(e.personType.Contains("Entreprenur")) { %>
-               <a href="/Pages/AdminRightsEdit.aspx" class="btn btn-default">
-                  Bolig Administration
-               </a>
-        <% } 
-           
-     } %>
+		<div class="col-lg-6">
+			<h4>Subheading</h4>
+			<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-    <a href="/Pages/addUser.aspx" class="btn btn-default">
-        Opret bruger
-    </a>
+			<h4>Subheading</h4>
+			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-    
+			<h4>Subheading</h4>
+			<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+		</div>
+	</div>
 
-</body>
+	<div class="footer">
+		<p>&copy; Company 2014</p>
+	</div>
 
-</html>
+</asp:Content>

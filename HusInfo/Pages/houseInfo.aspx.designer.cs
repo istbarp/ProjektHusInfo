@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HusInfo.Pages2 {
+namespace HusInfo.Pages {
     
     
     public partial class houseInfo {
