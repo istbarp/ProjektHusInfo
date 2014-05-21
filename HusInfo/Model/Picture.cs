@@ -12,12 +12,14 @@ namespace HusInfo.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class HousePic
+    public partial class Picture
     {
         public int id { get; set; }
-        public string pictureFilename { get; set; }
+        public string fileName { get; set; }
         public Nullable<int> houseId { get; set; }
+        public Nullable<int> classificationId { get; set; }
     
+        public virtual Classification Classification { get; set; }
         public virtual House House { get; set; }
     }
 }

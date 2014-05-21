@@ -33,11 +33,13 @@ create table House
 	zipCode int,
 	loginId int foreign key references [Login](id)
 )
-create table HousePic
+create table Picture
 (
 	id int identity primary key,
 	pictureFilename nvarchar(MAX),
-	houseId int foreign key references House(id)
+	houseId int foreign key references House(id) null,
+	classificationId int foreign key references Classification(id) null,
+	CHECK (houseId IS not null OR classificationId IS not null)
 )
 create table Report
 (
@@ -50,7 +52,6 @@ create table Classification
 (
 	id int identity primary key,
 	problem nvarchar(MAX),
-	problemPicture varBinary(MAX),
 	[type] nvarchar(MAX),
 	reportId int foreign key references Report(id)
 

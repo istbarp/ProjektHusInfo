@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content.Master" AutoEventWireup="true" CodeBehind="giveOffer.aspx.cs" Inherits="HusInfo.Pages.giveOffer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
 
+	<h3><%=c.problem %></h3>
+
 	<form id="form1" runat="server">
     <div id="back">
     <asp:TextBox ID="price" placeholder="Indtast pris" runat="server"></asp:TextBox><br /><br />

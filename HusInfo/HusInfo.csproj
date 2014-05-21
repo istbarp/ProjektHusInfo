@@ -146,6 +146,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ClassificationCtr.cs" />
     <Compile Include="Controller\OfferCtr.cs" />
     <Compile Include="Controller\PersonCtr.cs" />
     <Compile Include="Model\Classification.cs">
@@ -170,13 +171,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HouseInfo.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\HousePic.cs">
-      <DependentUpon>HouseInfo.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Login.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Offer.cs">
+      <DependentUpon>HouseInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Picture.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\addUser.aspx.cs">

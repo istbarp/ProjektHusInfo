@@ -17,7 +17,7 @@ namespace HusInfo.Model
         public House()
         {
             this.Report = new HashSet<Report>();
-            this.HousePic = new HashSet<HousePic>();
+            this.Picture = new HashSet<Picture>();
         }
     
         public int id { get; set; }
@@ -44,6 +44,6 @@ namespace HusInfo.Model
     
         public virtual Login Login { get; set; }
         public virtual ICollection<Report> Report { get; set; }
-        public virtual ICollection<HousePic> HousePic { get; set; }
+        public virtual ICollection<Picture> Picture { get; set; }
     }
 }

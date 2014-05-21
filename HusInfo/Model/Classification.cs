@@ -17,15 +17,16 @@ namespace HusInfo.Model
         public Classification()
         {
             this.Offer = new HashSet<Offer>();
+            this.Picture = new HashSet<Picture>();
         }
     
         public int id { get; set; }
         public string problem { get; set; }
-        public byte[] problemPicture { get; set; }
         public string type { get; set; }
         public Nullable<int> reportId { get; set; }
     
         public virtual Report Report { get; set; }
         public virtual ICollection<Offer> Offer { get; set; }
+        public virtual ICollection<Picture> Picture { get; set; }
     }
 }

@@ -16,14 +16,6 @@ namespace HusInfo.Pages
 		{
 			ContentMasterSite s = Page.Master as ContentMasterSite;
 			s.SelectedMenu = "addUser";
-
-
-			List<String> personTyper = new List<String>();
-			personTyper.Add("Entreprenur");
-			personTyper.Add("RealEstateAgent");
-
-			DropDownListType.DataSource = personTyper;
-			DropDownListType.DataBind();
 		}
 
 		protected void ButtonAddUser_Click(object sender, EventArgs e)
@@ -36,7 +28,7 @@ namespace HusInfo.Pages
 			person.lastname = LastNameTbe.Text;
 			person.username = UsernameTbe.Text;
 			person.phoneNumber = int.Parse(PhoneTbe.Text);
-			person.personType = DropDownListType.Text;
+			person.personType = "Entreprenur";
 			person.cvrNumber = int.Parse(CVRTbe.Text);
 
 			pCtr.addPerson(person);

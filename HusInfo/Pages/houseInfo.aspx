@@ -6,7 +6,7 @@
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<% i = 0; %>
-				<% foreach (HusInfo.Model.HousePic p in house.HousePic) { %>
+				<% foreach (HusInfo.Model.Picture p in house.Picture) { %>
 					<% if (i == 0) { %>
 						<li data-target="#carousel-example-generic" data-slide-to="<%=i %>" class="active"></li>
 					<% } else { %>
@@ -18,12 +18,9 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<% i = 0; %>
-				<% foreach (HusInfo.Model.HousePic p in house.HousePic) { %>
+				<% foreach (HusInfo.Model.Picture p in house.Picture) { %>
 				<div class="<% if (i == 0) Response.Write("item active"); else Response.Write("item"); %>">
-					<img src="<%=p.pictureFilename%>" alt="..." />
-					<div class="carousel-caption">
-						Ydunsvej 7, 9800 Hjørring
-					</div>
+					<img src="<%=p.fileName%>" alt="..." />
 				</div>
 				<% i++; } %>
 			</div>

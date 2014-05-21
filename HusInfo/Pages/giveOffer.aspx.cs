@@ -10,9 +10,10 @@ namespace HusInfo.Pages
 {
 	public partial class giveOffer : System.Web.UI.Page
 	{
-		int classificationId;
+		protected HusInfo.Model.Classification c;
 		int loginId;
 		OfferCtr oCtr = new OfferCtr();
+		ClassificationCtr cCtr = new ClassificationCtr();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -24,8 +25,10 @@ namespace HusInfo.Pages
 			if (l != null)
 			{
 				loginId = l.id;
+				
+				int id = int.Parse(Request.QueryString["id"].ToString());
 
-				classificationId = int.Parse(Request.QueryString["id"].ToString());
+				c = cCtr.getClassification(id);
 			}
 		}
 
@@ -35,7 +38,7 @@ namespace HusInfo.Pages
 				return;
 
 			HusInfo.Model.Offer o = new HusInfo.Model.Offer();
-			o.classificationId = classificationId;
+			o.classificationId = c.id;
 			o.loginId = loginId;
 			o.comment = comment.Text.ToString();
 			o.price = double.Parse(price.Text.ToString());

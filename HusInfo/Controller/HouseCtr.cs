@@ -107,9 +107,9 @@ namespace HusInfo.Controller
         //    db.SaveChanges();
         //}
 
-		public List<HousePic> GetHousePictures(House house)
+		public List<Picture> GetHousePictures(House house)
 		{
-            var q = from p in db.HousePic
+            var q = from p in db.Picture
                     where p.houseId == house.id
                     select p;
 
