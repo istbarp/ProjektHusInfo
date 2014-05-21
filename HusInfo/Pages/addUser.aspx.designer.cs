@@ -10,7 +10,7 @@
 namespace HusInfo.Pages {
     
     
-    public partial class AddUser {
+    public partial class addUser {
         
         /// <summary>
         /// form1 control.

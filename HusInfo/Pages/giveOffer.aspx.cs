@@ -16,6 +16,10 @@ namespace HusInfo.Pages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			ContentMasterSite s = Page.Master as ContentMasterSite;
+			s.SelectedMenu = "";
+
+
 			Model.Login l = (Model.Login)Session["Login"];
 			if (l != null)
 			{

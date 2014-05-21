@@ -10,7 +10,7 @@
 namespace HusInfo.Pages {
     
     
-    public partial class AdminRightsEdit {
+    public partial class admin {
         
         /// <summary>
         /// form1 control.

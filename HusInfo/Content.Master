@@ -12,13 +12,13 @@
     <title>Narrow Jumbotron Template for Bootstrap</title>
 	  
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/Scripts/bootstrap2/js/bootstrap.min.js"></script>
+    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap core CSS -->
-    <link href="/Scripts/bootstrap2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/Scripts/bootstrap2/css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/Scripts/bootstrap/css/jumbotron-narrow.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -37,14 +37,15 @@
 		<div class="header">
 			<ul class="nav nav-pills pull-right">
 				<li <% if (SelectedMenu == "frontpage") Response.Write("class=\"active\""); %>><a href="/default.aspx">Forside</a></li>
-				<li <% if (SelectedMenu == "houses") Response.Write("class=\"active\""); %>><a href="/Pages/homes.aspsx">Boliger</a></li>
 				<li <% if (SelectedMenu == "search") Response.Write("class=\"active\""); %>><a href="/Pages/search.aspx">Søg</a></li>
 
 				<% if (Session["Login"] == null) { %>
 				<li <% if (SelectedMenu == "login") Response.Write("class=\"active\""); %>><a href="/Pages/login.aspx">Login</a></li>
+				<li <% if (SelectedMenu == "addUser") Response.Write("class=\"active\""); %>><a href="/Pages/addUser.aspx">Ny bruger</a></li>
 				<% } %>
 				<% else { %>
-				<li>Velkommen <%=((HusInfo.Model.Login)Session["Login"]).name %> | <a href="/Pages/login.aspx?logout=true">Log ud</a></li>
+				<li <% if (SelectedMenu == "admin") Response.Write("class=\"active\""); %>><a href="/Pages/admin.aspx">Admin</a></li>
+				<li><a href="/Pages/login.aspx?logout=true">Log ud</a></li>
 				<% } %>
 				
 			</ul>

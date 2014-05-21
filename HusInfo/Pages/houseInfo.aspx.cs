@@ -18,6 +18,10 @@ namespace HusInfo.Pages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			ContentMasterSite s = Page.Master as ContentMasterSite;
+			s.SelectedMenu = "search";
+
+
 			int id = int.Parse(Request.QueryString["id"]);
 			hCtr = new HusInfo.Controller.HouseCtr();
 			house = hCtr.GetHouse(id);

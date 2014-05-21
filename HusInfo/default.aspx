@@ -2,11 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
 
 	<div class="jumbotron">
-		<h1>Jumbotron heading</h1>
-		<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+		<h1>Forside</h1>
+		<!--
+			<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 		<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+			-->
 	</div>
 
+	<!--
 	<div class="row marketing">
 		<div class="col-lg-6">
 			<h4>Subheading</h4>
@@ -30,9 +33,10 @@
 			<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 		</div>
 	</div>
+	-->
 
 	<div class="footer">
-		<p>&copy; Company 2014</p>
+		<p>&copy; HusInfo 2014</p>
 	</div>
 
 </asp:Content>

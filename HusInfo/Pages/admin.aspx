@@ -1,39 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminRightsEdit.aspx.cs" Inherits="HusInfo.Pages.AdminRightsEdit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content.Master" AutoEventWireup="true" CodeBehind="admin.aspx.cs" Inherits="HusInfo.Pages.admin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
-
-    <style>
-        .wrap {
-            width: 800px;
-            min-width: 800px;
-            margin: auto auto -2px auto;
-            border: 2px solid black;
-            overflow: hidden;
-        }
-
-        .leftlbl, .rightTxt {
-            float: left;
-            width: 398px;
-            min-width: 398px;
-            height: 100%;
-            text-align: center;
-        }
-
-        #createBtn {
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <form id="form1" runat="server">
+	<form id="form1" runat="server">
         <div id="DivForAll">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
@@ -438,5 +406,5 @@
                 </div>
             
     </form>
-</body>
-</html>
+
+</asp:Content>

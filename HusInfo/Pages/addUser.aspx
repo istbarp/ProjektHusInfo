@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddUser.aspx.cs" Inherits="HusInfo.Pages.AddUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content.Master" AutoEventWireup="true" CodeBehind="addUser.aspx.cs" Inherits="HusInfo.Pages.addUser" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+	<form id="form1" runat="server">
         <div>
             
         </div>
@@ -16,7 +10,7 @@
             <asp:Label ID="ELabelPersonType" runat="server" Text="PersonType"></asp:Label>
             &nbsp;&nbsp;
             <br />
-            <asp:DropDownList ID="DropDownListType" runat="server" OnSelectedIndexChanged="DropDownListType_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList ID="DropDownListType" runat="server"></asp:DropDownList>
             <br />
         </div>
 
@@ -66,5 +60,5 @@
         </div>
 
         </form>
-</body>
-</html>
+
+</asp:Content>
