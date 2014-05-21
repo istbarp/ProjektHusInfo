@@ -70,12 +70,15 @@
 
 					<div class="panel-body">
                             <%HusInfo.Model.Report r = house.Report.FirstOrDefault();
-                              var q = from c in r.Classification
-                                      where c.type.Equals(type)
-                                      select c;
+							  
+							  if (r != null)
+							  {
+								  var q = from c in r.Classification
+										  where c.type.Equals(type)
+										  select c;
 
-                              foreach (HusInfo.Model.Classification c in q)
-                              {%>
+								  foreach (HusInfo.Model.Classification c in q)
+								{%>
                             <h3><%=c.problem %></h3>
                             <br />
                             <img src="http://www.pro-skadeservice.dk/wp-content/uploads/vandskade2-300x225.jpg" height="200" alt="vandskader" />
@@ -102,6 +105,7 @@
 								<a href="giveOffer.aspx?id=<%=c.id%>" class="btn btn-default">Giv tilbud</a>
 							<% } %>
                             <br />
+                            <% } %>
                             <% } %>
                         </div>
 
