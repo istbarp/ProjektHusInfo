@@ -1,16 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content.Master" AutoEventWireup="true" CodeBehind="admin.aspx.cs" Inherits="HusInfo.Pages.admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
+	<style>
+		.panel-group .panel-heading
+		{
+			background-color: #f5f5f5;
+		}
 
+		.panel-title
+		{
+			color: #999 !important;
+			font-weight: bold;
+		}
+
+		a
+		{
+			color: none !important;
+			text-decoration: none !important;
+		}
+
+		.a:hover
+		{
+			color: none !important;
+			text-decoration: none !important;
+		}
+	</style>
 	<form id="form1" runat="server">
         <div id="DivForAll">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" "><div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" ">Opret Hus
-                            </a>
+                            Opret Hus
+                            
                         </h4>
-                    </div>
+                    </div></a>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivCreateHouse" title="Create House">
@@ -174,20 +197,29 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Ret hus
-                            </a>
+                            Ret hus
                         </h4>
-                    </div>
+                    </div></a>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivEditHouse" title="EditHouse">
                                 <div id="DivGetHouse">
                                 </div>
+								<asp:ScriptManager ID="ScriptManager1" runat="server"/>
+								<asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
+									<Triggers>
+										<asp:AsyncPostBackTrigger ControlID="UpdateButton1" EventName="Click" />
+									</Triggers>
+									<ContentTemplate>
                                 <div id="dropdownEdit">
                                     <asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
+<<<<<<< HEAD
                                     <asp:Button class="btn" ID="ButtonGetHouse" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
+=======
+                                    <asp:Button ID="UpdateButton1" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
+>>>>>>> d1258196cfd2e6e50f456c0372b233b0b744e893
                                 </div>
                                 <div class="wrap">
                                     <div class="leftlbl">
@@ -341,6 +373,8 @@
                                         <asp:TextBox ID="WeblinkTbe" runat="server" Width="300px"></asp:TextBox>
                                     </div>
                                 </div>
+										</ContentTemplate>
+									</asp:UpdatePanel>
                                 <div id="buttonEditDiv">
                                     <asp:Button class="btn" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
                                 </div>
@@ -349,12 +383,11 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Slet hus
-                            </a>
+                            Slet hus
                         </h4>
-                    </div>
+                    </div></a>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivDeleteHouse">
@@ -369,12 +402,11 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Alle huse
-                            </a>
+                            Alle huse
                         </h4>
-                    </div>
+                    </div></a>
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
                              <div id="DivShowAllHouses">
