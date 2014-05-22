@@ -37,11 +37,10 @@ namespace HusInfo.Controller
             var q = (from o in db.Offer
                      where o.id == id
                      select o).FirstOrDefault();
+
             db.Offer.Remove(q);
 
             db.SaveChanges();
         }
-
-
     }
 }
