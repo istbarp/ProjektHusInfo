@@ -115,11 +115,8 @@
 									<ContentTemplate>
                                 <div id="dropdownEdit">
                                     <asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
-<<<<<<< HEAD
-                                    <asp:Button class="btn" ID="ButtonGetHouse" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
-=======
-                                    <asp:Button ID="UpdateButton1" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
->>>>>>> d1258196cfd2e6e50f456c0372b233b0b744e893
+                                    <asp:Button ID="UpdateButton1" class="btn btn-default" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
+
                                 </div>
                                 <div class="wrap">
                                     <div class="leftlbl">
