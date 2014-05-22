@@ -18,5 +18,16 @@ namespace HusInfo.Controller
 
 			return q.FirstOrDefault();
 		}
+
+		public void deleteClassification(int id)
+		{
+			Classification c = (from v in db.Classification
+								where v.id == id
+								select v).FirstOrDefault();
+
+			db.Classification.Remove(c);
+
+			db.SaveChanges();
+		}
 	}
 }

@@ -148,8 +148,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ClassificationCtr.cs" />
+    <Compile Include="Controller\LoginCtr.cs" />
     <Compile Include="Controller\OfferCtr.cs" />
     <Compile Include="Controller\PersonCtr.cs" />
+    <Compile Include="Controller\ReportCtr.cs" />
     <Compile Include="Model\Classification.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
     </Compile>

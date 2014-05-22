@@ -43,7 +43,12 @@
 
 		.jumbotron
 		{
-			padding-top: 0px !important;
+			padding-top: 10px !important;
+		}
+
+		#buttonEditDiv
+		{
+			text-align: center;
 		}
 	</style>
 	<form id="form1" runat="server">

@@ -15,9 +15,9 @@ namespace HusInfo.Controller
 
         public House GetHouse(int id)
         {
-			var q = from h in db.House.Include("Report.Classification")
+			var q = (from h in db.House.Include("Report.Classification").AsNoTracking()
 					where h.id == id
-					select h;
+					select h);
 
             return q.FirstOrDefault();
         }
@@ -150,12 +150,13 @@ namespace HusInfo.Controller
 
         public void deleteHouse(int id)
         {
-            House h = new House { id = id };
-            db.House.Attach(h);
-            db.House.Remove(h);
-            db.SaveChanges();
+			House h = (from v in db.House
+						where v.id == id
+						select v).FirstOrDefault();
 
+			db.House.Remove(h);
 
+			db.SaveChanges();
         }
 
         private void validationOfHouse(House h)
