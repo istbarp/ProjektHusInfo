@@ -92,7 +92,7 @@
                                     </div>
                                 </div>
                                 <div id="createBtn">
-                                    <asp:Button ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
+                                    <asp:Button class="btn" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
                                 </div>
                     </div>
                 </div>
@@ -115,7 +115,11 @@
 									<ContentTemplate>
                                 <div id="dropdownEdit">
                                     <asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
+<<<<<<< HEAD
+                                    <asp:Button class="btn" ID="ButtonGetHouse" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
+=======
                                     <asp:Button ID="UpdateButton1" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
+>>>>>>> d1258196cfd2e6e50f456c0372b233b0b744e893
                                 </div>
                                 <div class="wrap">
                                     <div class="leftlbl">
@@ -272,7 +276,7 @@
 										</ContentTemplate>
 									</asp:UpdatePanel>
                                 <div id="buttonEditDiv">
-                                    <asp:Button ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
+                                    <asp:Button class="btn" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
                                 </div>
                             </div>
                         </div>
@@ -291,7 +295,7 @@
                                     <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
                                 </div>
                                 <div id="ButtonDeleteDiv">
-                                    <asp:Button ID="ButtonDeleteHouse" class="btn btn-default" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
+                                    <asp:Button class="btn" ID="ButtonDeleteHouse" class="btn" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
                                 </div>
                             </div>
                         </div>
