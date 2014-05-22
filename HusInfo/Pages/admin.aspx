@@ -30,8 +30,8 @@
 		{
 			margin: auto;
 		}
-
-		#createBtn{
+		
+		/*#createBtn{
 			text-align: center;
 			padding-bottom: 10px;
 		}
@@ -39,16 +39,25 @@
 		#dropdownEdit{
 			text-align: center;
 			padding-bottom: 10px;	
-		}
+		}*/
 
 		.jumbotron
 		{
-			padding-top: 10px !important;
+			padding-top: 15px !important;
+			padding-bottom: 15px !important
 		}
 
 		#buttonEditDiv
 		{
 			text-align: center;
+		}
+
+		.form-label {
+			float:left;
+		}
+
+		.form-control {
+			margin-bottom: 16px;
 		}
 	</style>
 	<form id="form1" runat="server">
@@ -63,67 +72,67 @@
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivCreateHouse" class="jumbotron" title="Create House">
-                                        <asp:Label ID="LabelAddress" class="" runat="server" Text="Adresse:"></asp:Label><br />
-                                        <asp:TextBox ID="AddressTb" class="form-control" runat="server" ></asp:TextBox><br />
-								<br />
+                                        <span class="form-label">Adresse</span>
+                                        <asp:TextBox ID="AddressTb" class="form-control" runat="server" ></asp:TextBox>
  
-                                        <asp:Label ID="LabelCity" runat="server" Text="By:"></asp:Label><br />
-                                        <asp:TextBox ID="CityTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelZipcode" runat="server"  Text="Post nr:"></asp:Label><br />
-                                        <asp:TextBox ID="ZipcodeTb" runat="server" class="form-control"></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelLivingAreal" runat="server" Text="Boligareal:"></asp:Label><br />
-                                        <asp:TextBox ID="LivingArealTb" runat="server" class="form-control"></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelGroundAreal" runat="server" Text="Grundareal:"></asp:Label><br />
-                                        <asp:TextBox ID="GroundArealTb" runat="server" class="form-control"></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelBasementAreal" runat="server" Text="Kælderareal:"></asp:Label><br />
-                                        <asp:TextBox ID="BasementArealTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelGarageAreal" runat="server" Text="Garageareal:"></asp:Label><br />
-                                        <asp:TextBox ID="GarageArealTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelRooms" runat="server" Text="Rum:"></asp:Label><br />
-                                        <asp:TextBox ID="RoomsTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelToilets" runat="server" Text="Toiletter:"></asp:Label><br />
-                                        <asp:TextBox ID="ToiletsTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelFloorLevels" runat="server" Text="Antal plan:"></asp:Label><br />
-                                        <asp:TextBox ID="FloorLevelsTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelBuildingYear" runat="server" Text="Byggeår:"></asp:Label><br />
-                                        <asp:TextBox ID="BuildingYearTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelDistToSchool" runat="server" Text="Afstand til skole:"></asp:Label><br />
-                                        <asp:TextBox ID="DistToSchoolTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelDistToShopping" runat="server" Text="Afstand til indkøb:"></asp:Label><br />
-                                        <asp:TextBox ID="DistToShppingTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelEnergyMark" runat="server" Text="Energimærke:"></asp:Label><br />
-                                        <asp:TextBox ID="EnergyMarkTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelKvmPrice" runat="server" Text="Kvm pris:"></asp:Label><br />
-                                        <asp:TextBox ID="KvmPriceTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelBruttoPrice" runat="server" Text="Brutto pris"></asp:Label><br />
-                                        <asp:TextBox ID="BruttoPriceTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelNettoPrice" runat="server" Text="Netto pris"></asp:Label><br />
-                                        <asp:TextBox ID="NettoPriceTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelCashPrice" runat="server" Text="Cash pris"></asp:Label><br />
-                                        <asp:TextBox ID="CashPriceTb" runat="server" class="form-control" ></asp:TextBox><br />
-								<br />
-                                        <asp:Label ID="LabelWebLink" runat="server" Text="Web link"></asp:Label><br />
-                                        <asp:TextBox ID="WebLinkTb" runat="server" class="form-control" ></asp:TextBox><br />
+                                        <span class="form-label">By</span>
+                                        <asp:TextBox ID="CityTb" runat="server" class="form-control" ></asp:TextBox>
+
+                                        <span class="form-label">Post nr</span>
+                                        <asp:TextBox ID="ZipcodeTb" runat="server" class="form-control"></asp:TextBox>
+								
+                                        <span class="form-label">Boligareal</span>
+                                        <asp:TextBox ID="LivingArealTb" runat="server" class="form-control"></asp:TextBox>
+								
+                                        <span class="form-label">Grundareal</span>
+                                        <asp:TextBox ID="GroundArealTb" runat="server" class="form-control"></asp:TextBox>
+
+                                        <span class="form-label">Kælderareal</span>
+                                        <asp:TextBox ID="BasementArealTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Garageareal</span>
+                                        <asp:TextBox ID="GarageArealTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Antal rum</span>
+                                        <asp:TextBox ID="RoomsTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Antal toiletter</span>
+                                        <asp:TextBox ID="ToiletsTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Etager</span>
+                                        <asp:TextBox ID="FloorLevelsTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Byggeår</span>
+                                        <asp:TextBox ID="BuildingYearTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Afstand til skole</span>
+                                        <asp:TextBox ID="DistToSchoolTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Afstand til indkøb</span>
+                                        <asp:TextBox ID="DistToShppingTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Energimærke</span>
+                                        <asp:TextBox ID="EnergyMarkTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Kvm pris</span>
+                                        <asp:TextBox ID="KvmPriceTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Brutto pris</span>
+                                        <asp:TextBox ID="BruttoPriceTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Netto pris</span>
+                                        <asp:TextBox ID="NettoPriceTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Kontantpris</span>
+                                        <asp:TextBox ID="CashPriceTb" runat="server" class="form-control" ></asp:TextBox>
+								
+                                        <span class="form-label">Mægler link</span>
+                                        <asp:TextBox ID="WebLinkTb" runat="server" class="form-control" ></asp:TextBox>
+
+										<asp:Button class="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
                                     </div>
                                 </div>
                                 <div id="createBtn">
-                                    <asp:Button class="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
                                 </div>
                     </div>
                 </div>
