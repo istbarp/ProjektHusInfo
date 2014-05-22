@@ -112,7 +112,7 @@
 		</div>
 
       <div class="footer">
-        <p>&copy; Company 2014</p>
+        <p>&copy; Husinfo 2014</p>
       </div>
 
 </asp:Content>
