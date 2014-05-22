@@ -59,24 +59,6 @@ namespace HusInfo.Pages
 				DropDownListDelete.DataTextField = "DisplayField";
 				DropDownListDelete.DataBind();
 			}
-
-			if (!Page.IsPostBack)
-			{
-				//fill listbox
-				List<House> hou = hC.GetAllHouses();
-				var houseSource = from h in hou
-								  select new
-								  {
-									  h.id,
-									  h.address,
-									  h.zipCode,
-									  DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
-								  };
-
-				ListBoxAllHouses.DataSource = houseSource;
-				ListBoxAllHouses.DataTextField = "DisplayField";
-				ListBoxAllHouses.DataBind();
-			}
 		}
 
 		protected void ButtonEdit_Click(object sender, EventArgs e)
@@ -112,9 +94,6 @@ namespace HusInfo.Pages
 
 			catch (Exception ex)
 			{
-				//Response.Write("<script>alert(' " + ex.Message.ToString() + " ')</script>");
-				//Response.Write("<script language='javascript'>alert(\"" + ex.Message.ToString() + "\")</script>");
-
 				string strm = ex.Message.Replace('\'', ' ');
 				string str = "<script language='javascript'>";
 				str += "alert('" + strm + "')";

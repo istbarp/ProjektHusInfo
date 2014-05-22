@@ -362,7 +362,7 @@
                                     <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
                                 </div>
                                 <div id="ButtonDeleteDiv">
-                                    <asp:Button ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
+                                    <asp:Button ID="ButtonDeleteHouse" class="btn btn-default" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
                                 </div>
                             </div>
                         </div>
@@ -378,26 +378,32 @@
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
                              <div id="DivShowAllHouses">
-                <div id="ListBoxShowAllHousesDiv">
-                    <asp:ListBox ID="ListBoxAllHouses" runat="server"></asp:ListBox>
+                <div id="ListShowAllHousesDiv">
                 </div>
-                <table style="width: 100%;" id="tableHouses" runat="server">
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
+                               <table class="table table-condensed">
+                                   <%HusInfo.Controller.HouseCtr hC = new HusInfo.Controller.HouseCtr();
+                                     List<HusInfo.Model.House> hou = hC.GetAllHouses();
+                                     var houseSource = from h in hou
+                                                       select new
+                                                       {
+                                                           h.id,
+                                                           h.address,
+                                                           h.zipCode,
+                                                       };
+                                     {
+
+                                         houseSource.ToList();
+
+                                         foreach (var ho in houseSource)
+                                         {
+                                             %><tr>
+                                                 <td><%=ho.address%></td>
+                                                 <td><%=ho.zipCode%></td>
+                                               </tr><%
+                                         }
+                                         
+                                     } %>
+                               </table>
             </div>
                                 </div>
                             </div>
