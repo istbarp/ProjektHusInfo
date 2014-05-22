@@ -49,7 +49,7 @@
         <asp:Label ID="ELabelCVR" runat="server" Text="CVR nr."></asp:Label>
         <asp:TextBox ID="CVRTbe" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
-
+		<br /><br />
         <div id="buttonAddUser">
         <asp:Button ID="ButtonAddUser" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Tilføj Bruger" OnClick="ButtonAddUser_Click" />
         </div>
