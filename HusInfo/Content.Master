@@ -50,6 +50,7 @@
 				<% else { %>
 				<li <% if (SelectedMenu == "admin") Response.Write("class=\"active\""); %>><a href="/Pages/admin.aspx">Admin</a></li>
 				<li><a href="/Pages/login.aspx?logout=true">Log ud</a></li>
+				
 				<% } %>
 				
 			</ul>
