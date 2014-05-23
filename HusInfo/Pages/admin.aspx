@@ -43,15 +43,15 @@
 		}
 	</style>
 	<form id="form1" runat="server">
-        <div id="DivForAll">
             <div class="panel-group" id="accordion">
+				
                 <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" "><div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" "><div class="panel-heading">
                         <h4 class="panel-title">
                             Opret Hus
                         </h4>
                     </div></a>
-                    <div id="collapseOne" class="panel-collapse collapse">
+                    <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivCreateHouse" class="jumbotron" title="Create House">
                                         <span class="form-label">Adresse</span>
@@ -117,12 +117,12 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><div class="panel-heading">
                         <h4 class="panel-title">
                             Ret hus
                         </h4>
                     </div></a>
-                    <div id="collapseTwo" class="panel-collapse collapse">
+                    <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivEditHouse" title="EditHouse">
                                 
@@ -132,10 +132,7 @@
 										<asp:AsyncPostBackTrigger ControlID="UpdateButton1" EventName="Click" />
 									</Triggers>
 									<ContentTemplate>
-                                <div id="dropdownEdit">
-                                    
-
-                                </div>
+                                
 										<div id="EditFields" class="jumbotron">
 
 										<asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
@@ -200,7 +197,6 @@
 
 										<asp:Button class="btn btn-success btn-lg" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
                                     </div>
-                                </div>
 										</ContentTemplate>
 									</asp:UpdatePanel>
                                 
@@ -209,32 +205,30 @@
                     </div>
                 </div>
 				<div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><div class="panel-heading">
                         <h4 class="panel-title">
                             Slet hus
                         </h4>
                     </div></a>
-                    <div id="collapseThree" class="panel-collapse collapse">
+                    <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
 							<div id="DivDeleteHouse" class="jumbotron">
-                                <div id="DropdownlistDeleteDiv">
-                                    <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
-                                </div>
-                                <div id="ButtonDeleteDiv">
+
+                                    <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList><br /><br />
                                     <asp:Button class="btn btn-danger" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
-                                </div>
+
 								</div>
                     </div>
                 </div>
 				</div>
                 
                 <div class="panel panel-default">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><div class="panel-heading">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><div class="panel-heading">
                         <h4 class="panel-title">
                             Alle huse
                         </h4>
                     </div></a>
-                    <div id="collapseFour" class="panel-collapse collapse">
+                    <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
                              <div id="DivShowAllHouses">
                                <table class="table table-condensed">
@@ -266,7 +260,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
     </form>
 
 </asp:Content>
