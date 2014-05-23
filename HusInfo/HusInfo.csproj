@@ -94,6 +94,7 @@
     <Content Include="Images\Ydunsvej7\Ydunsvej7_9.png" />
     <Content Include="Pages\addUser.aspx" />
     <Content Include="Pages\admin.aspx" />
+    <Content Include="Pages\brunoSearch.aspx" />
     <Content Include="Pages\giveOffer.aspx" />
     <Content Include="Pages\houseInfo.aspx" />
     <Content Include="Pages\login.aspx" />
@@ -198,6 +199,13 @@
     </Compile>
     <Compile Include="Pages\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\brunoSearch.aspx.cs">
+      <DependentUpon>brunoSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\brunoSearch.aspx.designer.cs">
+      <DependentUpon>brunoSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\giveOffer.aspx.cs">
       <DependentUpon>giveOffer.aspx</DependentUpon>
