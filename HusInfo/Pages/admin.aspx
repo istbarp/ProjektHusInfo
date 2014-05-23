@@ -41,6 +41,29 @@
 		.form-control {
 			margin-bottom: 16px;
 		}
+
+		th 
+		{
+			text-align: left;
+			border-bottom: solid 1px grey;
+		}
+		
+		td 
+		{
+			text-align: left;
+			background-color: white;
+		}
+
+		td:nth-child(2)
+		{
+			border-left: 1px solid grey;
+		}
+
+		table{
+			border: solid 1px grey;
+			margin-bottom: 0px !important;
+			border-collapse: inherit !important;
+		}
 	</style>
 	<form id="form1" runat="server">
             <div class="panel-group" id="accordion">
@@ -54,63 +77,63 @@
                         <div class="panel-body">
                             <div id="DivCreateHouse" class="jumbotron" title="Create House">
                                         <span class="form-label">Adresse</span>
-                                        <asp:TextBox ID="AddressTb" class="form-control" runat="server" ></asp:TextBox>
+                                        <asp:TextBox ID="AddressTb" CssClass="form-control" runat="server" ></asp:TextBox>
  
                                         <span class="form-label">By</span>
-                                        <asp:TextBox ID="CityTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="CityTb" runat="server" CssClass="form-control" ></asp:TextBox>
 
                                         <span class="form-label">Post nr</span>
-                                        <asp:TextBox ID="ZipcodeTb" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="ZipcodeTb" runat="server" CssClass="form-control"></asp:TextBox>
 								
                                         <span class="form-label">Boligareal</span>
-                                        <asp:TextBox ID="LivingArealTb" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="LivingArealTb" runat="server" CssClass="form-control"></asp:TextBox>
 								
                                         <span class="form-label">Grundareal</span>
-                                        <asp:TextBox ID="GroundArealTb" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="GroundArealTb" runat="server" CssClass="form-control"></asp:TextBox>
 
                                         <span class="form-label">Kælderareal</span>
-                                        <asp:TextBox ID="BasementArealTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="BasementArealTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Garageareal</span>
-                                        <asp:TextBox ID="GarageArealTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="GarageArealTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Antal rum</span>
-                                        <asp:TextBox ID="RoomsTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="RoomsTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Antal toiletter</span>
-                                        <asp:TextBox ID="ToiletsTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="ToiletsTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Etager</span>
-                                        <asp:TextBox ID="FloorLevelsTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="FloorLevelsTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Byggeår</span>
-                                        <asp:TextBox ID="BuildingYearTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="BuildingYearTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Afstand til skole</span>
-                                        <asp:TextBox ID="DistToSchoolTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="DistToSchoolTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Afstand til indkøb</span>
-                                        <asp:TextBox ID="DistToShppingTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="DistToShppingTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Energimærke</span>
-                                        <asp:TextBox ID="EnergyMarkTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="EnergyMarkTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Kvm pris</span>
-                                        <asp:TextBox ID="KvmPriceTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="KvmPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Brutto pris</span>
-                                        <asp:TextBox ID="BruttoPriceTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="BruttoPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Netto pris</span>
-                                        <asp:TextBox ID="NettoPriceTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="NettoPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Kontantpris</span>
-                                        <asp:TextBox ID="CashPriceTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="CashPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
 								
                                         <span class="form-label">Mægler link</span>
-                                        <asp:TextBox ID="WebLinkTb" runat="server" class="form-control" ></asp:TextBox>
+                                        <asp:TextBox ID="WebLinkTb" runat="server" CssClass="form-control" ></asp:TextBox>
 
-										<asp:Button class="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
+										<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
                                     </div>
                                 </div>
                     </div>
@@ -134,67 +157,67 @@
                                 
 										<div id="EditFields" class="jumbotron">
 
-										<asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
-										<asp:Button ID="UpdateButton1" class="btn btn-warning" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" /><br />
+										<asp:DropDownList ID="DropDownListEdit" runat="server" CssClass="form-control"></asp:DropDownList>
+										<asp:Button ID="UpdateButton1" CssClass="btn btn-warning" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" /><br />
 
 										<span class="form-label">Adresse:</span>
-                                        <asp:TextBox ID="AddressTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="AddressTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">By:</span>
-                                        <asp:TextBox ID="CityTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="CityTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Post nr.:</span>
-                                        <asp:TextBox ID="ZipcodeTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="ZipcodeTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Boligareal:</span>
-                                        <asp:TextBox ID="LivingArealTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="LivingArealTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Grundareal:</span>
-                                        <asp:TextBox ID="GroundArealTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="GroundArealTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Kælderareal:</span>
-                                        <asp:TextBox ID="BasementArealTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="BasementArealTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Garageareal:</span>
-                                        <asp:TextBox ID="GarageArealTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="GarageArealTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Antal rum:</span>
-                                        <asp:TextBox ID="RoomsTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="RoomsTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Antal toiletter:</span>
-                                        <asp:TextBox ID="ToiletsTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="ToiletsTbe" runat="server" CssClass="form-control"></asp:TextBox>
 											
 										<span class="form-label">Antal plan:</span>
-                                        <asp:TextBox ID="FloorLevelsTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="FloorLevelsTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Byggeår:</span>
-                                        <asp:TextBox ID="BuildingYearTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="BuildingYearTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Afstand til skole:</span>
-                                        <asp:TextBox ID="DistToSchoolTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="DistToSchoolTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Afstand til indkøb:</span>
-                                        <asp:TextBox ID="DistToShoppingTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="DistToShoppingTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Energimærke:</span>
-                                        <asp:TextBox ID="EnergyMarkTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="EnergyMarkTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Kvm pris:</span>
-                                        <asp:TextBox ID="KvmPriceTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="KvmPriceTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Brutto pris:</span>
-                                        <asp:TextBox ID="BruttoPriceTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="BruttoPriceTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Netto pris:</span>
-                                        <asp:TextBox ID="NettoPriceTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="NettoPriceTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Kontant pris:</span>
-                                        <asp:TextBox ID="CashPriceTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="CashPriceTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
 										<span class="form-label">Link til mægler:</span>
-                                        <asp:TextBox ID="WeblinkTbe" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="WeblinkTbe" runat="server" CssClass="form-control"></asp:TextBox>
 
-										<asp:Button class="btn btn-success btn-lg" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
+										<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
                                     </div>
 										</ContentTemplate>
 									</asp:UpdatePanel>
@@ -213,8 +236,8 @@
                         <div class="panel-body">
 							<div id="DivDeleteHouse" class="jumbotron">
 
-                                    <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
-                                    <asp:Button class="btn btn-danger" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
+								    <asp:DropDownList ID="DropDownListDelete" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    <asp:Button CssClass="btn btn-danger" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
 
 								</div>
                     </div>
@@ -229,8 +252,16 @@
                     </div></a>
                     <div id="collapseFive" class="panel-collapse collapse">
                         <div class="panel-body">
-                             <div id="DivShowAllHouses">
+                             <div id="DivShowAllHouses" class="jumbotron">
                                <table class="table table-condensed">
+								   <tr>
+									   <th>
+										   Adresse
+									   </th>
+									   <th>
+										   Post nr.
+									   </th>
+								   </tr>
                                    <%HusInfo.Controller.HouseCtr hC = new HusInfo.Controller.HouseCtr();
 									 List<HusInfo.Model.House> hou = hC.GetAllHouses();
 									 var houseSource = from h in hou
