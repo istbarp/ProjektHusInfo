@@ -208,7 +208,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
+				<div class="panel panel-default">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><div class="panel-heading">
                         <h4 class="panel-title">
                             Slet hus
@@ -216,17 +216,18 @@
                     </div></a>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <div id="DivDeleteHouse">
+							<div id="DivDeleteHouse" class="jumbotron">
                                 <div id="DropdownlistDeleteDiv">
                                     <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
                                 </div>
                                 <div id="ButtonDeleteDiv">
                                     <asp:Button class="btn btn-danger" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
                                 </div>
-                            </div>
-                        </div>
+								</div>
                     </div>
                 </div>
+				</div>
+                
                 <div class="panel panel-default">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><div class="panel-heading">
                         <h4 class="panel-title">
@@ -236,8 +237,6 @@
                     <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
                              <div id="DivShowAllHouses">
-                <div id="ListShowAllHousesDiv">
-                </div>
                                <table class="table table-condensed">
                                    <%HusInfo.Controller.HouseCtr hC = new HusInfo.Controller.HouseCtr();
 									 List<HusInfo.Model.House> hou = hC.GetAllHouses();
@@ -262,13 +261,12 @@
 
 									 } %>
                                </table>
-            </div>
+					 </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            
     </form>
 
 </asp:Content>
