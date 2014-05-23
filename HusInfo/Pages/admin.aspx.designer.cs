@@ -238,15 +238,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.Button UpdateButton1;
         
         /// <summary>
-        /// ELabelAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ELabelAddress;
-        
-        /// <summary>
         /// AddressTbe control.
         /// </summary>
         /// <remarks>
@@ -254,15 +245,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AddressTbe;
-        
-        /// <summary>
-        /// ELabelCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ELabelCity;
         
         /// <summary>
         /// CityTbe control.
@@ -274,15 +256,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox CityTbe;
         
         /// <summary>
-        /// ELabelZipcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ELabelZipcode;
-        
-        /// <summary>
         /// ZipcodeTbe control.
         /// </summary>
         /// <remarks>
@@ -290,15 +263,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ZipcodeTbe;
-        
-        /// <summary>
-        /// ElabelLivingAreal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelLivingAreal;
         
         /// <summary>
         /// LivingArealTbe control.
@@ -310,15 +274,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox LivingArealTbe;
         
         /// <summary>
-        /// ElabelGroundAreal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelGroundAreal;
-        
-        /// <summary>
         /// GroundArealTbe control.
         /// </summary>
         /// <remarks>
@@ -326,15 +281,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox GroundArealTbe;
-        
-        /// <summary>
-        /// ElabelBasementAreal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelBasementAreal;
         
         /// <summary>
         /// BasementArealTbe control.
@@ -346,15 +292,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox BasementArealTbe;
         
         /// <summary>
-        /// ElabelGarageAreal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelGarageAreal;
-        
-        /// <summary>
         /// GarageArealTbe control.
         /// </summary>
         /// <remarks>
@@ -362,15 +299,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox GarageArealTbe;
-        
-        /// <summary>
-        /// ELabelRooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ELabelRooms;
         
         /// <summary>
         /// RoomsTbe control.
@@ -382,15 +310,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox RoomsTbe;
         
         /// <summary>
-        /// ElabelToilets control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelToilets;
-        
-        /// <summary>
         /// ToiletsTbe control.
         /// </summary>
         /// <remarks>
@@ -398,15 +317,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ToiletsTbe;
-        
-        /// <summary>
-        /// ElabelFloorLevels control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelFloorLevels;
         
         /// <summary>
         /// FloorLevelsTbe control.
@@ -418,15 +328,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox FloorLevelsTbe;
         
         /// <summary>
-        /// ElabelBuildingYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelBuildingYear;
-        
-        /// <summary>
         /// BuildingYearTbe control.
         /// </summary>
         /// <remarks>
@@ -434,15 +335,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox BuildingYearTbe;
-        
-        /// <summary>
-        /// ElabelDistToSchool control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelDistToSchool;
         
         /// <summary>
         /// DistToSchoolTbe control.
@@ -454,15 +346,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox DistToSchoolTbe;
         
         /// <summary>
-        /// ElabelDistToShopping control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelDistToShopping;
-        
-        /// <summary>
         /// DistToShoppingTbe control.
         /// </summary>
         /// <remarks>
@@ -470,15 +353,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DistToShoppingTbe;
-        
-        /// <summary>
-        /// ElabelEnergyMark control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelEnergyMark;
         
         /// <summary>
         /// EnergyMarkTbe control.
@@ -490,15 +364,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox EnergyMarkTbe;
         
         /// <summary>
-        /// ElabelKvmPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelKvmPrice;
-        
-        /// <summary>
         /// KvmPriceTbe control.
         /// </summary>
         /// <remarks>
@@ -506,15 +371,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox KvmPriceTbe;
-        
-        /// <summary>
-        /// ElabelBruttoPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelBruttoPrice;
         
         /// <summary>
         /// BruttoPriceTbe control.
@@ -526,15 +382,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox BruttoPriceTbe;
         
         /// <summary>
-        /// ElabelNettoPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ElabelNettoPrice;
-        
-        /// <summary>
         /// NettoPriceTbe control.
         /// </summary>
         /// <remarks>
@@ -544,15 +391,6 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox NettoPriceTbe;
         
         /// <summary>
-        /// ELabelCashPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ELabelCashPrice;
-        
-        /// <summary>
         /// CashPriceTbe control.
         /// </summary>
         /// <remarks>
@@ -560,15 +398,6 @@ namespace HusInfo.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CashPriceTbe;
-        
-        /// <summary>
-        /// ELabelWeblink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ELabelWeblink;
         
         /// <summary>
         /// WeblinkTbe control.

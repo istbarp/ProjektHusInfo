@@ -20,40 +20,22 @@
 			text-decoration: none !important;
 		}
 
-		#DivCreateHouse
-		{
+		#DivCreateHouse {
 			margin: auto;
 		}
-		
 
-		.input-group
-		{
+
+		.input-group {
 			margin: auto;
 		}
-		
-		/*#createBtn{
-			text-align: center;
-			padding-bottom: 10px;
-		}
 
-		#dropdownEdit{
-			text-align: center;
-			padding-bottom: 10px;	
-		}*/
-
-		.jumbotron
-		{
+		.jumbotron {
 			padding-top: 15px !important;
-			padding-bottom: 15px !important
-		}
-
-		#buttonEditDiv
-		{
-			text-align: center;
+			padding-bottom: 15px !important;
 		}
 
 		.form-label {
-			float:left;
+			float: left;
 		}
 
 		.form-control {
@@ -132,8 +114,6 @@
 										<asp:Button class="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
                                     </div>
                                 </div>
-                                <div id="createBtn">
-                                </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -153,74 +133,77 @@
 									</Triggers>
 									<ContentTemplate>
                                 <div id="dropdownEdit">
-                                    <asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
-                                    <asp:Button ID="UpdateButton1" class="btn btn-primary" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" />
+                                    
 
                                 </div>
-										<div id="EditFields" class="jumbotron"><br />
-                                        <asp:Label ID="ELabelAddress" runat="server" Text="Adresse"></asp:Label><br />
-                                        <asp:TextBox ID="AddressTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ELabelCity" runat="server" Text="By:"></asp:Label><br />
-                                        <asp:TextBox ID="CityTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ELabelZipcode" runat="server" Text="Post nr:"></asp:Label><br />
-                                        <asp:TextBox ID="ZipcodeTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelLivingAreal" runat="server" Text="Boligareal:"></asp:Label><br />
-                                        <asp:TextBox ID="LivingArealTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelGroundAreal" runat="server" Text="Grundareal:"></asp:Label><br />
-                                        <asp:TextBox ID="GroundArealTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelBasementAreal" runat="server" Text="Kælderareal:"></asp:Label><br />
-                                        <asp:TextBox ID="BasementArealTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelGarageAreal" runat="server" Text="Garageareal:"></asp:Label><br />
-                                        <asp:TextBox ID="GarageArealTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ELabelRooms" runat="server" Text="Rum:"></asp:Label><br />
-                                        <asp:TextBox ID="RoomsTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelToilets" runat="server" Text="Toiletter:"></asp:Label><br />
-                                        <asp:TextBox ID="ToiletsTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelFloorLevels" runat="server" Text="Antal plan:"></asp:Label><br />
-                                        <asp:TextBox ID="FloorLevelsTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelBuildingYear" runat="server" Text="Byggeår:"></asp:Label><br />
-                                        <asp:TextBox ID="BuildingYearTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelDistToSchool" runat="server" Text="Afstand til skole:"></asp:Label><br />
-                                        <asp:TextBox ID="DistToSchoolTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelDistToShopping" runat="server" Text="Afstand til indkøb:"></asp:Label><br />
-                                        <asp:TextBox ID="DistToShoppingTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelEnergyMark" runat="server" Text="Energimærke:"></asp:Label><br />
-                                        <asp:TextBox ID="EnergyMarkTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelKvmPrice" runat="server" Text="Kvm pris:"></asp:Label><br />
-                                        <asp:TextBox ID="KvmPriceTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelBruttoPrice" runat="server" Text="Brutto pris"></asp:Label><br />
-                                        <asp:TextBox ID="BruttoPriceTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ElabelNettoPrice" runat="server" Text="Netto pris"></asp:Label><br />
-                                        <asp:TextBox ID="NettoPriceTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ELabelCashPrice" runat="server" Text="Cash pris"></asp:Label><br />
-                                        <asp:TextBox ID="CashPriceTbe" runat="server" Width="300px"></asp:TextBox><br />
-										<br />
-                                        <asp:Label ID="ELabelWeblink" runat="server" Text="Web link"></asp:Label><br />
-                                        <asp:TextBox ID="WeblinkTbe" runat="server" Width="300px"></asp:TextBox><br /><br />
+										<div id="EditFields" class="jumbotron">
+
+										<asp:DropDownList ID="DropDownListEdit" runat="server"></asp:DropDownList>
+										<asp:Button ID="UpdateButton1" class="btn btn-warning" runat="server" Text="Hent hus" OnClick="ButtonGetHouse_Click" /><br />
+
+										<span class="form-label">Adresse:</span>
+                                        <asp:TextBox ID="AddressTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">By:</span>
+                                        <asp:TextBox ID="CityTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Post nr.:</span>
+                                        <asp:TextBox ID="ZipcodeTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Boligareal:</span>
+                                        <asp:TextBox ID="LivingArealTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Grundareal:</span>
+                                        <asp:TextBox ID="GroundArealTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Kælderareal:</span>
+                                        <asp:TextBox ID="BasementArealTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Garageareal:</span>
+                                        <asp:TextBox ID="GarageArealTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Antal rum:</span>
+                                        <asp:TextBox ID="RoomsTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Antal toiletter:</span>
+                                        <asp:TextBox ID="ToiletsTbe" runat="server" class="form-control"></asp:TextBox>
+											
+										<span class="form-label">Antal plan:</span>
+                                        <asp:TextBox ID="FloorLevelsTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Byggeår:</span>
+                                        <asp:TextBox ID="BuildingYearTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Afstand til skole:</span>
+                                        <asp:TextBox ID="DistToSchoolTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Afstand til indkøb:</span>
+                                        <asp:TextBox ID="DistToShoppingTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Energimærke:</span>
+                                        <asp:TextBox ID="EnergyMarkTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Kvm pris:</span>
+                                        <asp:TextBox ID="KvmPriceTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Brutto pris:</span>
+                                        <asp:TextBox ID="BruttoPriceTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Netto pris:</span>
+                                        <asp:TextBox ID="NettoPriceTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Kontant pris:</span>
+                                        <asp:TextBox ID="CashPriceTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<span class="form-label">Link til mægler:</span>
+                                        <asp:TextBox ID="WeblinkTbe" runat="server" class="form-control"></asp:TextBox>
+
+										<asp:Button class="btn btn-success btn-lg" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
                                     </div>
                                 </div>
 										</ContentTemplate>
 									</asp:UpdatePanel>
-                                <div id="buttonEditDiv">
-                                    <asp:Button class="btn btn-success btn-lg" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -238,7 +221,7 @@
                                     <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
                                 </div>
                                 <div id="ButtonDeleteDiv">
-                                    <asp:Button class="btn btn-warning" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
+                                    <asp:Button class="btn btn-danger" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
                                 </div>
                             </div>
                         </div>
