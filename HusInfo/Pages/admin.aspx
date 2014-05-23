@@ -44,7 +44,6 @@
 	</style>
 	<form id="form1" runat="server">
             <div class="panel-group" id="accordion">
-				
                 <div class="panel panel-default">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" "><div class="panel-heading">
                         <h4 class="panel-title">
@@ -214,7 +213,7 @@
                         <div class="panel-body">
 							<div id="DivDeleteHouse" class="jumbotron">
 
-                                    <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList><br /><br />
+                                    <asp:DropDownList ID="DropDownListDelete" runat="server"></asp:DropDownList>
                                     <asp:Button class="btn btn-danger" ID="ButtonDeleteHouse" runat="server" Text="Slet hus" OnClick="ButtonDelete_Click" />
 
 								</div>
