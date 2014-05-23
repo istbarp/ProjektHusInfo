@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/content.Master" AutoEventWireup="true" CodeBehind="houseInfo.aspx.cs" Inherits="HusInfo.Pages.houseInfo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContainerPlaceHolder" runat="server">
+	<style>
+		img
+		{
+			margin: auto;
+		}
+	</style>
 
       <div class="jumbotron">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
