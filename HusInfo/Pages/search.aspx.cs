@@ -26,7 +26,7 @@ namespace HusInfo.Pages
 			if (!string.IsNullOrEmpty(searchStr))
 			{
 				hCtr = new HusInfo.Controller.HouseCtr();
-				hList = hCtr.getHouseAddress(searchStr);
+				hList = hCtr.FindHouse(searchStr);
 			}
 		}
 
@@ -36,7 +36,7 @@ namespace HusInfo.Pages
 		{
 			HusInfo.Controller.HouseCtr hCtr = new Controller.HouseCtr();
 
-			var q = from v in hCtr.getHouseAddress(pre)
+			var q = from v in hCtr.FindHouse(pre)
 					select new HouseBasic()
 					{
 						Id = v.id,

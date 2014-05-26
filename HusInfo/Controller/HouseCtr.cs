@@ -61,23 +61,22 @@ namespace HusInfo.Controller
             db.SaveChanges();
         }
 
-        //Returns null if no houses found
-		public List<House> getHouseAddress(string address)
-		{      
-                 try{
-                    var houses =
-                        (from h in db.House.Include("Report.Classification")
-                        where h.address.Contains(address)
-                        select h).Take(5).ToList();
+		//Returns null if no houses found
+		public List<House> FindHouse(string searchString)
+		{
+			// If search contains 4-digit number, it's likely a zipcode.
+			Match m = Regex.Match(searchString, "[0-9]{4}", RegexOptions.Compiled);
+			int zipcode = -1;
+			if (m.Success)
+			{
+				zipcode = int.Parse(m.Captures[0].Value);
+			}
 
-                     return houses;
-                 }
-				 catch(Exception e)
-                 {
-                     Console.WriteLine("test");
-                 }
+			var houses = (from h in db.House.AsNoTracking()
+						  where h.address.Contains(searchString) || h.zipCode == zipcode
+						  select h).Take(5).ToList();
 
-                 return null;
+			return houses;
 		}
 
         public List<House> GetAllHouses()

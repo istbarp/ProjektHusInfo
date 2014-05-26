@@ -39,7 +39,7 @@ namespace ProjektHusInfoTest
 
             string s = "vej";
 
-            List<House> H = hCtr.getHouseAddress(s);
+            List<House> H = hCtr.FindHouse(s);
 
             Console.WriteLine("Count of houses");
             Console.WriteLine(H.Count.ToString());
@@ -81,13 +81,13 @@ namespace ProjektHusInfoTest
 
             hCtr.insertHouse(h);
 
-            Assert.AreEqual(hCtr.getHouseAddress("Testvej")[0].address, h.address);
+            Assert.AreEqual(hCtr.FindHouse("Testvej")[0].address, h.address);
         }
 
         [TestMethod]
         public void getTilstandsRapport()
         {
-            List<House> H = hCtr.getHouseAddress("vej");
+            List<House> H = hCtr.FindHouse("vej");
             //Report report = hCtr.getReport(house[0].id);
 
             List<Report> rep = new List<Report>();

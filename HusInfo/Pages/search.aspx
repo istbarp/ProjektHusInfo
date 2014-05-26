@@ -33,6 +33,11 @@
 					$(window.location).attr('href', '/Pages/houseInfo.aspx?id=' + ui.item.id)
 				}
 			});
+
+            /* On textbox focus, previous results (if any) for current text is shown. */
+			$('#searchTextBox').bind('focus', function () {
+			    $(this).autocomplete('search');
+			})
 		});
 	</script>
 
