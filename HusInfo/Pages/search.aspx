@@ -38,12 +38,8 @@
 
 	<div class="jumbotron">
 		<form target="_self" method="get">
-			<div class="input-group">
-
+			<div class="edit-group">
 				<input id ="searchTextBox" name="search" type="text" class="form-control" placeholder="Indtast adresse">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="submit">Søg</button>
-				</span>
 			</div>
 			<!-- /input-group -->
 		</form>
