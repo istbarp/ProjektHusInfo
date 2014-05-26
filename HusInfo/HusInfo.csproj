@@ -79,6 +79,7 @@
     <Content Include="Images\Hadsundvej28\hadsundvej28_7.jpg" />
     <Content Include="Images\Hadsundvej28\hadsundvej28_8.jpg" />
     <Content Include="Images\Hadsundvej28\hadsundvej28_9.jpg" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Images\Ydunsvej7\Ydunsvej7_1.png" />
     <Content Include="Images\Ydunsvej7\Ydunsvej7_10.png" />
     <Content Include="Images\Ydunsvej7\Ydunsvej7_11.png" />
