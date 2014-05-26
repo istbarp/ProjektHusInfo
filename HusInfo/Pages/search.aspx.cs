@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -26,6 +28,28 @@ namespace HusInfo.Pages
 				hCtr = new HusInfo.Controller.HouseCtr();
 				hList = hCtr.getHouseAddress(searchStr);
 			}
+		}
+
+		[WebMethod]
+		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+		public static List<HouseBasic> FindHouse(string pre)
+		{
+			HusInfo.Controller.HouseCtr hCtr = new Controller.HouseCtr();
+
+			var q = from v in hCtr.getHouseAddress(pre)
+					select new HouseBasic()
+					{
+						Id = v.id,
+						S = v.address + ", " + v.zipCode + " " + v.city
+					};
+
+			return q.ToList();
+		}
+
+		public class HouseBasic
+		{
+			public int Id { get; set; }
+			public string S { get; set; }
 		}
 	}
 }

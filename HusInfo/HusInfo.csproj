@@ -94,13 +94,10 @@
     <Content Include="Images\Ydunsvej7\Ydunsvej7_9.png" />
     <Content Include="Pages\addUser.aspx" />
     <Content Include="Pages\admin.aspx" />
-    <Content Include="Pages\brunoSearch.aspx" />
     <Content Include="Pages\giveOffer.aspx" />
     <Content Include="Pages\houseInfo.aspx" />
     <Content Include="Pages\login.aspx" />
     <Content Include="Pages\search.aspx" />
-    <Content Include="Pages\SearchTest.aspx" />
-    <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css" />
@@ -200,13 +197,6 @@
     <Compile Include="Pages\admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\brunoSearch.aspx.cs">
-      <DependentUpon>brunoSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\brunoSearch.aspx.designer.cs">
-      <DependentUpon>brunoSearch.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\giveOffer.aspx.cs">
       <DependentUpon>giveOffer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,20 +224,6 @@
     </Compile>
     <Compile Include="Pages\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SearchTest.aspx.cs">
-      <DependentUpon>SearchTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\SearchTest.aspx.designer.cs">
-      <DependentUpon>SearchTest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Report.cs">
