@@ -29,7 +29,7 @@ namespace HusInfo.Pages
 			person.username = UsernameTbe.Text;
 			person.phoneNumber = int.Parse(PhoneTbe.Text);
 			person.personType = "Entreprenur";
-			person.cvrNumber = int.Parse(CVRTbe.Text);
+			person.cvrNumber = CVRTbe.Text;
 
 			pCtr.addPerson(person);
 

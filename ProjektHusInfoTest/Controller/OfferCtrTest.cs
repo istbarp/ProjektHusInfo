@@ -27,7 +27,7 @@ namespace ProjektHusInfoTest.Controller
 			l = new Login()
 			{
 				company = "Estate agent A/S",
-				cvrNumber = 1234,
+				cvrNumber = "1234",
 				lastname = "and",
 				name = "anders",
 				password = "1234",

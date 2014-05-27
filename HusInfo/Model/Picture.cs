@@ -15,7 +15,7 @@ namespace HusInfo.Model
     public partial class Picture
     {
         public int id { get; set; }
-        public string fileName { get; set; }
+        public string pictureFilename { get; set; }
         public Nullable<int> houseId { get; set; }
         public Nullable<int> classificationId { get; set; }
     

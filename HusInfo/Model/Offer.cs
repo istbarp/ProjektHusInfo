@@ -17,8 +17,8 @@ namespace HusInfo.Model
         public int id { get; set; }
         public Nullable<int> loginId { get; set; }
         public Nullable<int> classificationId { get; set; }
-        public Nullable<double> price { get; set; }
         public string comment { get; set; }
+        public Nullable<double> price { get; set; }
     
         public virtual Classification Classification { get; set; }
         public virtual Login Login { get; set; }
