@@ -257,13 +257,6 @@
     <Compile Include="Pages\_workmanAdmin.aspx.designer.cs">
       <DependentUpon>_workmanAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\userAdmin.aspx.cs">
-      <DependentUpon>userAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\userAdmin.aspx.designer.cs">
-      <DependentUpon>userAdmin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

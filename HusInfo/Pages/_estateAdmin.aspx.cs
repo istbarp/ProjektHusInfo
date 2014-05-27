@@ -25,7 +25,7 @@ namespace HusInfo.Pages
 				HusInfo.Model.Login l = new HusInfo.Model.Login();
 
 				l.company = CompanyTb.Text;
-				l.cvrNumber = int.Parse(CvrNumberTb.Text);
+				l.cvrNumber = CvrNumberTb.Text;
 				l.lastname = LastnameTb.Text;
 				l.name = NameTb.Text;
 				l.password = PasswordTb.Text;
@@ -55,7 +55,7 @@ namespace HusInfo.Pages
 				HusInfo.Model.Login l = new HusInfo.Model.Login();
 
 				l.company = CompanyTbe.Text;
-				l.cvrNumber = int.Parse(CvrNumberTbe.Text);
+				l.cvrNumber = CvrNumberTbe.Text;
 				l.lastname = LastnameTbe.Text;
 				l.name = NameTbe.Text;
 				l.password = PasswordTbe.Text;
