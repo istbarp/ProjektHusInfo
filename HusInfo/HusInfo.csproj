@@ -99,12 +99,9 @@
     <Content Include="Pages\houseInfo.aspx" />
     <Content Include="Pages\login.aspx" />
     <Content Include="Pages\search.aspx" />
-<<<<<<< HEAD
     <Content Include="Pages\_houseAdmin.aspx" />
     <Content Include="Pages\_workmanAdmin.aspx" />
-=======
     <Content Include="Pages\userAdmin.aspx" />
->>>>>>> 0bb69c0a1666a8ab6ce78079c3d9858dba8cfebe
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css" />
