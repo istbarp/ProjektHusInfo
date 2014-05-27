@@ -44,14 +44,13 @@
 				<li <% if (SelectedMenu == "search") Response.Write("class=\"active\""); %>><a href="/Pages/search.aspx">Søg</a></li>
 
 				<% if (Session["Login"] == null) { %>
-				<li <% if (SelectedMenu == "login") Response.Write("class=\"active\""); %>><a href="/Pages/login.aspx">Login</a></li>
-				<li <% if (SelectedMenu == "addUser") Response.Write("class=\"active\""); %>><a href="/Pages/addUser.aspx">Ny bruger</a></li>
-				<% } %>
-				<% else { %>
-				<li <% if (SelectedMenu == "admin") Response.Write("class=\"active\""); %>><a href="/Pages/admin.aspx">Admin</a></li>
-                <li <% if (SelectedMenu == "userAdmin") Response.Write ("class=\"active\""); %>><a href="/Pages/userAdmin.aspx">Ny Mægler</a></li>
-				<li><a href="/Pages/login.aspx?logout=true">Log ud</a></li>
-				
+					<li <% if (SelectedMenu == "login") Response.Write("class=\"active\""); %>><a href="/Pages/login.aspx">Login</a></li>
+					<li <% if (SelectedMenu == "addUser") Response.Write("class=\"active\""); %>><a href="/Pages/addUser.aspx">Ny bruger</a></li>
+				<% } else { %>
+					<% if (((HusInfo.Model.Login)Session["Login"]).personType == "RealEstateAgent") {  %>
+						<li <% if (SelectedMenu == "admin") Response.Write("class=\"active\""); %>><a href="/Pages/admin.aspx">Admin</a></li>
+					<% } %>
+					<li><a href="/Pages/login.aspx?logout=true">Log ud</a></li>
 				<% } %>
 				
 			</ul>

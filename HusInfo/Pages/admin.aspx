@@ -21,7 +21,7 @@
 	<div id="tabs">
 		<ul>
 			<li><a href="_houseAdmin.aspx">Boliger</a></li>
-			<li><a href="DANNYSTUFF">Mæglere</a></li>
+			<li><a href="_estateAdmin.aspx">Mæglere</a></li>
 			<li><a href="_workmanAdmin.aspx">Håndværkere</a></li>
 		</ul>
 		<div id="tabs-1"></div>

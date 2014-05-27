@@ -99,9 +99,9 @@
     <Content Include="Pages\houseInfo.aspx" />
     <Content Include="Pages\login.aspx" />
     <Content Include="Pages\search.aspx" />
+    <Content Include="Pages\_estateAdmin.aspx" />
     <Content Include="Pages\_houseAdmin.aspx" />
     <Content Include="Pages\_workmanAdmin.aspx" />
-    <Content Include="Pages\userAdmin.aspx" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap.css" />
@@ -230,6 +230,13 @@
     <Compile Include="Pages\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\_estateAdmin.aspx.cs">
+      <DependentUpon>_estateAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\_estateAdmin.aspx.designer.cs">
+      <DependentUpon>_estateAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\_houseAdmin.aspx.cs">
       <DependentUpon>_houseAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,13 +250,6 @@
     </Compile>
     <Compile Include="Pages\_workmanAdmin.aspx.designer.cs">
       <DependentUpon>_workmanAdmin.aspx</DependentUpon>
-	</Compile>
-    <Compile Include="Pages\userAdmin.aspx.cs">
-      <DependentUpon>userAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\userAdmin.aspx.designer.cs">
-      <DependentUpon>userAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Report.cs">

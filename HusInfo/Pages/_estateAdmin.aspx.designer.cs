@@ -10,7 +10,7 @@
 namespace HusInfo.Pages {
     
     
-    public partial class userAdmin {
+    public partial class _estateAdmin {
         
         /// <summary>
         /// form1 control.
