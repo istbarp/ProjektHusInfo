@@ -29,6 +29,7 @@ namespace HusInfo.Model
         public string name { get; set; }
         public string lastname { get; set; }
         public Nullable<int> cvrNumber { get; set; }
+        public Nullable<bool> verified { get; set; }
     
         public virtual ICollection<House> House { get; set; }
         public virtual ICollection<Offer> Offer { get; set; }

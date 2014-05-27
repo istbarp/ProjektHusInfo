@@ -10,6 +10,6 @@
 namespace HusInfo.Pages {
     
     
-    public partial class admin {
+    public partial class _workmanAdmin {
     }
 }

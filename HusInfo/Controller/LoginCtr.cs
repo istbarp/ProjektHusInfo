@@ -27,5 +27,26 @@ namespace HusInfo.Controller
 
 			db.SaveChanges();
 		}
+
+		public List<Login> GetWorkmen()
+		{
+			var q = from v in db.Login
+					where v.personType == "Entreprenur"
+					orderby v.verified ascending
+					select v;
+
+			return q.ToList();
+		}
+
+		public void VerifyLogin(int verifyId)
+		{
+			Login l = (from v in db.Login
+					   where v.id == verifyId
+					   select v).FirstOrDefault();
+
+			l.verified = true;
+
+			db.SaveChanges();
+		}
 	}
 }

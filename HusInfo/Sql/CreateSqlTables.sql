@@ -1,12 +1,16 @@
 create table Login
 (
 	id int identity primary key,
+	name nvarchar(100),
+	lastname nvarchar(100),
+	cvrNumber nvarchar(100),
 	company nvarchar(MAX),
 	password nvarchar(MAX),
 	phoneNumber int,
-	username nvarchar(MAX),
+	verified bit,
+	username nvarchar(50) unique,
 	personType nvarchar(MAX)
-	check (personType in ('Entreprenur' , 'RealEstateAgent'))	
+	check (personType in ('Entreprenur' , 'RealEstateAgent'))
 )
 
 create table House
@@ -33,6 +37,23 @@ create table House
 	zipCode int,
 	loginId int foreign key references [Login](id)
 )
+
+create table Report
+(
+	id int identity primary key,
+	houseId int foreign key references House(id)
+)
+
+create table Classification
+(
+	id int identity primary key,
+	problem nvarchar(MAX),
+	[type] nvarchar(MAX),
+	reportId int foreign key references Report(id),
+
+	check ([type] in ('k3' , 'k2', 'k1', 'k0', 'un'))
+)
+
 create table Picture
 (
 	id int identity primary key,
@@ -40,22 +61,6 @@ create table Picture
 	houseId int foreign key references House(id) null,
 	classificationId int foreign key references Classification(id) null,
 	CHECK (houseId IS not null OR classificationId IS not null)
-)
-create table Report
-(
-	id int identity primary key,
-	houseId int foreign key references House(id)
-)
-
-
-create table Classification
-(
-	id int identity primary key,
-	problem nvarchar(MAX),
-	[type] nvarchar(MAX),
-	reportId int foreign key references Report(id)
-
-	check ([type] in ('k3' , 'k2', 'k1', 'k0', 'un')),
 )
 
 create table Offer

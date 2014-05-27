@@ -53,6 +53,7 @@
           <Property Name="name" Type="nvarchar(max)" />
           <Property Name="lastname" Type="nvarchar(max)" />
           <Property Name="cvrNumber" Type="int" />
+          <Property Name="verified" Type="bit" />
         </EntityType>
         <EntityType Name="Offer">
           <Key>
@@ -260,6 +261,7 @@
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="cvrNumber" Type="Int32" />
+          <Property Name="verified" Type="Boolean" />
         </EntityType>
         <EntityType Name="Offer">
           <Key>
@@ -459,6 +461,7 @@
           <EntitySetMapping Name="Login">
             <EntityTypeMapping TypeName="Model.Login">
               <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="verified" ColumnName="verified" />
                 <ScalarProperty Name="cvrNumber" ColumnName="cvrNumber" />
                 <ScalarProperty Name="lastname" ColumnName="lastname" />
                 <ScalarProperty Name="name" ColumnName="name" />
