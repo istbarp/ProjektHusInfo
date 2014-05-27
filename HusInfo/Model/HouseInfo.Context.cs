@@ -16,7 +16,7 @@ namespace HusInfo.Model
     public partial class HouseInfoContext : DbContext
     {
         public HouseInfoContext()
-            : base("name=HouseInfoContext")
+            : base("name=dmaa0912JesperHEntities")
         {
         }
     
@@ -29,7 +29,8 @@ namespace HusInfo.Model
         public virtual DbSet<House> House { get; set; }
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Offer> Offer { get; set; }
-        public virtual DbSet<Report> Report { get; set; }
         public virtual DbSet<Picture> Picture { get; set; }
+        public virtual DbSet<Report> Report { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

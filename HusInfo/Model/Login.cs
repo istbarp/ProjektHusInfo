@@ -21,15 +21,15 @@ namespace HusInfo.Model
         }
     
         public int id { get; set; }
+        public string name { get; set; }
+        public string lastname { get; set; }
+        public string cvrNumber { get; set; }
         public string company { get; set; }
         public string password { get; set; }
         public Nullable<int> phoneNumber { get; set; }
+        public Nullable<bool> verified { get; set; }
         public string username { get; set; }
         public string personType { get; set; }
-        public string name { get; set; }
-        public string lastname { get; set; }
-        public Nullable<int> cvrNumber { get; set; }
-        public Nullable<bool> verified { get; set; }
     
         public virtual ICollection<House> House { get; set; }
         public virtual ICollection<Offer> Offer { get; set; }
