@@ -10,7 +10,7 @@ namespace HusInfo
 	public partial class ContentMasterSite : System.Web.UI.MasterPage
 	{
 		private string page = "frontpage";
-
+		
 		public string SelectedMenu
 		{
 			get { return page; }
