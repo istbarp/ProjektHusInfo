@@ -16,6 +16,11 @@
 				}
 			});
 		});
+
+		function reloadCurrentTab() {
+			var current_index = $("#tabs").tabs("option", "active");
+			$("#tabs").tabs('load', current_index);
+		};
 	</script>
 
 	<div id="tabs">

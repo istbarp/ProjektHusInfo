@@ -245,6 +245,7 @@
     <Compile Include="Pages\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Shared.cs" />
     <Compile Include="Pages\_estateAdmin.aspx.cs">
       <DependentUpon>_estateAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -13,35 +13,10 @@ namespace HusInfo.Pages
 {
 	public partial class _houseAdmin : System.Web.UI.Page
 	{
-		HouseCtr hC = new HouseCtr();
-		protected static Dictionary<string, string> createForm;
+		protected HouseCtr hC = new HouseCtr();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			createForm = new Dictionary<string, string>()
-			{
-				{ "address", "Adresse" },
-				{ "city", "By" },
-				{ "zipcode", "Post nr." },
-				{ "livingAreal", "Boligareal" },
-				{ "groundAreal", "Grundareal" },
-				{ "basementAreal", "Kælderareal" },
-				{ "garageKvm", "Garageareal" },
-				{ "rooms", "Antal rum" },
-				{ "toilets", "Antal toiletter" },
-				{ "floorLevels", "Etager" },
-				{ "buildingYear", "Byggeår" },
-				{ "distToSchool", "Afstand til skole" },
-				{ "distToShopping", "Afstand til indkøb" },
-				{ "energyMark", "Energimærke" },
-				{ "kvmPrice", "Kvm pris" },
-				{ "bruttoprice", "Brutto pris" },
-				{ "nettoprice", "Netto pris" },
-				{ "cashPrice", "Kontantpris" },
-				{ "webLink", "Mægler link" }
-			};
-
-			//fill dropdownlist edit
 			if (!Page.IsPostBack)
 			{
 				List<House> ha = hC.GetAllHouses();
@@ -52,29 +27,13 @@ namespace HusInfo.Pages
 									 h.address,
 									 h.zipCode,
 									 DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
-
-
-
 								 };
+
 				DropDownListEdit.DataSource = datasource;
 				DropDownListEdit.DataValueField = "id";
 				DropDownListEdit.DataTextField = "DisplayField";
 				DropDownListEdit.DataBind();
-			}
 
-
-			//fill dropdownlist delete
-			if (!Page.IsPostBack)
-			{
-				List<House> ha = hC.GetAllHouses();
-				var datasource = from h in ha
-								 select new
-								 {
-									 h.id,
-									 h.address,
-									 h.zipCode,
-									 DisplayField = String.Format("{0} ({1})", h.address, h.zipCode)
-								 };
 
 				DropDownListDelete.DataSource = datasource;
 				DropDownListDelete.DataValueField = "id";
@@ -88,7 +47,7 @@ namespace HusInfo.Pages
 			try
 			{
 				House h = new House();
-				h.id = Int32.Parse(DropDownListEdit.SelectedValue);
+				h.id = int.Parse(DropDownListEdit.SelectedValue);
 				h.address = AddressTbe.Text;
 				h.basementAreal = double.Parse(BasementArealTbe.Text);
 				h.bruttoprice = double.Parse(BruttoPriceTbe.Text);
@@ -108,26 +67,20 @@ namespace HusInfo.Pages
 				h.toilets = int.Parse(ToiletsTbe.Text);
 				h.webLink = WeblinkTbe.Text;
 				h.zipCode = int.Parse(ZipcodeTbe.Text);
-
+				
 				hC.editHouse(h);
 
-				Response.Redirect(Request.RawUrl);
+				Shared.alert("Hus rettet.", this);
 			}
 
 			catch (Exception ex)
 			{
-				string strm = ex.Message.Replace('\'', ' ');
-				string str = "<script language='javascript'>";
-				str += "alert('" + strm + "')";
-				str += "</script>";
-				ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str);
+				Shared.alert(ex.Message, this);
 			}
-
 		}
 
 		protected void ButtonGetHouse_Click(object sender, EventArgs e)
 		{
-
 			int id = int.Parse(DropDownListEdit.SelectedValue);
 
 			var H = hC.GetHouse(id);
@@ -151,7 +104,6 @@ namespace HusInfo.Pages
 			ToiletsTbe.Text = H.toilets.ToString();
 			WeblinkTbe.Text = H.webLink;
 			ZipcodeTbe.Text = H.zipCode.ToString();
-
 		}
 
 
@@ -160,7 +112,7 @@ namespace HusInfo.Pages
 			try
 			{
 				House h = new House();
-				/*h.address = AddressTb.Text;
+				h.address = AddressTb.Text;
 				h.basementAreal = Double.Parse(BasementArealTb.Text);
 				h.bruttoprice = double.Parse(BruttoPriceTb.Text);
 				h.buildingYear = int.Parse(BuildingYearTb.Text);
@@ -178,24 +130,18 @@ namespace HusInfo.Pages
 				h.rooms = int.Parse(RoomsTb.Text);
 				h.toilets = int.Parse(ToiletsTb.Text);
 				h.webLink = WebLinkTb.Text;
-				h.zipCode = int.Parse(ZipcodeTb.Text);*/
+				h.zipCode = int.Parse(ZipcodeTb.Text);
 
 				hC.insertHouse(h);
 
-				Response.Redirect(Request.RawUrl);
+				Shared.reloadCurrentTab(this);
+				Shared.alert("Hus oprettet.", this);
 			}
 
-			catch (Exception exc)
+			catch (Exception ex)
 			{
-				string strm = exc.Message.Replace('\'', ' ');
-				string str = "<script language='javascript'>";
-				str += "alert('" + strm + "')";
-				str += "</script>";
-				ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str);
+				Shared.alert(ex.Message, this);
 			}
-
-
-
 		}
 
 		protected void ButtonDelete_Click(object sender, EventArgs e)
@@ -204,102 +150,7 @@ namespace HusInfo.Pages
 
 			hC.deleteHouse(id);
 
-			Response.Redirect(Request.RawUrl);
-		}
-
-		[WebMethod]
-		public static string Create(string data)
-		{
-			List<Input> inputs = new JavaScriptSerializer().Deserialize<List<Input>>(data);
-
-			var q = from f in inputs
-					select f;
-
-			var dic = q.ToDictionary(x => x.name, v => v.value);
-
-			string errorField = null;
-
-			try
-			{
-				House h = new House();
-				h.address = dic["address"];
-				h.city = dic["city"];
-				errorField = createForm["zipcode"];
-				h.zipCode = MyParse<int?>(dic["zipcode"]);
-				errorField = createForm["livingAreal"];
-				h.livingAreal = MyParse<double?>(dic["livingAreal"]);
-				errorField = createForm["groundAreal"];
-				h.groundAreal = MyParse<double?>(dic["groundAreal"]);
-				errorField = createForm["basementAreal"];
-				h.basementAreal = MyParse<double?>(dic["basementAreal"]);
-				errorField = createForm["garageKvm"];
-				h.garageKvm = MyParse<double?>(dic["garageKvm"]);
-				errorField = createForm["rooms"];
-				h.rooms = MyParse<int?>(dic["rooms"]);
-				errorField = createForm["toilets"];
-				h.toilets = MyParse<int?>(dic["toilets"]);
-				errorField = createForm["floorLevels"];
-				h.floorLevels = MyParse<int?>(dic["floorLevels"]);
-				errorField = createForm["buildingYear"];
-				h.buildingYear = MyParse<int?>(dic["buildingYear"]);
-				errorField = createForm["distToSchool"];
-				h.distToSchool = MyParse<double?>(dic["distToSchool"]);
-				errorField = createForm["distToShopping"];
-				h.distToShopping = MyParse<double?>(dic["distToShopping"]);
-				h.energyMark = dic["energyMark"];
-				errorField = createForm["kvmPrice"];
-				h.kvmPrice = MyParse<double?>(dic["kvmPrice"]);
-				errorField = createForm["bruttoprice"];
-				h.bruttoprice = MyParse<double?>(dic["bruttoprice"]);
-				errorField = createForm["nettoprice"];
-				h.nettoPrice = MyParse<double?>(dic["nettoprice"]);
-				errorField = createForm["cashPrice"];
-				h.cashPrice = MyParse<double?>(dic["cashPrice"]);
-				h.webLink = dic["webLink"];
-
-				HouseCtr hC = new HouseCtr();
-				errorField = null;
-				hC.insertHouse(h);
-
-				return null;
-			}
-			catch (Exception e)
-			{
-				if (errorField != null)
-					return errorField + ": " + e.Message;
-				else
-					return e.Message;
-			}
-		}
-
-		private static T MyParse<T>(string data)
-		{
-			if (string.IsNullOrEmpty(data))
-			{
-				return default(T);
-			}
-			else
-			{
-				if (typeof(int?) == typeof(T))
-				{
-					return (T)Convert.ChangeType(int.Parse(data), typeof(int));
-				}
-				else if (typeof(double?) == typeof(T))
-				{
-					return (T)Convert.ChangeType(double.Parse(data), typeof(double));
-				}
-				else
-				{
-					throw new Exception();
-				}
-			}
-		}
-
-		public class Input
-		{
-
-			public string name { get; set; }
-			public string value { get; set; }
+			Shared.reloadCurrentTab(this);
 		}
 	}
 }
