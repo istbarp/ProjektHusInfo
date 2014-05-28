@@ -14,7 +14,7 @@ namespace HusInfo.Controller
         public Login GetPerson(string username, string password)
         {
 			var person = from p in db.Login
-						 where p.username.Equals(username) && p.username.Equals(password) && (p.personType != "Entreprenur" || p.verified == true)
+						 where p.username.Equals(username) && p.password.Equals(password) && (p.personType != "Entreprenur" || p.verified == true)
 						 select p;
 
             return person.FirstOrDefault();
