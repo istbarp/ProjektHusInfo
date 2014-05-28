@@ -117,10 +117,8 @@
 										<asp:AsyncPostBackTrigger ControlID="UpdateButton1" EventName="Click" />
 									</Triggers>
 									<ContentTemplate>
-                                
-
-                                        <span class="form-label">Søg</span>
-                                        <asp:TextBox ID="SearchTbe" runat="server" CssClass="form-control" ></asp:TextBox>
+                                        <span class="form-label">Søg på telefon nummer</span>
+                                        <asp:TextBox ID="SearchTbe" hint="Telefon nr" runat="server" CssClass="form-control" ></asp:TextBox>
                                         <asp:Button ID="UpdateButton1" CssClass="btn btn-warning" runat="server" Text="Hent Bruger" OnClick="ButtonGetUser_Click" /><br />
 
                                         <span class="form-label">Brugernavn</span>
