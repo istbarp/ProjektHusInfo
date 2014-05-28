@@ -104,7 +104,7 @@
 								</table>
 							<br />
 							<% } %>
-							<% if (Session["login"] != null) { %>
+							<% if (Session["login"] != null && ((HusInfo.Model.Login)Session["login"]).personType == "Entreprenur") { %>
 								<a href="giveOffer.aspx?id=<%=c.id%>" class="btn btn-default">Giv tilbud</a>
 							<% } %>
                             <br />

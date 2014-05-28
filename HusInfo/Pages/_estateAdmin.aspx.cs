@@ -14,6 +14,7 @@ namespace HusInfo.Pages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            SearchTbe.MaxLength = 8;
 			
 		}
 
@@ -30,12 +31,13 @@ namespace HusInfo.Pages
 				l.name = NameTb.Text;
 				l.password = PasswordTb.Text;
 				l.personType = "RealEstateAgent";
+                l.verified = true;
 				l.phoneNumber = int.Parse(PhonenumberTb.Text);
 				l.username = UsernameTb.Text;
 
 				LCtr.insertLogin(l);
 
-				Response.Redirect(Request.RawUrl);
+
 			}
 			catch (Exception exc)
 			{
@@ -61,6 +63,7 @@ namespace HusInfo.Pages
 				l.password = PasswordTbe.Text;
 				l.phoneNumber = int.Parse(PhoneNumberTbe.Text);
 				l.username = UsernameTbe.Text;
+                l.verified = true;
 
 				LCtr.editLogin(l);
 			}
@@ -74,7 +77,6 @@ namespace HusInfo.Pages
 				ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str);
 			}
 
-			Response.Redirect(Request.RawUrl);
 		}
 
 		protected void ButtonGetUser_Click(object sender, EventArgs e)
@@ -82,15 +84,22 @@ namespace HusInfo.Pages
 
 			int phoneNr = int.Parse(SearchTbe.Text);
 
+            
 			var lo = LCtr.GetLoginByPhoneNumber(phoneNr);
-
-			CompanyTbe.Text = lo.company.ToString();
-			CvrNumberTbe.Text = lo.cvrNumber.ToString();
-			LastnameTbe.Text = lo.lastname.ToString();
-			NameTbe.Text = lo.name.ToString();
-			PasswordTbe.Text = lo.password.ToString();
-			UsernameTbe.Text = lo.username.ToString();
-			PhoneNumberTbe.Text = lo.phoneNumber.ToString();
+            if (lo != null)
+            {
+                CompanyTbe.Text = lo.company.ToString();
+                CvrNumberTbe.Text = lo.cvrNumber.ToString();
+                LastnameTbe.Text = lo.lastname.ToString();
+                NameTbe.Text = lo.name.ToString();
+                PasswordTbe.Text = lo.password.ToString();
+                UsernameTbe.Text = lo.username.ToString();
+                PhoneNumberTbe.Text = lo.phoneNumber.ToString();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Telefon nummeret ekisistere ikke" + "');", true);
+            }
 
 
 		}
@@ -104,8 +113,6 @@ namespace HusInfo.Pages
 
 			LCtr.deleteLoginByPhoneNumber(phoneNr);
 
-
-			Response.Redirect(Request.RawUrl);
 		}
 
 
