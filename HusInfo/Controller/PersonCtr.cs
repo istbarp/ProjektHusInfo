@@ -13,13 +13,11 @@ namespace HusInfo.Controller
 
         public Login GetPerson(string username, string password)
         {
-            //var person = from p in db.Login
-            //    where p.username.Equals(username) && p.password.Equals(password)
-            //    select p;
+			var person = from p in db.Login
+						 where p.username.Equals(username) && p.username.Equals(password) && (p.personType != "Entreprenur" || p.verified == true)
+						 select p;
 
-            var pers = db.Login.SingleOrDefault(p => p.username.Equals(username) && p.password.Equals(password));
-              
-            return pers;
+            return person.FirstOrDefault();
         }
 
 

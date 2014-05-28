@@ -13,13 +13,31 @@ namespace HusInfo.Pages {
     public partial class _estateAdmin {
         
         /// <summary>
-        /// form1 control.
+        /// estateForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm estateForm;
+        
+        /// <summary>
+        /// ScriptManager2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager2;
+        
+        /// <summary>
+        /// UpdatePanel21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel21;
         
         /// <summary>
         /// UsernameTb control.
@@ -85,31 +103,22 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox CvrNumberTb;
         
         /// <summary>
-        /// ButtonCreate control.
+        /// CreateButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCreate;
+        protected global::System.Web.UI.WebControls.Button CreateButton;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// UpdatePanel11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel11;
         
         /// <summary>
         /// SearchTbe control.
@@ -121,13 +130,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox SearchTbe;
         
         /// <summary>
-        /// UpdateButton1 control.
+        /// GetUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateButton1;
+        protected global::System.Web.UI.WebControls.Button GetUser;
         
         /// <summary>
         /// UsernameTbe control.
@@ -193,13 +202,13 @@ namespace HusInfo.Pages {
         protected global::System.Web.UI.WebControls.TextBox CvrNumberTbe;
         
         /// <summary>
-        /// ButtonEdit control.
+        /// EditButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEdit;
+        protected global::System.Web.UI.WebControls.Button EditButton;
         
         /// <summary>
         /// DeleteTbd control.
