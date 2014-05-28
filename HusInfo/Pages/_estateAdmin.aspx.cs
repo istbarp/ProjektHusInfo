@@ -14,6 +14,7 @@ namespace HusInfo.Pages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            SearchTbe.MaxLength = 8;
 			
 		}
 
@@ -35,6 +36,7 @@ namespace HusInfo.Pages
 				l.username = UsernameTb.Text;
 
 				LCtr.insertLogin(l);
+
 
 			}
 			catch (Exception exc)
@@ -82,15 +84,22 @@ namespace HusInfo.Pages
 
 			int phoneNr = int.Parse(SearchTbe.Text);
 
+            
 			var lo = LCtr.GetLoginByPhoneNumber(phoneNr);
-
-			CompanyTbe.Text = lo.company.ToString();
-			CvrNumberTbe.Text = lo.cvrNumber.ToString();
-			LastnameTbe.Text = lo.lastname.ToString();
-			NameTbe.Text = lo.name.ToString();
-			PasswordTbe.Text = lo.password.ToString();
-			UsernameTbe.Text = lo.username.ToString();
-			PhoneNumberTbe.Text = lo.phoneNumber.ToString();
+            if (lo != null)
+            {
+                CompanyTbe.Text = lo.company.ToString();
+                CvrNumberTbe.Text = lo.cvrNumber.ToString();
+                LastnameTbe.Text = lo.lastname.ToString();
+                NameTbe.Text = lo.name.ToString();
+                PasswordTbe.Text = lo.password.ToString();
+                UsernameTbe.Text = lo.username.ToString();
+                PhoneNumberTbe.Text = lo.phoneNumber.ToString();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Telefon nummeret ekisistere ikke" + "');", true);
+            }
 
 
 		}
