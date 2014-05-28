@@ -26,7 +26,7 @@
 				<% i = 0; %>
 				<% foreach (HusInfo.Model.Picture p in house.Picture) { %>
 				<div class="<% if (i == 0) Response.Write("item active"); else Response.Write("item"); %>">
-					<img src="<%=p.fileName%>" alt="..." />
+					<img src="<%=p.pictureFilename%>" alt="..." />
 				</div>
 				<% i++; } %>
 			</div>
