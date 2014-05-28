@@ -66,7 +66,35 @@
 		}
 	</style>
 
-	<form id="form1" runat="server">
+
+<script type="text/javascript">
+	$("#create").submit(function (event) {
+		event.preventDefault();
+		var str = $("#create").serializeArray();
+		console.log(str);
+
+		$.ajax({
+			url: "_houseAdmin.aspx/Create",
+			data: "{ 'data':'" + JSON.stringify(str) + "'}",
+			dataType: "json",
+			type: "POST",
+			contentType: "application/json; charset=utf-8",
+			success: function (data) {
+				if (data.d.length > 0) {
+					alert(data.d);
+				} else {
+					var current_index = $("#tabs").tabs("option", "active");
+					$("#tabs").tabs('load', current_index);
+				}
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert(textStatus);
+			}
+		});
+	});
+</script>
+
+
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" "><div class="panel-heading">
@@ -76,65 +104,13 @@
                     </div></a>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                                        <span class="form-label">Adresse</span>
-                                        <asp:TextBox ID="AddressTb" CssClass="form-control" runat="server" ></asp:TextBox>
- 
-                                        <span class="form-label">By</span>
-                                        <asp:TextBox ID="CityTb" runat="server" CssClass="form-control" ></asp:TextBox>
-
-                                        <span class="form-label">Post nr</span>
-                                        <asp:TextBox ID="ZipcodeTb" runat="server" CssClass="form-control"></asp:TextBox>
-								
-                                        <span class="form-label">Boligareal</span>
-                                        <asp:TextBox ID="LivingArealTb" runat="server" CssClass="form-control"></asp:TextBox>
-								
-                                        <span class="form-label">Grundareal</span>
-                                        <asp:TextBox ID="GroundArealTb" runat="server" CssClass="form-control"></asp:TextBox>
-
-                                        <span class="form-label">Kælderareal</span>
-                                        <asp:TextBox ID="BasementArealTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Garageareal</span>
-                                        <asp:TextBox ID="GarageArealTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Antal rum</span>
-                                        <asp:TextBox ID="RoomsTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Antal toiletter</span>
-                                        <asp:TextBox ID="ToiletsTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Etager</span>
-                                        <asp:TextBox ID="FloorLevelsTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Byggeår</span>
-                                        <asp:TextBox ID="BuildingYearTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Afstand til skole</span>
-                                        <asp:TextBox ID="DistToSchoolTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Afstand til indkøb</span>
-                                        <asp:TextBox ID="DistToShppingTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Energimærke</span>
-                                        <asp:TextBox ID="EnergyMarkTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Kvm pris</span>
-                                        <asp:TextBox ID="KvmPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Brutto pris</span>
-                                        <asp:TextBox ID="BruttoPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Netto pris</span>
-                                        <asp:TextBox ID="NettoPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Kontantpris</span>
-                                        <asp:TextBox ID="CashPriceTb" runat="server" CssClass="form-control" ></asp:TextBox>
-								
-                                        <span class="form-label">Mægler link</span>
-                                        <asp:TextBox ID="WebLinkTb" runat="server" CssClass="form-control" ></asp:TextBox>
-
-										<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
-                                   
+							<form id="create">
+								<% foreach (KeyValuePair<string, string> item in createForm) { %>
+									<span class="form-label"><%=item.Value %></span>
+									<input name="<%=item.Key %>" class="form-control">
+								<% } %>
+								<input type="submit" class="btn btn-success btn-lg" value="Opret">
+							</form>
                                 </div>
                     </div>
                 </div>
@@ -147,6 +123,7 @@
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivEditHouse" title="EditHouse">
+	<form id="form1" runat="server">
                                 
 								<asp:ScriptManager ID="ScriptManager1" runat="server"/>
 								<asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">

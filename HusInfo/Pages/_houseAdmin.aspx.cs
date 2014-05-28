@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,9 +14,34 @@ namespace HusInfo.Pages
 	public partial class _houseAdmin : System.Web.UI.Page
 	{
 		HouseCtr hC = new HouseCtr();
+		protected Dictionary<string, string> createForm;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			createForm = new Dictionary<string, string>()
+			{
+				{ "AddressTb", "Adresse" },
+				{ "CityTb", "By" },
+				{ "ZipcodeTb", "Post nr." },
+				{ "LivingArealTb", "Boligareal" },
+				{ "GroundArealTb", "Grundareal" },
+				{ "BasementArealTb", "Kælderareal" },
+				{ "GarageArealTb", "Garageareal" },
+				{ "RoomsTb", "Antal rum" },
+				{ "ToiletsTb", "Antal toiletter" },
+				{ "FloorLevelsTb", "Etager" },
+				{ "BuildingYearTb", "Byggeår" },
+				{ "DistToSchoolTb", "Afstand til skole" },
+				{ "DistToShppingTb", "Afstand til indkøb" },
+				{ "EnergyMarkTb", "Energimærke" },
+				{ "KvmPriceTb", "Kvm pris" },
+				{ "BruttoPriceTb", "Brutto pris" },
+				{ "NettoPriceTb", "Netto pris" },
+				{ "CashPriceTb", "Kontantpris" },
+				{ "WebLinkTb", "Mægler link" }
+			};
+
+
 			//fill dropdownlist edit
 			if (!Page.IsPostBack)
 			{
@@ -134,7 +161,7 @@ namespace HusInfo.Pages
 			try
 			{
 				House h = new House();
-				h.address = AddressTb.Text;
+				/*h.address = AddressTb.Text;
 				h.basementAreal = Double.Parse(BasementArealTb.Text);
 				h.bruttoprice = double.Parse(BruttoPriceTb.Text);
 				h.buildingYear = int.Parse(BuildingYearTb.Text);
@@ -152,7 +179,7 @@ namespace HusInfo.Pages
 				h.rooms = int.Parse(RoomsTb.Text);
 				h.toilets = int.Parse(ToiletsTb.Text);
 				h.webLink = WebLinkTb.Text;
-				h.zipCode = int.Parse(ZipcodeTb.Text);
+				h.zipCode = int.Parse(ZipcodeTb.Text);*/
 
 				hC.insertHouse(h);
 
@@ -179,6 +206,61 @@ namespace HusInfo.Pages
 			hC.deleteHouse(id);
 
 			Response.Redirect(Request.RawUrl);
+		}
+
+		[WebMethod]
+		public static string Create(string data)
+		{
+			List<Input> inputs = new JavaScriptSerializer().Deserialize<List<Input>>(data);
+
+			var q = from f in inputs
+					select new
+						{
+							key = f.name,
+							value = f.value
+						};
+
+			var dic = q.ToDictionary(x => x.key, v => v.value);
+
+			try
+			{
+				House h = new House();
+				h.address = dic["AddressTb"];
+				h.city = dic["CityTB"];
+				h.zipCode = int.Parse(dic["ZipcodeTb"]);
+				h.livingAreal = double.Parse(dic["LivingArealTb"]);
+				h.groundAreal = double.Parse(dic["GroundArealTb"]);
+				h.basementAreal = double.Parse(dic["BasementArealTb"]);
+				h.garageKvm = double.Parse(dic["GarageArealTb"]);
+				h.rooms = int.Parse(dic["RoomsTb"]);
+				h.toilets = int.Parse(dic["ToiletsTb"]);
+				h.floorLevels = int.Parse(dic["FloorLevelsTb"]);
+				h.buildingYear = int.Parse(dic["BuildingYearTb"]);
+				h.distToSchool = double.Parse(dic["DistToSchoolTb"]);
+				h.distToShopping = double.Parse(dic["DistToShppingTb"]);
+				h.energyMark = dic["EnergyMarkTb"];
+				h.kvmPrice = double.Parse(dic["KvmPriceTb"]);
+				h.bruttoprice = double.Parse(dic["BruttoPriceTb"]);
+				h.nettoPrice = double.Parse(dic["NettoPriceTb"]);
+				h.cashPrice = double.Parse(dic["CashPriceTb"]);
+				h.webLink = dic["WebLinkTb"];
+
+				HouseCtr hC = new HouseCtr();
+				hC.insertHouse(h);
+
+				return "";
+			}
+			catch (Exception e)
+			{
+				return e.Message;
+			}
+		}
+
+		public class Input
+		{
+
+			public string name { get; set; }
+			public string value { get; set; }
 		}
 	}
 }
