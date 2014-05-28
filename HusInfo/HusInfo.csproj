@@ -99,8 +99,10 @@
     <Content Include="Pages\houseInfo.aspx" />
     <Content Include="Pages\login.aspx" />
     <Content Include="Pages\search.aspx" />
+    <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Pages\_estateAdmin.aspx" />
     <Content Include="Pages\_houseAdmin.aspx" />
+    <Content Include="Pages\_jesperTest.aspx" />
     <Content Include="Pages\_workmanAdmin.aspx" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
@@ -236,6 +238,13 @@
     <Compile Include="Pages\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\_estateAdmin.aspx.cs">
       <DependentUpon>_estateAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,6 +258,13 @@
     </Compile>
     <Compile Include="Pages\_houseAdmin.aspx.designer.cs">
       <DependentUpon>_houseAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\_jesperTest.aspx.cs">
+      <DependentUpon>_jesperTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\_jesperTest.aspx.designer.cs">
+      <DependentUpon>_jesperTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\_workmanAdmin.aspx.cs">
       <DependentUpon>_workmanAdmin.aspx</DependentUpon>

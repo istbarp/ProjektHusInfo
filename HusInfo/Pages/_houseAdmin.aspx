@@ -1,5 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="_houseAdmin.aspx.cs" Inherits="HusInfo.Pages._houseAdmin" %>
 
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
 	<style>
 		.panel-group .panel-heading {
 			background-color: #f5f5f5;
@@ -65,7 +71,8 @@
 			border-collapse: inherit !important;
 		}
 	</style>
-
+	</head>
+<body>
 	<form id="form1" runat="server">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
@@ -286,3 +293,7 @@
                         </div>
                     </div>
     </form>
+
+</body>
+</html>
+

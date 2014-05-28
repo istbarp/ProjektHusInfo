@@ -30,12 +30,12 @@ namespace HusInfo.Pages
 				l.name = NameTb.Text;
 				l.password = PasswordTb.Text;
 				l.personType = "RealEstateAgent";
-                l.verified = true;
 				l.phoneNumber = int.Parse(PhonenumberTb.Text);
 				l.username = UsernameTb.Text;
 
 				LCtr.insertLogin(l);
 
+				Response.Redirect(Request.RawUrl);
 			}
 			catch (Exception exc)
 			{
@@ -61,7 +61,6 @@ namespace HusInfo.Pages
 				l.password = PasswordTbe.Text;
 				l.phoneNumber = int.Parse(PhoneNumberTbe.Text);
 				l.username = UsernameTbe.Text;
-                l.verified = true;
 
 				LCtr.editLogin(l);
 			}
@@ -75,6 +74,7 @@ namespace HusInfo.Pages
 				ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str);
 			}
 
+			Response.Redirect(Request.RawUrl);
 		}
 
 		protected void ButtonGetUser_Click(object sender, EventArgs e)
@@ -104,6 +104,8 @@ namespace HusInfo.Pages
 
 			LCtr.deleteLoginByPhoneNumber(phoneNr);
 
+
+			Response.Redirect(Request.RawUrl);
 		}
 
 

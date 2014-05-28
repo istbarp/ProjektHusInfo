@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="_estateAdmin.aspx.cs" Inherits="HusInfo.Pages._estateAdmin" %>
 
+<!DOCTYPE html>
 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
 <style>
 	.panel-group .panel-heading {
 		background-color: #f5f5f5;
@@ -63,6 +67,8 @@
 		border-collapse: inherit !important;
 	}
 </style>
+	</head>
+<body>
 <form id="form1" runat="server">
 	<div class="panel-group" id="accordion2">
 		<div class="panel panel-default">
@@ -75,27 +81,27 @@
 			<div id="collapseTwo2" class="panel-collapse collapse">
 				<div class="panel-body">
 						<span class="form-label">Brugernavn</span>
-						<asp:textbox id="UsernameTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox id="UsernameTb" runat="server" cssclass="form-control"></asp:TextBox>
 
 						<span class="form-label">Kodeord</span>
-						<asp:textbox id="PasswordTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox id="PasswordTb" runat="server" cssclass="form-control"></asp:TextBox>
 
 						<span class="form-label">Firma navn</span>
-						<asp:textbox id="CompanyTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox id="CompanyTb" runat="server" cssclass="form-control"></asp:TextBox>
 
 						<span class="form-label">Navn</span>
-						<asp:textbox id="NameTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox id="NameTb" runat="server" cssclass="form-control"></asp:TextBox>
 
 						<span class="form-label">Efternavn</span>
-						<asp:textbox id="LastnameTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox id="LastnameTb" runat="server" cssclass="form-control"></asp:TextBox>
 
 						<span class="form-label">Telefon nummer</span>
-						<asp:textbox id="PhonenumberTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox id="PhonenumberTb" runat="server" CssClass="form-control"></asp:TextBox>
 
 						<span class="form-label">Cvr nummer</span>
-						<asp:textbox id="CvrNumberTb" runat="server" cssclass="form-control"></asp:textbox>
+						<asp:TextBox ID="CvrNumberTb" runat="server" CssClass="form-control"></asp:TextBox>
 
-						<asp:button cssclass="btn btn-success btn-lg" id="ButtonCreate" runat="server" text="Opret" onclick="ButtonCreate_Click" />
+						<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonCreate" runat="server" Text="Opret" OnClick="ButtonCreate_Click" />
 					
 				</div>
 			</div>
@@ -111,8 +117,8 @@
 				<div class="panel-body">
 					<div id="DivEditUser" title="EditHouse">
 
-						<asp:scriptmanager id="ScriptManager1" runat="server" />
-						<asp:updatepanel runat="server" id="UpdatePanel1" updatemode="Conditional">
+						<asp:ScriptManager id="ScriptManager1" runat="server" />
+						<asp:UpdatePanel runat="server" id="UpdatePanel1" updatemode="Conditional">
 									<Triggers>
 										<asp:AsyncPostBackTrigger ControlID="UpdateButton1" EventName="Click" />
 									</Triggers>
@@ -142,10 +148,10 @@
                                         <span class="form-label">Cvr nummer</span>
                                         <asp:TextBox ID="CvrNumberTbe" runat="server" CssClass="form-control" ></asp:TextBox>
 
-										<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonEdit" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
+										<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonEdit" type="button" runat="server" Text="Redigere" OnClick="ButtonEdit_Click" />
                                    
 										</ContentTemplate>
-									</asp:updatepanel>
+									</asp:UpdatePanel>
 
 					</div>
 				</div>
@@ -168,4 +174,7 @@
 				</div>
 			</div>
 		</div>
+		</div>
 </form>
+	</body>
+</html>
