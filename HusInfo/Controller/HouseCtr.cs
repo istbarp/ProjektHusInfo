@@ -168,61 +168,61 @@ namespace HusInfo.Controller
             Regex onlyWebLink = new Regex(@"^(http|https|ftp|)\://|[a-zA-Z0-9\-\.]+\.[a-zA-Z](:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$");
 
             if (string.IsNullOrEmpty(h.address) || (!onlyLettersAndNumbers.IsMatch(h.address.ToLower())))
-                throw new Exception("Addresen er ikke korrekt indtastet");
+                throw new Exception("Ugyldig adresse");
 
             if ((string.IsNullOrEmpty(h.energyMark)) || (!onlyLetters.IsMatch(h.energyMark)))
-                throw new Exception("du har ikke indtastet et invalid energimærke");
+                throw new Exception("Ugyldigt energimærke");
 
             if (string.IsNullOrEmpty(h.webLink) || (!onlyWebLink.IsMatch(h.webLink)))
-                throw new Exception("du har ikke indtastet et weblink");
+                throw new Exception("Ugyldigt weblink");
 
             if (!checkZipcode.IsMatch(h.zipCode.ToString()))
-                throw new Exception("indtast en korrekt postnr");
+				throw new Exception("Ugyldigt postnr");
 
             if (!onlyDigits.IsMatch(h.basementAreal.ToString()))
-                throw new Exception("indtast et korrekt kælderareal");
+				throw new Exception("Ugyldigt kælderareal");
 
             if(!onlyDigits.IsMatch(h.bruttoprice.ToString()))
-                throw new Exception("indtast en korrekt brutopris");
+				throw new Exception("Ugyldigt brutopris");
 
             if(!onlyDigits.IsMatch(h.buildingYear.ToString()))
-                throw new Exception("indtast korrekt byggeår");
+				throw new Exception("Ugyldigt byggeår");
 
             if(!onlyDigits.IsMatch(h.cashPrice.ToString()))
-                throw new Exception("indtast korrekt kontantpris");
+				throw new Exception("Ugyldig kontantpris");
 
             if(string.IsNullOrEmpty(h.city))
-                throw new Exception("Indtast en by");
+				throw new Exception("Ugyldig by");
 
             if(!onlyDigits.IsMatch(h.distToSchool.ToString()))
-                throw new Exception("indtast korrekt afstand til skole");
+				throw new Exception("Ugyldig afstand til skole");
 
             if(!onlyDigits.IsMatch(h.distToShopping.ToString()))
-                throw new Exception("indtast korrekt afstand til indkøb");
+				throw new Exception("Ugyldig afstand til indkøb");
 
             if(!onlyDigits.IsMatch(h.floorLevels.ToString()))
-               throw new Exception("indtast korrekt antal plan");
+				throw new Exception("Ugyldigt antal plan");
 
             if(!onlyDigits.IsMatch(h.garageKvm.ToString()))
-                throw new Exception("indtast korrekt garage kvm");
+				throw new Exception("Ugyldigt garage kvm");
 
             if(!onlyDigits.IsMatch(h.groundAreal.ToString()))
-                throw new Exception("indtast korrekt grundareal");
+				throw new Exception("Ugyldigt grundareal");
 
             if(!onlyDigits.IsMatch(h.kvmPrice.ToString()))
-                throw new Exception("indtast korrekt kvadretmeter for huset");
+				throw new Exception("Ugyldigt kvm for huset");
 
             if(!onlyDigits.IsMatch(h.livingAreal.ToString()))
-                throw new Exception("indtast korrekt boligareal");
+				throw new Exception("Ugyldigt boligareal");
 
             if(!onlyDigits.IsMatch(h.nettoPrice.ToString()))
-                throw new Exception("indtast korrekt nettopris");
+				throw new Exception("Ugyldig nettopris");
 
             if(!onlyDigits.IsMatch(h.rooms.ToString()))
-                throw new Exception("indtast korrekt antal rum");
+				throw new Exception("Ugyldigt antal rum");
 
             if(!onlyDigits.IsMatch(h.toilets.ToString()))
-                throw new Exception("indtast korrekt antal toiletter");
+				throw new Exception("Ugyldigt antal toiletter");
         }
 
     }

@@ -14,33 +14,32 @@ namespace HusInfo.Pages
 	public partial class _houseAdmin : System.Web.UI.Page
 	{
 		HouseCtr hC = new HouseCtr();
-		protected Dictionary<string, string> createForm;
+		protected static Dictionary<string, string> createForm;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			createForm = new Dictionary<string, string>()
 			{
-				{ "AddressTb", "Adresse" },
-				{ "CityTb", "By" },
-				{ "ZipcodeTb", "Post nr." },
-				{ "LivingArealTb", "Boligareal" },
-				{ "GroundArealTb", "Grundareal" },
-				{ "BasementArealTb", "Kælderareal" },
-				{ "GarageArealTb", "Garageareal" },
-				{ "RoomsTb", "Antal rum" },
-				{ "ToiletsTb", "Antal toiletter" },
-				{ "FloorLevelsTb", "Etager" },
-				{ "BuildingYearTb", "Byggeår" },
-				{ "DistToSchoolTb", "Afstand til skole" },
-				{ "DistToShppingTb", "Afstand til indkøb" },
-				{ "EnergyMarkTb", "Energimærke" },
-				{ "KvmPriceTb", "Kvm pris" },
-				{ "BruttoPriceTb", "Brutto pris" },
-				{ "NettoPriceTb", "Netto pris" },
-				{ "CashPriceTb", "Kontantpris" },
-				{ "WebLinkTb", "Mægler link" }
+				{ "address", "Adresse" },
+				{ "city", "By" },
+				{ "zipcode", "Post nr." },
+				{ "livingAreal", "Boligareal" },
+				{ "groundAreal", "Grundareal" },
+				{ "basementAreal", "Kælderareal" },
+				{ "garageKvm", "Garageareal" },
+				{ "rooms", "Antal rum" },
+				{ "toilets", "Antal toiletter" },
+				{ "floorLevels", "Etager" },
+				{ "buildingYear", "Byggeår" },
+				{ "distToSchool", "Afstand til skole" },
+				{ "distToShopping", "Afstand til indkøb" },
+				{ "energyMark", "Energimærke" },
+				{ "kvmPrice", "Kvm pris" },
+				{ "bruttoprice", "Brutto pris" },
+				{ "nettoprice", "Netto pris" },
+				{ "cashPrice", "Kontantpris" },
+				{ "webLink", "Mægler link" }
 			};
-
 
 			//fill dropdownlist edit
 			if (!Page.IsPostBack)
@@ -214,45 +213,85 @@ namespace HusInfo.Pages
 			List<Input> inputs = new JavaScriptSerializer().Deserialize<List<Input>>(data);
 
 			var q = from f in inputs
-					select new
-						{
-							key = f.name,
-							value = f.value
-						};
+					select f;
 
-			var dic = q.ToDictionary(x => x.key, v => v.value);
+			var dic = q.ToDictionary(x => x.name, v => v.value);
+
+			string errorField = null;
 
 			try
 			{
 				House h = new House();
-				h.address = dic["AddressTb"];
-				h.city = dic["CityTB"];
-				h.zipCode = int.Parse(dic["ZipcodeTb"]);
-				h.livingAreal = double.Parse(dic["LivingArealTb"]);
-				h.groundAreal = double.Parse(dic["GroundArealTb"]);
-				h.basementAreal = double.Parse(dic["BasementArealTb"]);
-				h.garageKvm = double.Parse(dic["GarageArealTb"]);
-				h.rooms = int.Parse(dic["RoomsTb"]);
-				h.toilets = int.Parse(dic["ToiletsTb"]);
-				h.floorLevels = int.Parse(dic["FloorLevelsTb"]);
-				h.buildingYear = int.Parse(dic["BuildingYearTb"]);
-				h.distToSchool = double.Parse(dic["DistToSchoolTb"]);
-				h.distToShopping = double.Parse(dic["DistToShppingTb"]);
-				h.energyMark = dic["EnergyMarkTb"];
-				h.kvmPrice = double.Parse(dic["KvmPriceTb"]);
-				h.bruttoprice = double.Parse(dic["BruttoPriceTb"]);
-				h.nettoPrice = double.Parse(dic["NettoPriceTb"]);
-				h.cashPrice = double.Parse(dic["CashPriceTb"]);
-				h.webLink = dic["WebLinkTb"];
+				h.address = dic["address"];
+				h.city = dic["city"];
+				errorField = createForm["zipcode"];
+				h.zipCode = MyParse<int?>(dic["zipcode"]);
+				errorField = createForm["livingAreal"];
+				h.livingAreal = MyParse<double?>(dic["livingAreal"]);
+				errorField = createForm["groundAreal"];
+				h.groundAreal = MyParse<double?>(dic["groundAreal"]);
+				errorField = createForm["basementAreal"];
+				h.basementAreal = MyParse<double?>(dic["basementAreal"]);
+				errorField = createForm["garageKvm"];
+				h.garageKvm = MyParse<double?>(dic["garageKvm"]);
+				errorField = createForm["rooms"];
+				h.rooms = MyParse<int?>(dic["rooms"]);
+				errorField = createForm["toilets"];
+				h.toilets = MyParse<int?>(dic["toilets"]);
+				errorField = createForm["floorLevels"];
+				h.floorLevels = MyParse<int?>(dic["floorLevels"]);
+				errorField = createForm["buildingYear"];
+				h.buildingYear = MyParse<int?>(dic["buildingYear"]);
+				errorField = createForm["distToSchool"];
+				h.distToSchool = MyParse<double?>(dic["distToSchool"]);
+				errorField = createForm["distToShopping"];
+				h.distToShopping = MyParse<double?>(dic["distToShopping"]);
+				h.energyMark = dic["energyMark"];
+				errorField = createForm["kvmPrice"];
+				h.kvmPrice = MyParse<double?>(dic["kvmPrice"]);
+				errorField = createForm["bruttoprice"];
+				h.bruttoprice = MyParse<double?>(dic["bruttoprice"]);
+				errorField = createForm["nettoprice"];
+				h.nettoPrice = MyParse<double?>(dic["nettoprice"]);
+				errorField = createForm["cashPrice"];
+				h.cashPrice = MyParse<double?>(dic["cashPrice"]);
+				h.webLink = dic["webLink"];
 
 				HouseCtr hC = new HouseCtr();
+				errorField = null;
 				hC.insertHouse(h);
 
-				return "";
+				return null;
 			}
 			catch (Exception e)
 			{
-				return e.Message;
+				if (errorField != null)
+					return errorField + ": " + e.Message;
+				else
+					return e.Message;
+			}
+		}
+
+		private static T MyParse<T>(string data)
+		{
+			if (string.IsNullOrEmpty(data))
+			{
+				return default(T);
+			}
+			else
+			{
+				if (typeof(int?) == typeof(T))
+				{
+					return (T)Convert.ChangeType(int.Parse(data), typeof(int));
+				}
+				else if (typeof(double?) == typeof(T))
+				{
+					return (T)Convert.ChangeType(double.Parse(data), typeof(double));
+				}
+				else
+				{
+					throw new Exception();
+				}
 			}
 		}
 

@@ -1,73 +1,75 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="_houseAdmin.aspx.cs" Inherits="HusInfo.Pages._houseAdmin" %>
 
-	<style>
-		.panel-group .panel-heading {
-			background-color: #f5f5f5;
-		}
+<style>
+	.panel-group .panel-heading {
+		background-color: #f5f5f5;
+	}
 
-		.panel-title {
-			color: #999 !important;
-			font-weight: bold;
-		}
+	.panel-title {
+		color: #999 !important;
+		font-weight: bold;
+	}
 
-		a {
-			color: none !important;
-			text-decoration: none !important;
-		}
+	a {
+		color: none !important;
+		text-decoration: none !important;
+	}
 
-		.a:hover {
-			color: none !important;
-			text-decoration: none !important;
-		}
+	.a:hover {
+		color: none !important;
+		text-decoration: none !important;
+	}
 
-		#DivCreateHouse {
-			margin: auto;
-		}
+	#DivCreateHouse {
+		margin: auto;
+	}
 
 
-		.input-group {
-			margin: auto;
-		}
+	.input-group {
+		margin: auto;
+	}
 
-		.jumbotron {
-			padding-top: 15px !important;
-			padding-bottom: 15px !important;
-		}
+	.jumbotron {
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+	}
 
-		.form-label {
-			float: left;
-		}
+	.form-label {
+		float: left;
+	}
 
-		.form-control {
-			margin-bottom: 16px;
-		}
+	.form-control {
+		margin-bottom: 16px;
+	}
 
-		th 
-		{
-			text-align: left;
-			border-bottom: solid 1px grey;
-		}
-		
-		td 
-		{
-			text-align: left;
-			background-color: white;
-		}
+	th {
+		text-align: left;
+		border-bottom: solid 1px grey;
+	}
 
-		td:nth-child(2)
-		{
+	td {
+		text-align: left;
+		background-color: white;
+	}
+
+		td:nth-child(2) {
 			border-left: 1px solid grey;
 		}
 
-		table{
-			border: solid 1px grey;
-			margin-bottom: 0px !important;
-			border-collapse: inherit !important;
-		}
-	</style>
+	table {
+		border: solid 1px grey;
+		margin-bottom: 0px !important;
+		border-collapse: inherit !important;
+	}
+</style>
 
 
 <script type="text/javascript">
+	function updateTab() {
+		var current_index = $("#tabs").tabs("option", "active");
+		$("#tabs").tabs('load', current_index);
+	}
+
 	$("#create").submit(function (event) {
 		event.preventDefault();
 		var str = $("#create").serializeArray();
@@ -80,11 +82,11 @@
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
 			success: function (data) {
-				if (data.d.length > 0) {
-					alert(data.d);
+				if (data.d == null) {
+					alert('Hus tilføjet!')
+					updateTab();
 				} else {
-					var current_index = $("#tabs").tabs("option", "active");
-					$("#tabs").tabs('load', current_index);
+					alert(data.d);
 				}
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -95,7 +97,7 @@
 </script>
 
 
-            <div class="panel-group" id="accordion">
+<div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" "><div class="panel-heading">
                         <h4 class="panel-title">
@@ -123,6 +125,11 @@
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div id="DivEditHouse" title="EditHouse">
+
+
+
+
+
 	<form id="form1" runat="server">
                                 
 								<asp:ScriptManager ID="ScriptManager1" runat="server"/>
