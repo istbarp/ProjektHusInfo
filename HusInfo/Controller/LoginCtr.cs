@@ -88,6 +88,7 @@ namespace HusInfo.Controller
             login.password = lo.password;
             login.username = lo.username;
             login.phoneNumber = lo.phoneNumber;
+            login.verified = true;
 
             db.SaveChanges();
         }
