@@ -15,12 +15,10 @@ namespace HusInfo.Pages
 		protected void Page_Load(object sender, EventArgs e)
 		{
             SearchTbe.MaxLength = 8;
-			
 		}
 
 		protected void ButtonCreate_Click(object sender, EventArgs e)
 		{
-
 			try
 			{
 				HusInfo.Model.Login l = new HusInfo.Model.Login();
@@ -37,15 +35,12 @@ namespace HusInfo.Pages
 
 				LCtr.insertLogin(l);
 
-
+				Shared.alert("Mægler oprettet.", this);
+				Shared.reloadCurrentTab(this);
 			}
-			catch (Exception exc)
+			catch (Exception ex)
 			{
-				string strm = exc.Message.Replace('\'', ' ');
-				string str = "<script language='javascript'>";
-				str += "alert('" + strm + "')";
-				str += "</script>";
-				ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str);
+				Shared.alert(ex.Message, this);
 			}
 		}
 
@@ -66,25 +61,20 @@ namespace HusInfo.Pages
                 l.verified = true;
 
 				LCtr.editLogin(l);
+
+				Shared.alert("Mægler rettet.", this);
 			}
 
 			catch (Exception ex)
 			{
-				string strm = ex.Message.Replace('\'', ' ');
-				string str = "<script language='javascript'>";
-				str += "alert('" + strm + "')";
-				str += "</script>";
-				ClientScript.RegisterStartupScript(typeof(Page), "showmessage", str);
+				Shared.alert(ex.Message, this);
 			}
-
 		}
 
 		protected void ButtonGetUser_Click(object sender, EventArgs e)
 		{
-
 			int phoneNr = int.Parse(SearchTbe.Text);
 
-            
 			var lo = LCtr.GetLoginByPhoneNumber(phoneNr);
             if (lo != null)
             {
@@ -98,25 +88,18 @@ namespace HusInfo.Pages
             }
             else
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Telefon nummeret ekisistere ikke" + "');", true);
+				Shared.alert("Telefon nummeret ekisistere ikke", this);
             }
-
-
 		}
-
 
 		protected void ButtonDelete_Click(object sender, EventArgs e)
 		{
-
-
 			int phoneNr = int.Parse(DeleteTbd.Text);
 
 			LCtr.deleteLoginByPhoneNumber(phoneNr);
 
+			Shared.alert("Mægler slettet.", this);
+			Shared.reloadCurrentTab(this);
 		}
-
-
-            
-        
 	}
 }
