@@ -67,6 +67,39 @@
 			border-collapse: inherit !important;
 		}
 	</style>
+
+	<script type="text/javascript">
+		function soeg() {
+			var tlf = $('#SearchTbe').val();
+
+			$.ajax({
+				type: "POST",
+				url: "/Controller/EstateHandler.ashx",
+				data: { firstName: tlf },
+				// DO NOT SET CONTENT TYPE to json
+				// contentType: "application/json; charset=utf-8", 
+				// DataType needs to stay, otherwise the response object
+				// will be treated as a single string
+				dataType: "json",
+				success: function (response) {
+					if (response["fejl"] == "Fejl") {
+						alert("Ingen bruger fundet... Prøv igen");
+					}
+					else
+					{
+						$('#UsernameTbe').val(response["username"]);
+						$('#PasswordTbe').val(response["password"]);
+						$('#CompanyTbe').val(response["company"]);
+						$('#NameTbe').val(response["name"]);
+						$('#LastnameTbe').val(response["lastname"]);
+						$('#PhoneNumberTbe').val(response["phone"]);
+						$('#CvrNumberTbe').val(response["cvr"]);
+					}
+				}
+			});
+			return false;
+		}
+	</script>
 </head>
 <body>
 	<form id="form1" runat="server">
@@ -81,32 +114,32 @@
 				<div id="collapseThree3" class="panel-collapse collapse">
 					<div class="panel-body">
 						<div id="DivEditUser" title="EditHouse">
-									<span class="form-label">Søg på telefon nummer</span>
-									<asp:TextBox ID="SearchTbe" hint="Telefon nr" runat="server" CssClass="form-control"></asp:TextBox>
-									<asp:Button ID="UpdateButton1" CssClass="btn btn-warning" runat="server" Text="Hent Bruger" /><br />
+							<span class="form-label">Søg på telefon nummer</span>
+							<input type="text" id="SearchTbe" placeholder="Telefon nr" class="form-control" />
+							<button id="btnSoeg" onclick="return soeg();" class="btn btn-warning" type="button">Hent Bruger</button><br />
 
-									<span class="form-label">Brugernavn</span>
-									<asp:TextBox ID="UsernameTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Brugernavn</span>
+							<input type="text" id="UsernameTbe" class="form-control" />
 
-									<span class="form-label">Kodeord</span>
-									<asp:TextBox ID="PasswordTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Kodeord</span>
+							<input type="text" id="PasswordTbe" class="form-control" />
 
-									<span class="form-label">Firma navn</span>
-									<asp:TextBox ID="CompanyTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Firma navn</span>
+							<input type="text" id="CompanyTbe" class="form-control" />
 
-									<span class="form-label">Navn</span>
-									<asp:TextBox ID="NameTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Navn</span>
+							<input id="NameTbe" class="form-control" />
 
-									<span class="form-label">Efternavn</span>
-									<asp:TextBox ID="LastnameTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Efternavn</span>
+							<input id="LastnameTbe" class="form-control" />
 
-									<span class="form-label">Telefon nummer</span>
-									<asp:TextBox ID="PhoneNumberTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Telefon nummer</span>
+							<input id="PhoneNumberTbe" class="form-control" />
 
-									<span class="form-label">Cvr nummer</span>
-									<asp:TextBox ID="CvrNumberTbe" runat="server" CssClass="form-control"></asp:TextBox>
+							<span class="form-label">Cvr nummer</span>
+							<input id="CvrNumberTbe" class="form-control" />
 
-									<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonEdit" type="button" runat="server" Text="Redigere"  />
+							<asp:Button CssClass="btn btn-success btn-lg" ID="ButtonEdit" type="button" runat="server" Text="Redigere" />
 
 						</div>
 					</div>

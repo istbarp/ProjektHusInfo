@@ -45,6 +45,10 @@
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -99,7 +103,6 @@
     <Content Include="Pages\houseInfo.aspx" />
     <Content Include="Pages\login.aspx" />
     <Content Include="Pages\search.aspx" />
-    <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Pages\_estateAdmin.aspx" />
     <Content Include="Pages\_houseAdmin.aspx" />
     <Content Include="Pages\_jesperTest.aspx" />
@@ -131,6 +134,7 @@
       <DependentUpon>HouseInfo.edmx</DependentUpon>
       <LastGenOutput>HouseInfo.cs</LastGenOutput>
     </Content>
+    <Content Include="Controller\EstateHandler.ashx" />
     <None Include="Properties\PublishProfiles\Jobudbud.dk.pubxml" />
     <None Include="Properties\PublishProfiles\jobudbud.pubxml" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
@@ -155,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ClassificationCtr.cs" />
+    <Compile Include="Controller\EstateHandler.ashx.cs">
+      <DependentUpon>EstateHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Controller\LoginCtr.cs" />
     <Compile Include="Controller\OfferCtr.cs" />
     <Compile Include="Controller\PersonCtr.cs" />
@@ -237,13 +244,6 @@
     </Compile>
     <Compile Include="Pages\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\_estateAdmin.aspx.cs">
       <DependentUpon>_estateAdmin.aspx</DependentUpon>
