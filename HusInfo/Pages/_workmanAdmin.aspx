@@ -40,29 +40,31 @@
 
 <h4>Håndværkere</h4>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Firma</th>
-			<th>Tlf. Nr.</th>
-			<th>Verificeret</th>
-			<th>Slet</th>
-		</tr>
-	</thead>
-	<tbody>
-<% foreach(HusInfo.Model.Login l in lCtr.GetWorkmen()) { %>
-		<tr>
-			<td><%=l.id %></td>
-			<td><%=l.company %></td>
-			<td><%=l.phoneNumber %></td>
-			<% if (l.verified != null && (bool)l.verified) { %>
-				<td><button type="button" class="btn btn-success">Godkendt</button></td>
-			<% } else { %>
-				<td><button type="button" class="btn btn-primary" onclick="verify(<%=l.id %>);">Verificer?</button></td>
-			<% } %>
-			<td><button type="button" class="btn btn-danger" onclick="del(<%=l.id %>);">Slet</button></td>
-		</tr>
-<% } %>
-	</tbody>
-</table>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Firma</th>
+				<th>Tlf. Nr.</th>
+				<th>Verificeret</th>
+				<th>Slet</th>
+			</tr>
+		</thead>
+		<tbody>
+	<% foreach(HusInfo.Model.Login l in lCtr.GetWorkmen()) { %>
+			<tr>
+				<td><%=l.id %></td>
+				<td><%=l.company %></td>
+				<td><%=l.phoneNumber %></td>
+				<% if (l.verified != null && (bool)l.verified) { %>
+					<td><button type="button" class="btn btn-success">Godkendt</button></td>
+				<% } else { %>
+					<td><button type="button" class="btn btn-primary" onclick="verify(<%=l.id %>);">Verificer?</button></td>
+				<% } %>
+				<td><button type="button" class="btn btn-danger" onclick="del(<%=l.id %>);">Slet</button></td>
+			</tr>
+	<% } %>
+		</tbody>
+	</table>
+</div>
