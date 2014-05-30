@@ -1,16 +1,16 @@
-﻿using System;
+﻿using HusInfo.Controller;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Newtonsoft.Json;
 
-
-namespace HusInfo.Controller
+namespace HusInfo.Handlers
 {
 	/// <summary>
-	/// Summary description for Handler1
+	/// Summary description for EstateHandler_DeleteEstate
 	/// </summary>
-	public class EstateHandler : IHttpHandler
+	public class EstateHandler_DeleteEstate : IHttpHandler
 	{
 
 		public void ProcessRequest(HttpContext context)
@@ -19,23 +19,22 @@ namespace HusInfo.Controller
 			{
 				LoginCtr LCtr = new LoginCtr();
 
-
 				context.Response.ContentType = "text/plain";
-				string s = context.Request.Form["firstName"];
-				int tlf = int.Parse(s);
-				var lo = LCtr.GetLoginByPhoneNumber(tlf);
 
+				int phoneNr = int.Parse(context.Request.Form["tlf"]);
 
+				LCtr.deleteLoginByPhoneNumber(phoneNr);
 
-				// simulate Microsoft XSS protection
-				var wrapper = new { username = lo.username, password = lo.password, company = lo.company, name = lo.name, lastname = lo.lastname, phone = lo.phoneNumber, cvr = lo.cvrNumber };
+				var wrapper = new { succes = "succes" };
 				context.Response.Write(JsonConvert.SerializeObject(wrapper));
+
 			}
 			catch (Exception)
 			{
 				var failwrapper = new { fejl = "Fejl" };
 				context.Response.Write(JsonConvert.SerializeObject(failwrapper));
 			}
+
 		}
 
 		public bool IsReusable

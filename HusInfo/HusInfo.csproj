@@ -134,7 +134,11 @@
       <DependentUpon>HouseInfo.edmx</DependentUpon>
       <LastGenOutput>HouseInfo.cs</LastGenOutput>
     </Content>
-    <Content Include="Controller\EstateHandler.ashx" />
+    <Content Include="Handlers\EstateHandler.ashx" />
+    <Content Include="Handlers\EstateHandler_GetEstate.ashx" />
+    <Content Include="Handlers\EstateHandler_CreateEstate.ashx" />
+    <Content Include="Handlers\EstateHandler_EditEstate.ashx" />
+    <Content Include="Handlers\EstateHandler_DeleteEstate.ashx" />
     <None Include="Properties\PublishProfiles\Jobudbud.dk.pubxml" />
     <None Include="Properties\PublishProfiles\jobudbud.pubxml" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
@@ -159,7 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ClassificationCtr.cs" />
-    <Compile Include="Controller\EstateHandler.ashx.cs">
+    <Compile Include="Handlers\EstateHandler.ashx.cs">
       <DependentUpon>EstateHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controller\LoginCtr.cs" />
@@ -167,6 +171,18 @@
     <Compile Include="Controller\PersonCtr.cs" />
     <Compile Include="Controller\ReportCtr.cs" />
     <Compile Include="Controller\HouseCtr.cs" />
+    <Compile Include="Handlers\EstateHandler_CreateEstate.ashx.cs">
+      <DependentUpon>EstateHandler_CreateEstate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\EstateHandler_DeleteEstate.ashx.cs">
+      <DependentUpon>EstateHandler_DeleteEstate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\EstateHandler_EditEstate.ashx.cs">
+      <DependentUpon>EstateHandler_EditEstate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\EstateHandler_GetEstate.ashx.cs">
+      <DependentUpon>EstateHandler_GetEstate.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Model\Classification.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
     </Compile>

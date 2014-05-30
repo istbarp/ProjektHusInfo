@@ -74,7 +74,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/Controller/EstateHandler.ashx",
+				url: "/Handlers/EstateHandler.ashx",
 				data: { firstName: tlf },
 				// DO NOT SET CONTENT TYPE to json
 				// contentType: "application/json; charset=utf-8", 
