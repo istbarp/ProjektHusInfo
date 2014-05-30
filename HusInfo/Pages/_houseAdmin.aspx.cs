@@ -107,42 +107,7 @@ namespace HusInfo.Pages
 		}
 
 
-		protected void ButtonCreate_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				House h = new House();
-				h.address = AddressTb.Text;
-				h.basementAreal = Double.Parse(BasementArealTb.Text);
-				h.bruttoprice = double.Parse(BruttoPriceTb.Text);
-				h.buildingYear = int.Parse(BuildingYearTb.Text);
-				h.cashPrice = double.Parse(CashPriceTb.Text);
-				h.city = CityTb.Text;
-				h.distToSchool = double.Parse(DistToSchoolTb.Text);
-				h.distToShopping = double.Parse(DistToShppingTb.Text);
-				h.energyMark = EnergyMarkTb.Text;
-				h.floorLevels = int.Parse(FloorLevelsTb.Text);
-				h.garageKvm = double.Parse(GarageArealTb.Text);
-				h.groundAreal = double.Parse(GroundArealTb.Text);
-				h.kvmPrice = double.Parse(KvmPriceTb.Text);
-				h.livingAreal = double.Parse(LivingArealTb.Text);
-				h.nettoPrice = double.Parse(NettoPriceTb.Text);
-				h.rooms = int.Parse(RoomsTb.Text);
-				h.toilets = int.Parse(ToiletsTb.Text);
-				h.webLink = WebLinkTb.Text;
-				h.zipCode = int.Parse(ZipcodeTb.Text);
-
-				hC.insertHouse(h);
-
-				Shared.reloadCurrentTab(this);
-				Shared.alert("Hus oprettet.", this);
-			}
-
-			catch (Exception ex)
-			{
-				Shared.alert(ex.Message, this);
-			}
-		}
+		
 
 		protected void ButtonDelete_Click(object sender, EventArgs e)
 		{

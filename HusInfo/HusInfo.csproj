@@ -105,7 +105,6 @@
     <Content Include="Pages\search.aspx" />
     <Content Include="Pages\_estateAdmin.aspx" />
     <Content Include="Pages\_houseAdmin.aspx" />
-    <Content Include="Pages\_jesperTest.aspx" />
     <Content Include="Pages\_workmanAdmin.aspx" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
@@ -134,11 +133,12 @@
       <DependentUpon>HouseInfo.edmx</DependentUpon>
       <LastGenOutput>HouseInfo.cs</LastGenOutput>
     </Content>
-    <Content Include="Handlers\EstateHandler.ashx" />
-    <Content Include="Handlers\EstateHandler_GetEstate.ashx" />
-    <Content Include="Handlers\EstateHandler_CreateEstate.ashx" />
-    <Content Include="Handlers\EstateHandler_EditEstate.ashx" />
-    <Content Include="Handlers\EstateHandler_DeleteEstate.ashx" />
+    <Content Include="Handlers\EstateAdmin\EstateHandler_GetEstate.ashx" />
+    <Content Include="Handlers\EstateAdmin\EstateHandler_CreateEstate.ashx" />
+    <Content Include="Handlers\EstateAdmin\EstateHandler_EditEstate.ashx" />
+    <Content Include="Handlers\EstateAdmin\EstateHandler_DeleteEstate.ashx" />
+    <Content Include="Handlers\HouseAdmin\HouseHandler_CreateHouse.ashx" />
+    <Content Include="Handlers\HouseAdmin\HouseHandler_DeleteHouse.ashx" />
     <None Include="Properties\PublishProfiles\Jobudbud.dk.pubxml" />
     <None Include="Properties\PublishProfiles\jobudbud.pubxml" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css.map" />
@@ -163,25 +163,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ClassificationCtr.cs" />
-    <Compile Include="Handlers\EstateHandler.ashx.cs">
-      <DependentUpon>EstateHandler.ashx</DependentUpon>
-    </Compile>
     <Compile Include="Controller\LoginCtr.cs" />
     <Compile Include="Controller\OfferCtr.cs" />
     <Compile Include="Controller\PersonCtr.cs" />
     <Compile Include="Controller\ReportCtr.cs" />
     <Compile Include="Controller\HouseCtr.cs" />
-    <Compile Include="Handlers\EstateHandler_CreateEstate.ashx.cs">
+    <Compile Include="Handlers\EstateAdmin\EstateHandler_CreateEstate.ashx.cs">
       <DependentUpon>EstateHandler_CreateEstate.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\EstateHandler_DeleteEstate.ashx.cs">
+    <Compile Include="Handlers\EstateAdmin\EstateHandler_DeleteEstate.ashx.cs">
       <DependentUpon>EstateHandler_DeleteEstate.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\EstateHandler_EditEstate.ashx.cs">
+    <Compile Include="Handlers\EstateAdmin\EstateHandler_EditEstate.ashx.cs">
       <DependentUpon>EstateHandler_EditEstate.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\EstateHandler_GetEstate.ashx.cs">
+    <Compile Include="Handlers\EstateAdmin\EstateHandler_GetEstate.ashx.cs">
       <DependentUpon>EstateHandler_GetEstate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\HouseAdmin\HouseHandler_CreateHouse.ashx.cs">
+      <DependentUpon>HouseHandler_CreateHouse.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\HouseAdmin\HouseHandler_DeleteHouse.ashx.cs">
+      <DependentUpon>HouseHandler_DeleteHouse.ashx</DependentUpon>
     </Compile>
     <Compile Include="Model\Classification.cs">
       <DependentUpon>HouseInfo.tt</DependentUpon>
@@ -276,13 +279,6 @@
     <Compile Include="Pages\_houseAdmin.aspx.designer.cs">
       <DependentUpon>_houseAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\_jesperTest.aspx.cs">
-      <DependentUpon>_jesperTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\_jesperTest.aspx.designer.cs">
-      <DependentUpon>_jesperTest.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\_workmanAdmin.aspx.cs">
       <DependentUpon>_workmanAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,6 +306,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

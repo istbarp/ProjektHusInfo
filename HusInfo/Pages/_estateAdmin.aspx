@@ -74,7 +74,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/Handlers/EstateHandler_GetEstate.ashx",
+				url: "/Handlers/EstateAdmin/EstateHandler_GetEstate.ashx",
 				data: { firstName: tlf },
 				// DO NOT SET CONTENT TYPE to json
 				// contentType: "application/json; charset=utf-8", 
@@ -110,7 +110,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/Handlers/EstateHandler_CreateEstate.ashx",
+				url: "/Handlers/EstateAdmin/EstateHandler_CreateEstate.ashx",
 				data: {
 					username: username,
 					password: password,
@@ -148,7 +148,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/Handlers/EstateHandler_EditEstate.ashx",
+				url: "/Handlers/EstateAdmin/EstateHandler_EditEstate.ashx",
 				data: {
 					username: username,
 					password: password,
@@ -180,7 +180,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/Handlers/EstateHandler_DeleteEstate.ashx",
+				url: "/Handlers/EstateAdmin/EstateHandler_DeleteEstate.ashx",
 				data: { tlf: tlf },
 				// DO NOT SET CONTENT TYPE to json
 				// contentType: "application/json; charset=utf-8", 
